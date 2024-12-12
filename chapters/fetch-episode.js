@@ -1,5 +1,5 @@
 // List of episodes (your existing array)
-const API_URL = 'http://localhost:5000'; // JSON Server API URL
+const API_URL = 'https://this-should-work-l9hj.onrender.com'; // JSON Server API URL
 
 const episodes = [
     { name: 'Yzk-Tanıtım', file: 'giris.docx' },
