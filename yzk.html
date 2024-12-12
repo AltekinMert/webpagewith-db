@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YZK</title>
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/svg/Rectangle.png">
+    <link rel="apple-touch-icon" href="assets/svg/Rectangle.png">
+
+<!-- Custom CSS -->
+<link href="assets/css/font-awesome.min.css" rel="stylesheet">
+<link href="assets/css/animate-custom.css" rel="stylesheet">
+<!-- <link rel="stylesheet" href="jQuery-plugins/bxslider-4-4.2.17/src/css/jquery.bxslider.css"> -->
+<link rel="stylesheet" href="jQuery-plugins/jquery-ui-1.13.3.custom/jquery-ui.css">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css"> -->
+<!-- <link rel="stylesheet" href="jQuery-plugins/aos-master/dist/aos.css"> -->
+<link href="assets/css/styles.css" rel="stylesheet">
+<link href="assets/css/styles2.css" rel="stylesheet">
+<link href="assets/css/styles3.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styleslider.css">
+<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.css" integrity="sha512-8BU3emz11z9iF75b10oPjjpamM4Mz23yQFQymbtwyPN3mNWHxpgeqyrYnkIUP6A8KyAj5k2p3MiYLtYqew7gIw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="assets/css/icons.css">
+<link rel="stylesheet" href="assets/css/footer.css">
+<link rel="stylesheet" href="assets/css/yzk.css">
+<link rel="stylesheet" href="chapters/styles.css">
+<link rel="stylesheet" href="assets/css/new-navbar.css">
+<link rel="stylesheet" href="assets/css/bugged.css">
+<!-- Include PDF.js library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+<!-- Include PDF.js worker -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js"></script>
+<!-- Include Mammoth.js library -->
+<script src="https://unpkg.com/mammoth@1.4.10/mammoth.browser.min.js"></script>
+<!-- <script src="jquery-3.7.1.min.js"></script> -->
+<script src="jQuery-plugins/jquery-ui-1.13.3.custom/jquery-ui.js"></script>
+<!-- <script src="jQuery-plugins/aos-master/dist/aos.js"></script> -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<!-- <script src="jQuery-plugins/bxslider-4-4.2.17/src/js/jquery.bxslider.js"></script> -->
+<script src="index.js" defer></script>
+<!-- <script src="assets/js/jquery.min.js"></script>  Burayı ben kapadım-->
+<script type="text/javascript" src="assets/js/modernizr.custom.js"></script>
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries --> 
+<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body style="height: max-content;">
+  <div id="navbar-main"> 
+    <div class="navbar-class">
+      <ul class="sidebar">
+          <div class="sidebar-logo">
+            <img
+            src="assets/videos/menu-logo-ezgif.com-optimize (1).gif"
+            alt="Logo Animation"
+            style="background-color: rgba(0, 0, 0, 0.0); outline-color: rgba(0, 0, 0, 0.0); object-fit: contain ;width: fit-content;"
+            class="logo-video"
+            width="auto"
+            height="90"
+            max-width="100%"
+          />
+          </div>
+          <div class="sidebar-content-class">
+            <span><h1><a href="index.html" style="color: black;">Home</a></h1></span>
+            <span>
+              <h1>Kitaplar</h1>
+            </span>
+            <span><h1><a href="yzk.html">YZK</a></h1></span>
+            <span><h1><a href="valens.html">VALENS</a></h1></span>
+            <span><h1><a href="leza.html">LEZA</a></h1></span> 
+            <span><h1><a href="mabel.html">MABEL</a></h1></span>
+            <span><h1>Hakkında</h1></span>
+            <span><h1>Çok Yakında</h1></span>
+            <span><h1>Okuma Sırası</h1></span>
+            <span style="display: flex; justify-content: center;
+            /* margin-right: 20px; */
+            ">
+              <p style="margin: 0; display: flex; flex-direction: column; justify-content: center;">
+                <!-- <svg class="instagram-svg" xmlns="http://www.w3.org/2000/svg" onclick="javascript:window.open('https://www.instagram.com/byzloey/', '_blank', 'noopener'); return false;" viewBox="0 0 50 50" width="50px" height="50px" fill="#ffffff" style="padding-left: 17px;"><path d="M 16 3 C 8.8324839 3 3 8.8324839 3 16 L 3 34 C 3 41.167516 8.8324839 47 16 47 L 34 47 C 41.167516 47 47 41.167516 47 34 L 47 16 C 47 8.8324839 41.167516 3 34 3 L 16 3 z M 16 5 L 34 5 C 40.086484 5 45 9.9135161 45 16 L 45 34 C 45 40.086484 40.086484 45 34 45 L 16 45 C 9.9135161 45 5 40.086484 5 34 L 5 16 C 5 9.9135161 9.9135161 5 16 5 z M 37 11 A 2 2 0 0 0 35 13 A 2 2 0 0 0 37 15 A 2 2 0 0 0 39 13 A 2 2 0 0 0 37 11 z M 25 14 C 18.936712 14 14 18.936712 14 25 C 14 31.063288 18.936712 36 25 36 C 31.063288 36 36 31.063288 36 25 C 36 18.936712 31.063288 14 25 14 z M 25 16 C 29.982407 16 34 20.017593 34 25 C 34 29.982407 29.982407 34 25 34 C 20.017593 34 16 29.982407 16 25 C 16 20.017593 20.017593 16 25 16 z"/></svg> -->
+              </p>
+              <h1 class="instagram-link-onsidebar" onclick="javascript:window.open('https://www.instagram.com/byzloey/', '_blank', 'noopener'); return false;">@byzloey</h1></span>
+              <span class="social-icons-container">
+                <div class="icon-container">
+                  <a href="https://www.instagram.com/byzloey/" class="icon-box"><i class="fab fa-instagram"></i></a>
+  
+                  <a href="https://www.wattpad.com/user/byzloey" class="icon-box">
+                    <img src="chapters/wattpad.svg" alt="Wattpad Logo" width="25" height="25" style="height: 30px; width: inherit;">
+                  </a>
+  
+                  <a href="https://whatsapp.com/channel/0029VajjevvKbYMNBYNTbd0c" class="icon-box"><i class="fab fa-whatsapp"></i></a>
+                  
+                  <a href="https://x.com/loeybyz" class="icon-box"><i class="fab fa-x-twitter"></i></a>
+                  
+                  <a href="https://www.kitappad.com/byzloey" class="icon-box" style="margin-top: 3px;">
+                    <img src="chapters/kitappad (4).svg" alt="Kitappad Logo" width="25" height="25" style="height: 34px; width: auto; vertical-align: baseline;">
+                  </a>
+  
+                  <a href="https://www.youtube.com/@beyzasurmen7504" class="icon-box" style="padding-right: 10px;"><i class="fab fa-youtube"></i></a>
+              </div>
+              </span>
+          </div>
+      </ul>
+  
+      <div class="container-navbar-new">
+        <div class="logo-byzloey">
+          <li>
+            <img
+              src="assets/videos/best-result.gif"
+              alt="Logo Animation"
+              style="background-color: rgba(0, 0, 0, 0.0); outline-color: rgba(0, 0, 0, 0.0); object-fit: cover;"
+              class="logo-video"
+              width="auto"
+              height="180"
+              max-width="100%"
+            />
+          </li>
+      </div>
+      <div class="logo-bottom hideonMobile">
+        <span><h1><a href="index.html">Home</a></h1></span>
+        <!-- altına gelicek function -->
+            <span class="kitaplar-container" style="position: relative;">
+              <h1>Kitaplar</h1>
+  
+              <div class="kitaplar-dropdown">
+                <div class="kitaplar-content-class" style="margin-top: 0px;">
+                  <span><h1><a href="yzk.html">YZK</a></h1></span>
+                  <span><h1><a href="valens.html">VALENS</a></h1></span>
+                  <span><h1><a href="mabel.html">MABEL</a></h1></span>
+                  <span><h1><a href="leza.html">LEZA</a></h1></span> 
+                </div>
+              </div>
+  
+            </span>
+            <span><h1>Hakkında</h1></span>
+            <span><h1>Çok Yakında</h1></span>
+            <span><h1>Okuma Sırası</h1></span>
+      </div>
+      </div>
+  
+  
+      
+      <div class="menu-button" onclick=showSidebar()>
+        <input type="checkbox" role="button" aria-label="Display the menu" class="custom-menu-checkbox" style="box-shadow: none; outline: none;" >
+      </div>
+  </div>
+  </div>
+
+
+
+  <div class="custom-dropdown" id="customDropdown">
+    <button id="prevButton"><i class="fa-solid fa-angle-left"></i></button>
+    <div class="select-box">
+      <img src="assets/images/yzk.jpg" alt="Book Cover">
+      <div class="dropdown-select">
+          <div class="selected-option">Yarınlar Zifiri Karanlık</div>
+          <div class="arrow"><i class="fa-solid fa-angle-down"></i></div>
+          <div class="episode-name" style="display: none;">Yarınlar Zifiri Karanlık</div>
+      </div>
+      
+    </div>
+    <button id="nextButton"><i class="fa-solid fa-angle-right"></i></button> <!-- Next Button -->
+    <div class="options" id="optionsList"></div>
+  </div>
+
+  <button id="scrollToTopBtn" class="scroll-to-top-btn">
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+
+
+
+
+      <div class="container3" style="padding: 20px;">
+        <div class="header3">
+            <h1>YZK</h1>
+        </div>
+        <div class="content3" style="overflow-x: hidden;">
+          <div class="left-side3">
+            <p class="description3 part1" style="color: #000; font-size: 22px;">
+              <!-- Önüme bir kadeh koydu, içine şarap doldurdu ve ince uzun parmaklarıyla masa da bana doğru ittirdi. Kimse dokunmadı, sadece gözlerimiz değdi kadehe ama o kadeh devrildi, kucağıma düştü ve içinde ki şarap bedenime yayıldı. Bu şarap benim kanımdı, şarap şişesinin kırılan cam parçaları benim kalbimdi ve kucağıma düşen bu kadeh benim hayallerimdi. Kadehi bana uzatan bu adam ise ölümle aramda ki tek engeldi. -->
+            </p>
+            <p class="description3" style="color: #000;">Küçükken duyduğum silah seslerini bastırabilmek için şarkılar söylerdim, sonra sesimi kestiler, silah seslerini yükselttiler. Bende sesimi silah yaptım ve o silahı hiç susturmadım.
+
+              En büyük hayalim aynı zamanda en büyük korkumdu sesim, bunu göstermek hayatımın en büyük hatasıydı ve hayatıma mal olmuştu</p>
+            <p class="description3" style="color: #000;">Sonra öğrendim; eğer korkunu her daim göz önünde tutarsan bir süre sonra korkuya bile alışırsın.
+
+              İnsanın eksik hissetmesi ruh eşini bulamadığındandır derler. Benim ruh eşim beni bulmak için çok geç kaldı çünkü ruhum paramparça.</p>
+            <div class="bottom-praise3">
+                <div class="praise-header3">
+                    <h1>Praise for the familiar</h1>
+                </div>
+                <div class="bottom-perc3">
+                    <p>Yara kalpte açılır ama kalbe yayılmaz. Aklına sızar ve oraya yayılır.
+                    <br>Yara kalpte açılır ama acısını zihnimiz çeker.</p>
+                    <p>Yara kalpte açılır ve kapanır ama zihninde devam eder.
+                      <br>
+                      Yara dışarıda değil, yara içeride.
+                      <br>
+                      Yara çok içeride.</p>
+                    <p>Bana bir gece vakti, ayın gölgesi denizmişiz gibi üzerimize yakamoz düşürdüğünde 'Hala kanadığını görüyorum.' Demiştin.
+                      <br> Ben de aya bakmıştım senin gibi, yakamozun yüzüne ne kadar yakıştığını görmek istememiştim çünkü aklımı kaybettirecek kadar güzeldin. Yüzüne bakmadan 'Her yara bir yere kadar kanar.' Demiştim.
+                      <br>Salvor, merhem demekti ama kanayan bir yaraya merhem etki etmezdi.</p>
+                </div>
+            </div>
+          </div>
+          <div class="right-side3">
+            <img loading="lazy" decoding="async" width="752" height="1024" src="assets/img/yzkkitapkırmızı.png" class="attachment-large size-large wp-image-12739" alt="The Familiar by Leigh Bardugo" sizes="(max-width: 752px) 100vw, 752px">
+          </div>
+        </div>
+      </div>
+
+
+      <div class="playlist-class">
+        <h1 style="text-align: center; color: 	#000000; font-family: 'Cinzel Decorative',serif; ">Playlist </h1>
+        <iframe class="spotify-class" src="https://open.spotify.com/embed/album/4R2ugTPR6ldbrhuCFoU3p1?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </div>
+
+
+      <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+    </div>
+
+
+
+      <div class="kitap-oku">
+        <input type="checkbox" id="darkmode-toggle" />
+      <label for="darkmode-toggle">
+        <img src="chapters/sun.svg" class="sun" alt="Sun Icon" />
+        <img src="chapters/moon.svg" class="moon" alt="Moon Icon" />
+      </label>
+        <div id="content" class="content">
+          <!-- Episode content will be displayed here -->
+        </div>
+        <div class="next-episode">
+          <h1 class="next-episode-context">Sonraki Bölümü Okumaya Devam Edin</h1>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <!-- containerfhgf -->
+<div id="ambient-light" style="background-color: #000;">
+  <div class="bottom-info" style="width: -webkit-fill-available; height: -webkit-fill-available;">
+    <div>
+      <h1 style="font-size: medium; text-align: -webkit-center; font-family: sans-serif;color: #838383;">Copyright © 2024. Design by Byzloey</h1>
+    </div>
+
+    <div class="icon-container">
+      <a href="https://www.instagram.com/byzloey/" class="icon-box"><i class="fab fa-instagram" style="color: white;"></i></a>
+
+      <a href="https://www.wattpad.com/user/byzloey" class="icon-box">
+        <img src="chapters/wattpad.svg" alt="Wattpad Logo" width="25" height="25" style="height: 30px; width: inherit; -webkit-filter: invert(1);">
+      </a>
+
+      <a href="https://whatsapp.com/channel/0029VajjevvKbYMNBYNTbd0c" class="icon-box"><i class="fab fa-whatsapp" style="color: white;"></i></a>
+      
+      <a href="https://x.com/loeybyz" class="icon-box"><i class="fab fa-x-twitter" style="color: white;"></i></a>
+      
+      <a href="https://www.kitappad.com/byzloey" class="icon-box" style="margin-top: 3px;">
+        <img src="chapters/kitappad (4).svg" alt="Kitappad Logo" width="25" height="25" style="height: 34px; width: auto; vertical-align: baseline; -webkit-filter: invert(1);">
+      </a>
+
+      <a href="https://www.youtube.com/@beyzasurmen7504" class="icon-box" style="padding-right: 10px;"><i class="fab fa-youtube" style="color: white;"></i></a>
+  </div>
+
+  </div>
+
+  <div class="circle one"></div>
+  <div class="circle two"></div>
+  <div class="circle three"></div>
+  <div class="circle four"></div>
+  <div class="circle five"></div>
+</div>
+
+<script defer>
+  document.addEventListener("DOMContentLoaded", function() {
+    const selectBox = document.querySelector('.select-box');
+    const optionsList = document.querySelector('.options');
+    const prevButton = document.querySelector('#prevButton');
+
+    // select-box genişliğini al ve options'a uygula
+    function matchWidth() {
+        const width = selectBox.getBoundingClientRect().width;
+        const buttonWidth = prevButton.getBoundingClientRect().width;
+        
+        optionsList.style.width = width + 'px';
+        optionsList.style.marginLeft = buttonWidth + 'px';
+    }
+
+    // Sayfa yüklendiğinde ve pencere boyutu değiştiğinde genişliği eşitle
+    matchWidth();
+    window.addEventListener('resize', matchWidth);
+});
+
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+      // Function to set the top value of the scroll progress container based on the height of .custom-dropdown
+      function setProgressBarTop() {
+          const customDropdown = document.querySelector('.custom-dropdown');
+          const scrollProgressContainer = document.querySelector('.scroll-progress-container');
+          
+          if (customDropdown) {
+              // Get the height of the custom-dropdown element
+              const dropdownHeight = customDropdown.getBoundingClientRect().height;
+              // Set the top attribute of the scroll-progress-container based on the dropdown height
+              scrollProgressContainer.style.top = dropdownHeight + 'px';
+          }
+      }
+
+      // Function to update the scroll progress bar
+      function updateProgressBar() {
+          const scrollProgressBar = document.getElementById('scrollProgressBar');
+          const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+          const scrollPosition = window.scrollY;
+          const progressPercentage = (scrollPosition / totalHeight) * 100;
+          scrollProgressBar.style.width = progressPercentage + '%';
+      }
+
+      // Set the initial top value when the page loads
+      setProgressBarTop();
+
+      // Update the top value when the window is resized
+      window.addEventListener('resize', setProgressBarTop);
+
+      // Event listener for scrolling
+      window.addEventListener('scroll', updateProgressBar);
+  });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+      const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+      // Show or hide the button based on the scroll position
+      window.addEventListener('scroll', function() {
+          if (window.scrollY > 300) { // Show the button when scrolled 300px down
+              scrollToTopBtn.classList.add('show');
+          } else {
+              scrollToTopBtn.classList.remove('show');
+          }
+      });
+
+      // Smooth scroll to the top when the button is clicked
+      scrollToTopBtn.addEventListener('click', function() {
+          window.scrollTo({
+              top: 0,
+              behavior: 'smooth'
+          });
+      });
+  });
+</script>
+<script>
+	// JavaScript to toggle dark mode
+	const toggle = document.getElementById('darkmode-toggle');
+	const content = document.querySelector('.content');
+
+	toggle.addEventListener('change', () => {
+		content.classList.toggle('dark-mode');
+    customDropdown.classList.toggle('dark-mode');
+	});
+</script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="sidebar.js"></script>
+<script src="dropdown.js"></script>
+<script src="chapters/fetch-episode.js"></script>
+</body>
+</html>

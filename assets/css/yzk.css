@@ -1,0 +1,15 @@
+.playlist-class{
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+}
+.spotify-class{
+    width: 80%;
+    border-radius: 12px;
+}
+
+@media screen and (max-width: 678px) {
+    .spotify-class{
+        width: 100%;
+    }
+}
