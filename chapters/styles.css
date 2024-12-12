@@ -483,3 +483,7 @@ input:checked + label img.moon {
     position: absolute;
     right: 0;
   }
+
+  .content div:first-child button{
+    display: none;
+  }

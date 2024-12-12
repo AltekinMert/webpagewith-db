@@ -139,7 +139,6 @@ function loadDocument(filename, episodeId) {
   }
 }
 
-// Function to load and render DOCX files
 function loadDOCX(url, episodeId) {
   const contentDiv = document.getElementById('content');
   contentDiv.innerHTML = 'Loading DOCX...';
@@ -147,23 +146,22 @@ function loadDOCX(url, episodeId) {
   fetch(url)
     .then((response) => response.arrayBuffer())
     .then((arrayBuffer) => {
-      // Use Mammoth.js to convert DOCX to HTML
       return mammoth.convertToHtml({ arrayBuffer });
     })
     .then((result) => {
       contentDiv.innerHTML = ''; // Clear loading message
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(result.value, 'text/html');
-      const paragraphs = doc.body.getElementsByTagName('p');
 
-      Array.from(paragraphs).forEach((paragraph, index) => {
+      // Split the content into lines or paragraphs
+      const paragraphs = result.value.split(/<\/p>\s*<p>/); // Use simple split logic for separating <p> tags
+
+      paragraphs.forEach((paragraphContent, index) => {
         const paragraphContainer = document.createElement('div');
         paragraphContainer.classList.add('paragraph-container');
         paragraphContainer.dataset.index = index;
 
         // Add paragraph text
         const p = document.createElement('p');
-        p.textContent = paragraph.textContent;
+        p.innerHTML = paragraphContent.replace(/<\/?p>/g, '').trim(); // Clean up <p> tags
         paragraphContainer.appendChild(p);
 
         // Add Comment Button
@@ -183,6 +181,7 @@ function loadDOCX(url, episodeId) {
       contentDiv.innerHTML = 'Error loading document.';
     });
 }
+
 
 
 
@@ -225,13 +224,8 @@ function showCommentBox(paragraphIndex, episodeId, container) {
   commentDisplay.id = `commentDisplay-${paragraphIndex}`;
   commentDisplay.classList.add('comment-display-modal');
 
-  // Use preloaded comments from the cache
-  const cachedComments = commentsCache[paragraphIndex] || [];
-  cachedComments.forEach((comment) => {
-    const commentDiv = document.createElement('div');
-    commentDiv.innerHTML = `<strong>${comment.username}:</strong> ${comment.comment}`;
-    commentDisplay.appendChild(commentDiv);
-  });
+  // Load comments for this paragraph
+  loadComments(paragraphIndex, episodeId, commentDisplay);
 
   // Input for username
   const usernameInput = document.createElement('input');
@@ -251,10 +245,7 @@ function showCommentBox(paragraphIndex, episodeId, container) {
     saveComment(paragraphIndex, episodeId, usernameInput.value, textarea.value);
     usernameInput.value = '';
     textarea.value = '';
-    // Update cache and reload modal
-    preloadCommentsForEpisode(episodeId).then(() => {
-      showCommentBox(paragraphIndex, episodeId, container);
-    });
+    loadComments(paragraphIndex, episodeId, commentDisplay); // Reload comments
   });
 
   // Append elements to modal content
@@ -271,6 +262,7 @@ function showCommentBox(paragraphIndex, episodeId, container) {
   // Append modal to the body
   document.body.appendChild(modal);
 }
+
 
 
 
@@ -294,20 +286,29 @@ async function saveComment(paragraphIndex, episodeId, username, comment) {
         timestamp: new Date().toISOString(),
       }),
     });
-
-    // Add the new comment to the cache
-    if (!commentsCache[paragraphIndex]) {
-      commentsCache[paragraphIndex] = [];
-    }
-    commentsCache[paragraphIndex].push({
-      episodeId,
-      paragraphId: paragraphIndex,
-      username,
-      comment,
-      timestamp: new Date().toISOString(),
-    });
   } catch (error) {
     console.error('Error saving comment:', error);
+  }
+}
+
+// Function to load comments
+async function loadComments(paragraphIndex, episodeId, container) {
+  try {
+    const response = await fetch(
+      `${API_URL}/comments?episodeId=${episodeId}&paragraphId=${paragraphIndex}`
+    );
+    const comments = await response.json();
+
+    // Clear any existing comments
+    container.innerHTML = '';
+
+    comments.forEach((comment) => {
+      const commentDiv = document.createElement('div');
+      commentDiv.innerHTML = `<strong>${comment.username}:</strong> ${comment.comment}`;
+      container.appendChild(commentDiv);
+    });
+  } catch (error) {
+    console.error('Error loading comments:', error);
   }
 }
 // Function to load comments
