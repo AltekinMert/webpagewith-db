@@ -387,4 +387,91 @@ input:checked + label img.moon {
     font-size: medium;
 }
 
-.
+/* Modal Container */
+#commentModal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    width: 400px;
+    max-width: 90%;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  
+  /* Modal Content */
+  #modalContent {
+    position: relative;
+    padding: 20px;
+  }
+  
+  /* Close Button */
+  #closeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  /* Modal Title */
+  #modalTitle {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #444;
+  }
+  
+  /* Comment Display Section */
+  .comment-display-modal {
+    max-height: 200px;
+    overflow-y: auto;
+    margin: 10px 0;
+    padding: 10px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  /* Username Input */
+  #usernameInput {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Comment Textarea */
+  #commentTextarea {
+    display: block;
+    width: 100%;
+    height: 80px;
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Submit Button */
+  #submitButton {
+    display: block;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  #submitButton:hover {
+    background-color: #0056b3;
+  }
+  

@@ -175,8 +175,6 @@ function loadDOCX(url, episodeId) {
         });
         paragraphContainer.appendChild(commentButton);
 
-        loadComments(index, episodeId, paragraphContainer);
-
         contentDiv.appendChild(paragraphContainer);
       });
     })
@@ -186,37 +184,94 @@ function loadDOCX(url, episodeId) {
     });
 }
 
+
+// Function to show the comment box
+
 // Function to show the comment box
 function showCommentBox(paragraphIndex, episodeId, container) {
-  let commentBox = container.querySelector('.comment-box');
-  if (commentBox) {
-    commentBox.style.display = 'block';
-    return;
+  // Check if a modal already exists
+  let existingModal = document.querySelector('#commentModal');
+  if (existingModal) {
+    existingModal.remove(); // Remove any existing modals
   }
 
-  commentBox = document.createElement('div');
-  commentBox.classList.add('comment-box');
+  // Create the modal container
+  const modal = document.createElement('div');
+  modal.id = 'commentModal';
+  modal.classList.add('comment-modal');
 
+  // Create modal content
+  const modalContent = document.createElement('div');
+  modalContent.id = 'modalContent';
+  modalContent.classList.add('modal-content');
+
+  // Close button for modal
+  const closeButton = document.createElement('span');
+  closeButton.id = 'closeButton';
+  closeButton.classList.add('close-button');
+  closeButton.textContent = '×';
+  closeButton.addEventListener('click', () => {
+    modal.remove(); // Close the modal
+  });
+
+  // Title for comments section
+  const modalTitle = document.createElement('h3');
+  modalTitle.id = 'modalTitle';
+  modalTitle.textContent = `Comments for Paragraph ${paragraphIndex + 1}`;
+
+  // Comments display section
+  const commentDisplay = document.createElement('div');
+  commentDisplay.id = `commentDisplay-${paragraphIndex}`;
+  commentDisplay.classList.add('comment-display-modal');
+
+  // Use preloaded comments from the cache
+  const cachedComments = commentsCache[paragraphIndex] || [];
+  cachedComments.forEach((comment) => {
+    const commentDiv = document.createElement('div');
+    commentDiv.innerHTML = `<strong>${comment.username}:</strong> ${comment.comment}`;
+    commentDisplay.appendChild(commentDiv);
+  });
+
+  // Input for username
   const usernameInput = document.createElement('input');
+  usernameInput.id = 'usernameInput';
   usernameInput.placeholder = 'Your username';
 
+  // Input for comment
   const textarea = document.createElement('textarea');
+  textarea.id = 'commentTextarea';
   textarea.placeholder = 'Your comment';
 
+  // Submit button
   const submitButton = document.createElement('button');
+  submitButton.id = 'submitButton';
   submitButton.textContent = 'Submit';
   submitButton.addEventListener('click', () => {
     saveComment(paragraphIndex, episodeId, usernameInput.value, textarea.value);
     usernameInput.value = '';
     textarea.value = '';
-    loadComments(paragraphIndex, episodeId, container);
+    // Update cache and reload modal
+    preloadCommentsForEpisode(episodeId).then(() => {
+      showCommentBox(paragraphIndex, episodeId, container);
+    });
   });
 
-  commentBox.appendChild(usernameInput);
-  commentBox.appendChild(textarea);
-  commentBox.appendChild(submitButton);
-  container.appendChild(commentBox);
+  // Append elements to modal content
+  modalContent.appendChild(closeButton);
+  modalContent.appendChild(modalTitle);
+  modalContent.appendChild(commentDisplay);
+  modalContent.appendChild(usernameInput);
+  modalContent.appendChild(textarea);
+  modalContent.appendChild(submitButton);
+
+  // Append modal content to modal container
+  modal.appendChild(modalContent);
+
+  // Append modal to the body
+  document.body.appendChild(modal);
 }
+
+
 
 
 // Function to save a comment
@@ -231,12 +286,24 @@ async function saveComment(paragraphIndex, episodeId, username, comment) {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        episodeId, // Include episode ID
+        episodeId,
         paragraphId: paragraphIndex,
         username,
         comment,
         timestamp: new Date().toISOString(),
       }),
+    });
+
+    // Add the new comment to the cache
+    if (!commentsCache[paragraphIndex]) {
+      commentsCache[paragraphIndex] = [];
+    }
+    commentsCache[paragraphIndex].push({
+      episodeId,
+      paragraphId: paragraphIndex,
+      username,
+      comment,
+      timestamp: new Date().toISOString(),
     });
   } catch (error) {
     console.error('Error saving comment:', error);
@@ -270,6 +337,8 @@ async function loadComments(paragraphIndex, episodeId, container) {
     console.error('Error loading comments:', error);
   }
 }
+let commentsCache = {}; // Cache to store preloaded comments for the current episode
+
 // Update document loading with episode ID
 function updateSelectedOption() {
   const episode = episodes[currentIndex];
@@ -282,6 +351,10 @@ function updateSelectedOption() {
     newSelected.classList.add('selected');
   }
   episodeName.textContent = episode.name;
+
+  // Prefetch comments for the selected episode
+  preloadCommentsForEpisode(currentIndex);
+
   loadDocument(episode.file, currentIndex); // Pass episode ID
   if (!isFirstLoad) {
     scrollToContentTop();
@@ -289,6 +362,27 @@ function updateSelectedOption() {
     isFirstLoad = false;
   }
 }
+
+// Function to preload comments for an episode
+async function preloadCommentsForEpisode(episodeId) {
+  try {
+    const response = await fetch(`${API_URL}/comments?episodeId=${episodeId}`);
+    const comments = await response.json();
+
+    // Organize comments by paragraph ID and store in cache
+    commentsCache = {};
+    comments.forEach((comment) => {
+      if (!commentsCache[comment.paragraphId]) {
+        commentsCache[comment.paragraphId] = [];
+      }
+      commentsCache[comment.paragraphId].push(comment);
+    });
+  } catch (error) {
+    console.error('Error preloading comments:', error);
+  }
+}
+
+
 
 
 // Scroll to content top
