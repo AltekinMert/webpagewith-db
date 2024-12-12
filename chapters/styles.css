@@ -474,4 +474,12 @@ input:checked + label img.moon {
   #submitButton:hover {
     background-color: #0056b3;
   }
-  
+  .paragraph-container{
+    position: relative;
+  }
+
+  .paragraph-container button{
+    top: 30%;
+    position: absolute;
+    right: 0;
+  }
