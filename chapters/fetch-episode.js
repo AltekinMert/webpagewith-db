@@ -147,27 +147,26 @@ function loadDOCX(url, episodeId) {
   fetch(url)
     .then((response) => response.arrayBuffer())
     .then((arrayBuffer) => {
-      const zip = new JSZip();
-      return zip.loadAsync(arrayBuffer).then((zip) => {
-        const file = zip.file('word/document.xml');
-        return file.async('text');
-      });
+      // Use Mammoth.js to convert DOCX to HTML
+      return mammoth.convertToHtml({ arrayBuffer });
     })
-    .then((text) => {
-      const parser = new DOMParser();
-      const xmlDoc = parser.parseFromString(text, 'application/xml');
-      const paragraphs = xmlDoc.getElementsByTagName('w:t');
+    .then((result) => {
       contentDiv.innerHTML = ''; // Clear loading message
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(result.value, 'text/html');
+      const paragraphs = doc.body.getElementsByTagName('p');
 
       Array.from(paragraphs).forEach((paragraph, index) => {
         const paragraphContainer = document.createElement('div');
         paragraphContainer.classList.add('paragraph-container');
         paragraphContainer.dataset.index = index;
 
+        // Add paragraph text
         const p = document.createElement('p');
         p.textContent = paragraph.textContent;
         paragraphContainer.appendChild(p);
 
+        // Add Comment Button
         const commentButton = document.createElement('button');
         commentButton.textContent = 'Add Comment';
         commentButton.addEventListener('click', () => {
@@ -175,6 +174,7 @@ function loadDOCX(url, episodeId) {
         });
         paragraphContainer.appendChild(commentButton);
 
+        // Append paragraph container to the content div
         contentDiv.appendChild(paragraphContainer);
       });
     })
@@ -183,6 +183,7 @@ function loadDOCX(url, episodeId) {
       contentDiv.innerHTML = 'Error loading document.';
     });
 }
+
 
 
 // Function to show the comment box
