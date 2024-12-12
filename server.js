@@ -2,7 +2,14 @@ const jsonServer = require('json-server');
 const server = jsonServer.create();
 const router = jsonServer.router('db.json'); // The database file
 const middlewares = jsonServer.defaults();
-
+server.use((req, res, next) => {
+  const allowedMethods = ['GET', 'POST'];
+  if (!allowedMethods.includes(req.method)) {
+    res.status(405).json({ error: 'Method Not Allowed' }); // Reject unwanted methods
+  } else {
+    next(); // Allow the request
+  }
+});
 server.use(middlewares);
 server.use(router);
 
