@@ -1,9 +1,9 @@
 // List of episodes (your existing array)
-const API_URL = 'https://this-should-work-l9hj.onrender.com'; // JSON Server API URL
+// const API_URL = 'https://this-should-work-l9hj.onrender.com'; 
 
 const episodes = [
     { name: 'Yzk-Tanıtım', file: 'giris.docx' },
-    { name: 'YZK 1.Bölüm', file: 'yzk ilkk bölüm.docx' },
+    { name: 'YZK 1.Bölüm', file: 'yzk-1.docx' },
     { name: 'YZK 2.Bölüm', file: 'yzk-2.docx' },
     { name: 'YZK 3.Bölüm', file: 'yzk-3.docx' },
     { name: 'YZK 4.Bölüm', file: 'yzk-4.docx' },
@@ -234,12 +234,12 @@ function showCommentBox(paragraphIndex, episodeId, container) {
   // Input for username
   const usernameInput = document.createElement('input');
   usernameInput.id = 'usernameInput';
-  usernameInput.placeholder = 'Your username';
+  usernameInput.placeholder = 'Kullanıcı Adı';
 
   // Input for comment
   const textarea = document.createElement('textarea');
   textarea.id = 'commentTextarea';
-  textarea.placeholder = 'Your comment';
+  textarea.placeholder = 'Bir yorum yaz';
 
   // Submit button
   const submitButton = document.createElement('button');
