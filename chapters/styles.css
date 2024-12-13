@@ -476,12 +476,14 @@ input:checked + label img.moon {
   }
   .paragraph-container{
     position: relative;
+    display: flex;
   }
 
   .paragraph-container button{
-    top: 30%;
+    /* top: 30%;
     position: absolute;
-    right: 0;
+    right: 0; */
+    align-self: center;
   }
 
   .content div:first-child button{

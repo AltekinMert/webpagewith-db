@@ -315,7 +315,7 @@ async function saveComment(paragraphIndex, episodeId, username, comment) {
       }
     }
 
-    alert('Comment added successfully!');
+    // alert('Comment added successfully!');
   } catch (error) {
     console.error('Error saving comment to Firebase:', error);
     alert('An error occurred while saving your comment. Please try again.');
