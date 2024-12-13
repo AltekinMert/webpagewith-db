@@ -165,9 +165,14 @@ function loadDOCX(url, episodeId) {
         p.innerHTML = paragraphContent.replace(/<\/?p>/g, '').trim(); // Clean up <p> tags
         paragraphContainer.appendChild(p);
 
-        // Add Comment Button
+        // Add Comment Button with Font Awesome icon and counter
         const commentButton = document.createElement('button');
-        commentButton.textContent = 'Add Comment';
+        commentButton.classList.add('comment-button');
+        const commentCount = commentsCache[index]?.length || 0;
+        commentButton.innerHTML = `
+          <i class="fa-solid fa-message"></i>
+          <span class="comment-count">${commentCount}</span>
+        `;
         commentButton.addEventListener('click', () => {
           showCommentBox(index, episodeId, paragraphContainer);
         });
@@ -186,9 +191,10 @@ function loadDOCX(url, episodeId) {
 
 
 
-// Function to show the comment box
+
 
 // Function to show the comment box
+
 function showCommentBox(paragraphIndex, episodeId, container) {
   // Check if a modal already exists
   let existingModal = document.querySelector('#commentModal');
@@ -225,8 +231,13 @@ function showCommentBox(paragraphIndex, episodeId, container) {
   commentDisplay.id = `commentDisplay-${paragraphIndex}`;
   commentDisplay.classList.add('comment-display-modal');
 
-  // Load comments for this paragraph
-  loadComments(paragraphIndex, episodeId, commentDisplay);
+  // Load comments from cache
+  const cachedComments = commentsCache[paragraphIndex] || [];
+  cachedComments.forEach((comment) => {
+    const commentDiv = document.createElement('div');
+    commentDiv.innerHTML = `<strong>${comment.username}:</strong> ${comment.comment}`;
+    commentDisplay.appendChild(commentDiv);
+  });
 
   // Input for username
   const usernameInput = document.createElement('input');
@@ -242,11 +253,19 @@ function showCommentBox(paragraphIndex, episodeId, container) {
   const submitButton = document.createElement('button');
   submitButton.id = 'submitButton';
   submitButton.textContent = 'Submit';
-  submitButton.addEventListener('click', () => {
-    saveComment(paragraphIndex, episodeId, usernameInput.value, textarea.value);
+  submitButton.addEventListener('click', async () => {
+    await saveComment(paragraphIndex, episodeId, usernameInput.value, textarea.value);
     usernameInput.value = '';
     textarea.value = '';
-    loadComments(paragraphIndex, episodeId, commentDisplay); // Reload comments
+
+    // Update the modal with the new comment
+    const newComment = {
+      username: usernameInput.value,
+      comment: textarea.value,
+    };
+    const newCommentDiv = document.createElement('div');
+    newCommentDiv.innerHTML = `<strong>${newComment.username}:</strong> ${newComment.comment}`;
+    commentDisplay.appendChild(newCommentDiv);
   });
 
   // Append elements to modal content
@@ -268,7 +287,7 @@ function showCommentBox(paragraphIndex, episodeId, container) {
 
 
 
-// Function to save a comment
+
 async function saveComment(paragraphIndex, episodeId, username, comment) {
   if (!username || !comment) {
     alert('Please enter both username and comment.');
@@ -276,7 +295,8 @@ async function saveComment(paragraphIndex, episodeId, username, comment) {
   }
 
   try {
-    await fetch(`${API_URL}/comments`, {
+    // Save the comment to the render database
+    const response = await fetch(`${API_URL}/comments`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -288,21 +308,42 @@ async function saveComment(paragraphIndex, episodeId, username, comment) {
       }),
     });
 
-    // Fetch the updated database from Render API
-    const response = await fetch(`${API_URL}/comments`);
     if (!response.ok) {
-      throw new Error(`Failed to fetch updated database: ${response.statusText}`);
+      throw new Error(`Failed to save comment: ${response.statusText}`);
     }
 
-    const dbData = await response.json();
+    const newComment = await response.json();
 
-    // Save the fetched database locally
-    const LOCAL_DB_PATH = '../db.json'; // Ensure this path is correct
-    fs.writeFileSync(LOCAL_DB_PATH, JSON.stringify(dbData, null, 2));
-    console.log('Local db.json updated with the latest comments.');
+    // Update commentsCache with the new comment
+    if (!commentsCache[paragraphIndex]) {
+      commentsCache[paragraphIndex] = [];
+    }
+    commentsCache[paragraphIndex].push(newComment);
 
+    // Update the counter on the button
+    const button = document.querySelector(
+      `.paragraph-container[data-index="${paragraphIndex}"] .comment-button`
+    );
+    if (button) {
+      const countSpan = button.querySelector('.comment-count');
+      const newCount = commentsCache[paragraphIndex].length;
+      if (countSpan) {
+        countSpan.textContent = newCount; // Update the counter dynamically
+      }
+    }
+
+    // Append the new comment to the modal's display
+    const commentDisplay = document.querySelector(`#commentDisplay-${paragraphIndex}`);
+    if (commentDisplay) {
+      const commentDiv = document.createElement('div');
+      commentDiv.innerHTML = `<strong>${newComment.username}:</strong> ${newComment.comment}`;
+      commentDisplay.appendChild(commentDiv);
+    }
+
+    // alert('Comment added successfully!');
   } catch (error) {
-    console.error('Error saving comment or updating local database:', error.message);
+    console.error('Error saving comment:', error);
+    alert('An error occurred while saving your comment. Please try again.');
   }
 }
 async function loadComments(paragraphIndex, episodeId, container) {
@@ -357,24 +398,36 @@ function updateSelectedOption() {
   }
 }
 
-// Function to preload comments for an episode
 async function preloadCommentsForEpisode(episodeId) {
   try {
     const response = await fetch(`${API_URL}/comments?episodeId=${episodeId}`);
     const comments = await response.json();
 
     // Organize comments by paragraph ID and store in cache
-    commentsCache = {};
+    commentsCache = {}; // Clear previous cache
     comments.forEach((comment) => {
-      if (!commentsCache[comment.paragraphId]) {
-        commentsCache[comment.paragraphId] = [];
+      const paragraphId = comment.paragraphId;
+      if (!commentsCache[paragraphId]) {
+        commentsCache[paragraphId] = [];
       }
-      commentsCache[comment.paragraphId].push(comment);
+      commentsCache[paragraphId].push(comment);
+    });
+
+    // Update counters in buttons after cache is ready
+    const contentDiv = document.getElementById('content');
+    const buttons = contentDiv.querySelectorAll('.comment-button');
+    buttons.forEach((button, index) => {
+      const commentCount = commentsCache[index]?.length || 0;
+      const countSpan = button.querySelector('.comment-count');
+      if (countSpan) {
+        countSpan.textContent = commentCount; // Update the count dynamically
+      }
     });
   } catch (error) {
     console.error('Error preloading comments:', error);
   }
 }
+
 
 
 
