@@ -20,6 +20,7 @@ const episodes = [
   ];
   
  // References to elements
+ let commentsCache = {}; // Cache to store preloaded comments for the current episode
 const customDropdown = document.getElementById('customDropdown');
 const dropdownSelect = customDropdown.querySelector('.dropdown-select');
 const selectedOption = customDropdown.querySelector('.selected-option');
@@ -286,33 +287,24 @@ async function saveComment(paragraphIndex, episodeId, username, comment) {
         timestamp: new Date().toISOString(),
       }),
     });
+
+    // Fetch the updated database from Render API
+    const response = await fetch(`${API_URL}/comments`);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch updated database: ${response.statusText}`);
+    }
+
+    const dbData = await response.json();
+
+    // Save the fetched database locally
+    const LOCAL_DB_PATH = '../db.json'; // Ensure this path is correct
+    fs.writeFileSync(LOCAL_DB_PATH, JSON.stringify(dbData, null, 2));
+    console.log('Local db.json updated with the latest comments.');
+
   } catch (error) {
-    console.error('Error saving comment:', error);
+    console.error('Error saving comment or updating local database:', error.message);
   }
 }
-
-// Function to load comments
-async function loadComments(paragraphIndex, episodeId, container) {
-  try {
-    const response = await fetch(
-      `${API_URL}/comments?episodeId=${episodeId}&paragraphId=${paragraphIndex}`
-    );
-    const comments = await response.json();
-
-    // Clear any existing comments
-    container.innerHTML = '';
-
-    comments.forEach((comment) => {
-      const commentDiv = document.createElement('div');
-      commentDiv.innerHTML = `<strong>${comment.username}:</strong> ${comment.comment}`;
-      container.appendChild(commentDiv);
-    });
-  } catch (error) {
-    console.error('Error loading comments:', error);
-  }
-}
-// Function to load comments
-// Function to load comments
 async function loadComments(paragraphIndex, episodeId, container) {
   try {
     const response = await fetch(
@@ -339,7 +331,7 @@ async function loadComments(paragraphIndex, episodeId, container) {
     console.error('Error loading comments:', error);
   }
 }
-let commentsCache = {}; // Cache to store preloaded comments for the current episode
+
 
 // Update document loading with episode ID
 function updateSelectedOption() {
