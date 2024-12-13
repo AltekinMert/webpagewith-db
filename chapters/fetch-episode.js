@@ -35,6 +35,17 @@ const arrowIcon = dropdownSelect.querySelector('.arrow i');
 let currentIndex = 0; // Set to 0 to select the first episode by default
 let isFirstLoad = true; // Flag to prevent scrolling on first load
 
+import {
+  ref,
+  push,
+  get,
+  child,
+  onValue,
+  getDatabase,
+} from "https://www.gstatic.com/firebasejs/11.1.0/firebase-database.js";
+import { db } from "./firebase-config.js"; // Import your initialized Firebase database
+
+
 // Populate the options list
 episodes.forEach((episode, index) => {
   const optionDiv = document.createElement('div');
@@ -104,25 +115,6 @@ nextButton2.addEventListener('click', () => {
 });
 
 // Function to update the selected option and load the document
-function updateSelectedOption() {
-  const episode = episodes[currentIndex];
-  const previousSelected = optionsList.querySelector('.option.selected');
-  if (previousSelected) {
-    previousSelected.classList.remove('selected');
-  }
-  const newSelected = optionsList.querySelector(`.option[data-index="${currentIndex}"]`);
-  if (newSelected) {
-    newSelected.classList.add('selected');
-  }
-  episodeName.textContent = episode.name;
-  loadDocument(episode.file);
-  if (!isFirstLoad) {
-    scrollToContentTop();
-  } else {
-    isFirstLoad = false;
-  }
-}
-
 // Function to load the selected document
 function loadDocument(filename, episodeId) {
   const contentDiv = document.getElementById('content');
@@ -275,6 +267,7 @@ function showCommentBox(paragraphIndex, episodeId, container) {
   modalContent.appendChild(usernameInput);
   modalContent.appendChild(textarea);
   modalContent.appendChild(submitButton);
+  
 
   // Append modal content to modal container
   modal.appendChild(modalContent);
@@ -283,44 +276,34 @@ function showCommentBox(paragraphIndex, episodeId, container) {
   document.body.appendChild(modal);
 }
 
-
-
-
-
-
 async function saveComment(paragraphIndex, episodeId, username, comment) {
   if (!username || !comment) {
     alert('Please enter both username and comment.');
     return;
   }
 
+  const commentData = {
+    username,
+    comment,
+    timestamp: new Date().toISOString(),
+  };
+
   try {
-    // Save the comment to the render database
-    const response = await fetch(`${API_URL}/comments`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        episodeId,
-        paragraphId: paragraphIndex,
-        username,
-        comment,
-        timestamp: new Date().toISOString(),
-      }),
-    });
+    // Reference to the Firebase Realtime Database
+    const commentsRef = ref(db, `comments/${episodeId}/${paragraphIndex}`);
 
-    if (!response.ok) {
-      throw new Error(`Failed to save comment: ${response.statusText}`);
-    }
+    // Push the new comment to Firebase
+    await push(commentsRef, commentData);
 
-    const newComment = await response.json();
+    console.log('Comment saved successfully:', commentData);
 
-    // Update commentsCache with the new comment
+    // Update commentsCache locally
     if (!commentsCache[paragraphIndex]) {
       commentsCache[paragraphIndex] = [];
     }
-    commentsCache[paragraphIndex].push(newComment);
+    commentsCache[paragraphIndex].push(commentData);
 
-    // Update the counter on the button
+    // Update the comment counter in the UI
     const button = document.querySelector(
       `.paragraph-container[data-index="${paragraphIndex}"] .comment-button`
     );
@@ -332,45 +315,30 @@ async function saveComment(paragraphIndex, episodeId, username, comment) {
       }
     }
 
-    // Append the new comment to the modal's display
-    const commentDisplay = document.querySelector(`#commentDisplay-${paragraphIndex}`);
-    if (commentDisplay) {
-      const commentDiv = document.createElement('div');
-      commentDiv.innerHTML = `<strong>${newComment.username}:</strong> ${newComment.comment}`;
-      commentDisplay.appendChild(commentDiv);
-    }
-
-    // alert('Comment added successfully!');
+    alert('Comment added successfully!');
   } catch (error) {
-    console.error('Error saving comment:', error);
+    console.error('Error saving comment to Firebase:', error);
     alert('An error occurred while saving your comment. Please try again.');
   }
 }
-async function loadComments(paragraphIndex, episodeId, container) {
-  try {
-    const response = await fetch(
-      `${API_URL}/comments?episodeId=${episodeId}&paragraphId=${paragraphIndex}`
-    );
-    const comments = await response.json();
 
-    let commentDisplay = container.querySelector('.comment-display');
-    if (commentDisplay) {
-      commentDisplay.remove();
+
+function loadComments(paragraphIndex, episodeId, container) {
+  const commentsRef = ref(db, `comments/${episodeId}/${paragraphIndex}`);
+
+  // Listen to comments in real-time
+  onValue(commentsRef, (snapshot) => {
+    const comments = snapshot.val();
+    container.innerHTML = ""; // Clear existing comments
+
+    if (comments) {
+      Object.values(comments).forEach((comment) => {
+        const commentDiv = document.createElement("div");
+        commentDiv.innerHTML = `<strong>${comment.username}:</strong> ${comment.comment}`;
+        container.appendChild(commentDiv);
+      });
     }
-
-    commentDisplay = document.createElement('div');
-    commentDisplay.classList.add('comment-display');
-
-    comments.forEach((comment) => {
-      const commentDiv = document.createElement('div');
-      commentDiv.innerHTML = `<strong>${comment.username}:</strong> ${comment.comment}`;
-      commentDisplay.appendChild(commentDiv);
-    });
-
-    container.appendChild(commentDisplay);
-  } catch (error) {
-    console.error('Error loading comments:', error);
-  }
+  });
 }
 
 
@@ -399,34 +367,31 @@ function updateSelectedOption() {
 }
 
 async function preloadCommentsForEpisode(episodeId) {
-  try {
-    const response = await fetch(`${API_URL}/comments?episodeId=${episodeId}`);
-    const comments = await response.json();
+  const commentsRef = ref(db, `comments/${episodeId}`);
 
-    // Organize comments by paragraph ID and store in cache
+  onValue(commentsRef, (snapshot) => {
+    const episodeComments = snapshot.val();
     commentsCache = {}; // Clear previous cache
-    comments.forEach((comment) => {
-      const paragraphId = comment.paragraphId;
-      if (!commentsCache[paragraphId]) {
-        commentsCache[paragraphId] = [];
-      }
-      commentsCache[paragraphId].push(comment);
-    });
+
+    if (episodeComments) {
+      Object.entries(episodeComments).forEach(([paragraphId, comments]) => {
+        commentsCache[paragraphId] = Object.values(comments);
+      });
+    }
 
     // Update counters in buttons after cache is ready
-    const contentDiv = document.getElementById('content');
-    const buttons = contentDiv.querySelectorAll('.comment-button');
+    const contentDiv = document.getElementById("content");
+    const buttons = contentDiv.querySelectorAll(".comment-button");
     buttons.forEach((button, index) => {
       const commentCount = commentsCache[index]?.length || 0;
-      const countSpan = button.querySelector('.comment-count');
+      const countSpan = button.querySelector(".comment-count");
       if (countSpan) {
         countSpan.textContent = commentCount; // Update the count dynamically
       }
     });
-  } catch (error) {
-    console.error('Error preloading comments:', error);
-  }
+  });
 }
+
 
 
 
