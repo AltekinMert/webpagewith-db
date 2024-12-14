@@ -555,10 +555,14 @@ input:checked + label img.moon {
   .replik-content-yzk img{
     height: -webkit-fill-available;
     object-fit: cover;
-    align-self: center;
   }
   @media (min-width: 1024px) {
     .replik-slider-yzk {
         height: 90vh;
+    }
+}
+@media (max-width: 768px) {
+    .replik-content-yzk{
+        padding: 0;
     }
 }
