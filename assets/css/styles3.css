@@ -23,7 +23,7 @@
   .left-side3 {
     align-self: auto;
     box-sizing: border-box;
-    padding: 20px;
+    padding-top: 20px;
     display: flex;
     flex-basis: 230%;
     flex-direction: column;
@@ -116,7 +116,7 @@
   }
 .header3{
     width: 100%;
-    margin-bottom: 80px;
+    margin-bottom: 40px;
 }
 .header3 h1{
     display: flex;

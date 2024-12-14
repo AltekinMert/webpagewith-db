@@ -2,7 +2,6 @@
 // const API_URL = 'https://this-should-work-l9hj.onrender.com'; 
 
 const episodes = [
-    { name: 'Yzk-Tanıtım', file: 'giris.docx' },
     { name: 'YZK 1.Bölüm', file: 'yzk-1.docx' },
     { name: 'YZK 2.Bölüm', file: 'yzk-2.docx' },
     { name: 'YZK 3.Bölüm', file: 'yzk-3.docx' },

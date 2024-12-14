@@ -525,12 +525,12 @@ input:checked + label img.moon {
     transition: background-color 0.3s;
   }
   
-  .comment-button:hover {
-    background-color: #e0e0e0;
+  .comment-button:hover i {
+    color: #a3a3a3; /* Change color on hover */
+    transition: color 0.3s; /* Add transition for smooth effect */
   }
-  
   .comment-button i {
-    color: #555;
+    color: #6f6f6f;
   }
   
   .comment-count {
@@ -538,9 +538,26 @@ input:checked + label img.moon {
     top: 46%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 0.6em;
+    font-size: 0.5em;
     font-weight: bold;
     color: #f8f6f6;
     pointer-events: none;
   }
-  
+
+  .yzk-html p{
+    color:black;
+    font-size: 21px;
+    font-family: "Lora",serif;
+  }
+  .replik-content-yzk{
+    height: 100%;
+  }
+  .replik-content-yzk img{
+    height: -webkit-fill-available;
+    object-fit: cover;
+  }
+  @media (min-width: 1024px) {
+    .replik-slider-yzk {
+        height: 90vh;
+    }
+}
