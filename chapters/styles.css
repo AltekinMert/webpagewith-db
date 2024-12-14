@@ -555,6 +555,7 @@ input:checked + label img.moon {
   .replik-content-yzk img{
     height: -webkit-fill-available;
     object-fit: cover;
+    align-self: center;
   }
   @media (min-width: 1024px) {
     .replik-slider-yzk {
