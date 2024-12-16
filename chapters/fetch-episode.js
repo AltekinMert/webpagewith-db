@@ -172,6 +172,9 @@ function loadDOCX(url, episodeId) {
         // Append paragraph container to the content div
         contentDiv.appendChild(paragraphContainer);
       });
+
+      // Call scrollToContentTop after loading the document
+      scrollToContentTop();
     })
     .catch((error) => {
       console.error('Error loading DOCX:', error);
@@ -398,12 +401,12 @@ async function preloadCommentsForEpisode(episodeId) {
 
 // Scroll to content top
 function scrollToContentTop() {
-  let content = document.querySelector('#content');
+  let content = document.querySelector('.playlist-class');
   if (content) {
-    const contentTop = content.offsetTop;
+    const contentTop = content.offsetTop + content.offsetHeight;
     window.scrollTo({
       top: contentTop,
-      behavior: 'smooth',
+      behavior: 'auto',
     });
   } else {
     console.error('#content not found.');

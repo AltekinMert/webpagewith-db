@@ -551,10 +551,13 @@ input:checked + label img.moon {
   }
   .replik-content-yzk{
     height: 100%;
+    background-image: linear-gradient(to top, #000, transparent);
   }
   .replik-content-yzk img{
     height: -webkit-fill-available;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
   }
   @media (min-width: 1024px) {
     .replik-slider-yzk {
@@ -565,4 +568,20 @@ input:checked + label img.moon {
     .replik-content-yzk{
         padding: 0;
     }
+    .replik-content-yzk img{
+        object-fit: cover;
+    }
+    .replik-slider-yzk{
+        height: 50vh;
+    }
+    .yzk-replik-cell-inside{
+        padding-top: 0px;
+    }
+    .flickity-page-dots{
+        bottom: -22px;
+    }
+}
+.carousel-cell-replik-yzk{
+    justify-content: flex-start;
+    background-image: linear-gradient(to top, #000, transparent);
 }

@@ -22,6 +22,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/styleslider.css">
 <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+<link rel="stylesheet" href="https://unpkg.com/flickity-fullscreen@2/fullscreen.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.css" integrity="sha512-8BU3emz11z9iF75b10oPjjpamM4Mz23yQFQymbtwyPN3mNWHxpgeqyrYnkIUP6A8KyAj5k2p3MiYLtYqew7gIw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="assets/css/icons.css">
 <link rel="stylesheet" href="assets/css/footer.css">
@@ -209,14 +210,17 @@
         </div>
       </div>
 
-      <div class="replik-slider replik-slider-yzk">
-        <!-- <img src="assets/svg/1920-banner-image-of-candle-with-bible-on-a-old-oak.jpg" alt="Background Image" class="background-image-replik" />
-        <div class="overlay"></div> -->
+      <div class="replik-slider replik-slider-yzk" style="background-image: url('../assets/aimages/bg.jpeg'); background-position: center; background-size: cover; position: relative;">
+        <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.8); z-index: 0;"></div>
         <!-- Flickity slider -->
-        <div class="replik-carousel" data-flickity='{ "wrapAround": true, }'>
-          <div class="carousel-cell-replik">
-            <div class="replik-content replik-content-yzk">
-              <img src="assets/aimages/yzk-1ai.jpeg" alt="Description of the image" loading="lazy" />
+        <div class="replik-carousel" data-flickity='{ "wrapAround": true, "fullscreen":true, }' style="position: relative; z-index: 1;">
+          <div class="carousel-cell-replik carousel-cell-replik-yzk">
+            <div class="yzk-replik-cell-inside" style="height: 80%;display: flex; flex-direction: column;">
+              <img style="height: -webkit-fill-available; object-fit: contain;" src="assets/aimages/yzk-1ai - Kopya.jpeg" alt="Description of the image" loading="lazy" />
+              <div class="forp">
+                <p>“Korkumun ne olduğunu bilmesem de ölüm olmadığını biliyorum. Ölümden hiç korkmadım.”<br>
+                  “Çünkü ölümle aranda hep ben vardım.”</p>
+              </div>
             </div>
           </div>
           <div class="carousel-cell-replik">
@@ -231,7 +235,7 @@
           </div>
           <div class="carousel-cell-replik">
             <div class="replik-content replik-content-yzk">
-              <img src="assets/aimages/yzk-4ai.jpeg" alt="Description of the image" loading="lazy" />
+              <img src="assets/aimages/yzk-4ai - Kopya.jpeg" alt="Description of the image" loading="lazy" />
             </div>
           </div>
           <!-- Add more carousel cells as needed -->
@@ -402,6 +406,7 @@
 <script src="sidebar.js"></script>
 <script src="dropdown.js"></script>
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.js" defer></script>
+<script src="https://unpkg.com/flickity-fullscreen@2/fullscreen.js" defer></script>
 <script defer>
   window.addEventListener('load', function() {
     var flktyReplik = new Flickity('.replik-carousel', {
@@ -410,6 +415,7 @@
       prevNextButtons: true,
       cellSelector: '.carousel-cell-replik',
       friction: 0.7,
+      fullscreen: true,
     });
 
     // Ensure body overflow is restored after initialization
