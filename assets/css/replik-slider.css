@@ -1,6 +1,6 @@
 .replik-slider{
     width: 100%;
-    height: 90vh;
+    height: 60vh;
     /* background-color: black; */
     position: relative;
 }
@@ -24,6 +24,7 @@
     margin: 0;
     text-align: center;
     color: rgb(217, 216, 216);
+    align-items: center;
 }
 .carousel-cell-replik h1{
     margin: 0;

@@ -15,6 +15,18 @@ const episodes = [
     { name: 'YZK 11.Bölüm', file: 'yzk-11.docx' },
     { name: 'YZK 12.Bölüm', file: 'yzk-12.docx' },
     { name: 'YZK 13.Bölüm', file: 'yzk-13.docx' },
+    { name: 'YZK 14.Bölüm', file: 'yzk-14.docx' },
+    { name: 'YZK 15.Bölüm', file: 'yzk-15.docx' },
+    { name: 'YZK 16.Bölüm', file: 'yzk-16.docx' },
+    { name: 'YZK 17.Bölüm', file: 'yzk-17.docx' },
+    { name: 'YZK 18.Bölüm', file: 'yzk-18.docx' },
+    { name: 'YZK 19.Bölüm', file: 'yzk-19.docx' },
+    { name: 'YZK 20.Bölüm', file: 'yzk-20.docx' },
+    { name: 'YZK 21.Bölüm', file: 'yzk-21.docx' },
+    { name: 'YZK 22.Bölüm', file: 'yzk-22.docx' },
+    { name: 'YZK 23.Bölüm', file: 'yzk-23.docx' },
+    { name: 'YZK 24.Bölüm', file: 'yzk-24.docx' },
+    { name: 'YZK 25.Bölüm', file: 'yzk-25.docx' },
     // Add more episodes as needed
   ];
   
@@ -400,7 +412,7 @@ async function preloadCommentsForEpisode(episodeId) {
 function scrollToContentTop() {
   let content = document.querySelector('.playlist-class');
   if (content) {
-    const contentTop = content.offsetTop;
+    const contentTop = content.offsetTop + content.offsetHeight;
     window.scrollTo({
       top: contentTop,
       behavior: 'smooth',
