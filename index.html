@@ -254,7 +254,7 @@
     </div>
 
     <div class="content3">
-      <div class="left-side3">
+      <div class="left-side3" style="padding: 20px;">
         <h2 class="title3" style="background: linear-gradient(#9a1bfc, #3d6dc2e8);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;">Sonun Baslangıcı</h2>
@@ -277,7 +277,7 @@
     </div>
     <div class="container3"></div>
     <div class="content3">
-      <div class="left-side3">
+      <div class="left-side3" style="padding: 20px;">
         <h2 class="title3" style="background: linear-gradient(#5dcaed, #393e45e8);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;">Derin Sular</h2>
@@ -384,7 +384,7 @@
     </div>
     <div class="instagram-link">
       <svg class="instagram-svg" xmlns="http://www.w3.org/2000/svg" onclick="javascript:window.open('https://www.instagram.com/byzloey/', '_blank', 'noopener'); return false;" viewBox="0 0 50 50" width="50px" height="50px" fill="#ffffff"><path d="M 16 3 C 8.8324839 3 3 8.8324839 3 16 L 3 34 C 3 41.167516 8.8324839 47 16 47 L 34 47 C 41.167516 47 47 41.167516 47 34 L 47 16 C 47 8.8324839 41.167516 3 34 3 L 16 3 z M 16 5 L 34 5 C 40.086484 5 45 9.9135161 45 16 L 45 34 C 45 40.086484 40.086484 45 34 45 L 16 45 C 9.9135161 45 5 40.086484 5 34 L 5 16 C 5 9.9135161 9.9135161 5 16 5 z M 37 11 A 2 2 0 0 0 35 13 A 2 2 0 0 0 37 15 A 2 2 0 0 0 39 13 A 2 2 0 0 0 37 11 z M 25 14 C 18.936712 14 14 18.936712 14 25 C 14 31.063288 18.936712 36 25 36 C 31.063288 36 36 31.063288 36 25 C 36 18.936712 31.063288 14 25 14 z M 25 16 C 29.982407 16 34 20.017593 34 25 C 34 29.982407 29.982407 34 25 34 C 20.017593 34 16 29.982407 16 25 C 16 20.017593 20.017593 16 25 16 z"/></svg>
-      <h1 onclick="javascript:window.open('https://www.instagram.com/byzloey/', '_blank', 'noopener'); return false;" style="color: white;"> Find me on Instagram</h1>
+      <h1 onclick="javascript:window.open('https://www.instagram.com/byzloey/', '_blank', 'noopener'); return false;" style="color: white;"> Instagramdan Beni Bul</h1>
     </div>
   </div>
 
@@ -397,14 +397,16 @@
           </div>
           <div class="container-others">
             <p>Byzloey dünyasındaki gelişmelerden ilk haberdar olan kişi olmak ister misiniz? Haber bültenine abone olun; haberler, düşünceler ve bonus içerikler sizi bekliyor.</p>
-            <form>
-              <div class="group-form">
-                <input type="email" placeholder="EMAIL" required>
-              </div>
-              <button type="submit">JOIN</button>
-            </form>
-            <textarea id="message" name="message" rows="4" cols="50" placeholder="Enter your message here..." maxlength="516"></textarea>
-            <p class="privacy-policy" style="font-size: 0.5em;">By signing up, you agree we can send you email updates and you agree to our <a href="#">Privacy Policy</a>.</p>
+            <div class="mail-icerik">
+              <form>
+                <div class="group-form">
+                  <input type="email" placeholder="EMAIL" required>
+                </div>
+                <button type="submit">Gönder</button>
+              </form>
+              <textarea id="message" name="message" rows="4" cols="50" placeholder="Mesajınızı iletin..." maxlength="516"></textarea>
+            </div>
+            <!-- <p class="privacy-policy" style="font-size: 0.5em;">By signing up, you agree we can send you email updates and you agree to our <a href="#">Privacy Policy</a>.</p> -->
           </div>
         </div>
       </div>
@@ -447,6 +449,7 @@
   <script type="text/javascript" src="assets/js/smoothscroll.js"defer ></script> 
   <script type="text/javascript" src="assets/js/custom-scripts.js" defer ></script>
   <script src="https://vjs.zencdn.net/7.20.3/video.min.js" defer ></script>
+  <script type="module" src="chapters/subscribe.js" defer></script>
   <script src="app.js"></script>
   <script src="sliderjs.js"></script>
   <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js" defer></script>

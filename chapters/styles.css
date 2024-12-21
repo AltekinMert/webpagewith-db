@@ -390,21 +390,31 @@ input:checked + label img.moon {
 /* Modal Container */
 #commentModal {
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 0;
+    /* left: 50%; */
+    /* transform: translate(-50%, -50%); */
     background-color: white;
     width: 500px;
     /* max-width: 90%; */
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     z-index: 1000;
+    right: 0;
+    height: 100%;
+    animation: fadeIn 0.3s ease-in-out;
   }
   
   /* Modal Content */
   #modalContent {
     position: relative;
-    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  #bookTitle{
+    text-align: center;
+    font-size: larger;
+    font-weight: bold;
   }
   
   /* Close Button */
@@ -417,28 +427,35 @@ input:checked + label img.moon {
     color: #333;
     cursor: pointer;
   }
+  .time-ago {
+    font-size: 12px;
+  }
   
   /* Modal Title */
   #modalTitle {
-    text-align: center;
-    font-size: 18px;
+    font-size: medium;
     margin-bottom: 10px;
     color: #444;
+    background-color: #f6f6f6;
+    padding: 20px;
+    line-height: 1.5;
   }
+  
   
   /* Comment Display Section */
   .comment-display-modal {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    max-height: 200px;
+    /* max-height: 200px; */
     overflow-y: auto;
     margin: 10px 0;
     padding-top: 10px;
-    padding-bottom: 10px;
     background: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 4px;
+    order: 20;
+    color: black;
   }
 
   .comment-display-modal div{
@@ -446,9 +463,14 @@ input:checked + label img.moon {
     flex-direction: column;
     border-bottom: groove;
     border-bottom-right-radius: 40px;
+    gap: 10px;
+    font-family: monospace;
   }
   .comment-display-modal div{
     padding-bottom: 15px;
+  }
+  .comment-display-modal strong{
+    /* color: crimson; */
   }
   @media screen and (max-width: 768px) {
     #commentModal{
@@ -464,6 +486,7 @@ input:checked + label img.moon {
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    font-size: 14px;
   }
   
   /* Comment Textarea */
@@ -475,19 +498,32 @@ input:checked + label img.moon {
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    align-content: center;
+    font-size: 14px;
   }
   
   /* Submit Button */
   #submitButton {
-    display: block;
-    background-color: #00b2b2;;
+    background-color: #00b2b2;
     color: white;
     border: none;
     padding: 10px 15px;
-    border-radius: 24px;
+    border-radius: 50%;
     cursor: pointer;
-    width: 100%;
-  }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 2%;
+    top: 50%;
+    transform: translateY(-60%);
+}
+
+#submitButton i {
+    font-size: 18px;
+}
   
   #submitButton:hover {
     background-color: #0056b3;
@@ -495,6 +531,9 @@ input:checked + label img.moon {
   .paragraph-container{
     position: relative;
     display: flex;
+  }
+  .comment-input-container{
+    position: relative;
   }
 
   .paragraph-container button{
@@ -569,13 +608,30 @@ input:checked + label img.moon {
     -webkit-text-stroke: thin;
     color: black;
     font-family: 'Cinzel', serif;
-    font-size: clamp(0.7rem,2vw,1.8rem);
+    font-size: clamp(1.1rem,2vw,1.8rem);
     line-height: 1.2;
     font-style: italic;
-    white-space: nowrap;
+    /* white-space: nowrap; */
     border: 0px solid black;
     text-overflow: ellipsis;
+    display: flex;
+    justify-content: center;
+    gap: 14px;
   }
+  @media (max-width: 768px) {
+    .quotes p{
+    }
+    .quotes{
+        height: 45px;
+        align-content: center;
+    }
+    .quotes p .fa-quote-left{
+        margin-left: 14px;
+    }
+    .quotes p .fa-quote-right{
+        margin-right: 14px;
+    }
+}
   .fa-solid {
     /* margin: 0 0.5rem;  */
   }
@@ -616,4 +672,26 @@ input:checked + label img.moon {
 }
 html{
     overflow-x: hidden;
+}
+.carousel-cell-replik:not(:first-child) {
+    visibility: hidden;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);  /* Semi-transparent black */
+    z-index: 1000;  /* Ensure it appears above content but below modal */
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  @keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

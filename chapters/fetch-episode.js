@@ -45,6 +45,7 @@ const arrowIcon = dropdownSelect.querySelector('.arrow i');
 
 let currentIndex = 0; // Set to 0 to select the first episode by default
 let isFirstLoad = true; // Flag to prevent scrolling on first load
+let globalEpisodeTitle = '';  // Store episode name globally
 
 import {
   ref,
@@ -94,6 +95,7 @@ optionsList.addEventListener('click', (event) => {
     arrowIcon.classList.add('fa-angle-down');
     loadDocument(clickedOption.dataset.file);
     scrollToContentTop();
+    updateSelectedOption();
   }
 });
 
@@ -168,6 +170,12 @@ function loadDOCX(url, episodeId) {
         p.innerHTML = paragraphContent.replace(/<\/?p>/g, '').trim(); // Clean up <p> tags
         paragraphContainer.appendChild(p);
 
+
+        // Capture episode title from first paragraph (data-index=0)
+        if (index === 0) {
+          globalEpisodeTitle = p.textContent;  // Store the first paragraph globally
+        }
+
         // Add Comment Button with Font Awesome icon and counter
         const commentButton = document.createElement('button');
         commentButton.classList.add('comment-button');
@@ -199,12 +207,26 @@ function loadDOCX(url, episodeId) {
 // Function to show the comment box
 
 function showCommentBox(paragraphIndex, episodeId, container) {
+
+  document.querySelector('#commentModal')?.remove();
+  document.querySelector('#modalOverlay')?.remove();
+
   // Check if a modal already exists
   let existingModal = document.querySelector('#commentModal');
   if (existingModal) {
     existingModal.remove(); // Remove any existing modals
   }
 
+
+   // Create the overlay (dark background)
+   const overlay = document.createElement('div');
+   overlay.id = 'modalOverlay';
+   overlay.classList.add('modal-overlay');
+   document.body.appendChild(overlay);
+
+
+
+  const paragraphText = container.querySelector('p').innerHTML;
   // Create the modal container
   const modal = document.createElement('div');
   modal.id = 'commentModal';
@@ -220,14 +242,19 @@ function showCommentBox(paragraphIndex, episodeId, container) {
   closeButton.id = 'closeButton';
   closeButton.classList.add('close-button');
   closeButton.textContent = '×';
-  closeButton.addEventListener('click', () => {
-    modal.remove(); // Close the modal
+   closeButton.addEventListener('click', () => {
+    modal.remove();  // Remove modal
+    overlay.remove();  // Remove overlay when closing the modal
   });
+  //kitap baslik
+  const bookTitle = document.createElement('h3');
+  bookTitle.id = 'bookTitle';
+  bookTitle.textContent = globalEpisodeTitle;
 
-  // Title for comments section
+  // Title for comments section - Use paragraph content
   const modalTitle = document.createElement('h3');
   modalTitle.id = 'modalTitle';
-  modalTitle.textContent = `Comments for Paragraph ${paragraphIndex + 1}`;
+  modalTitle.innerHTML = `${paragraphText}`;  // Set paragraph content as title
 
   // Comments display section
   const commentDisplay = document.createElement('div');
@@ -238,7 +265,12 @@ function showCommentBox(paragraphIndex, episodeId, container) {
   const cachedComments = commentsCache[paragraphIndex] || [];
   cachedComments.forEach((comment) => {
     const commentDiv = document.createElement('div');
-    commentDiv.innerHTML = `<strong>${comment.username}:</strong> ${comment.comment}`;
+    const timeAgoText = timeAgo(comment.timestamp);
+    
+    commentDiv.innerHTML = `
+    <strong>${comment.username}:</strong> ${comment.comment} 
+    <span class="time-ago">${timeAgoText}</span>
+  `;
     commentDisplay.appendChild(commentDiv);
   });
 
@@ -247,16 +279,27 @@ function showCommentBox(paragraphIndex, episodeId, container) {
   usernameInput.id = 'usernameInput';
   usernameInput.placeholder = 'Kullanıcı Adı';
 
+  const commentInputContainer = document.createElement('div');
+commentInputContainer.classList.add('comment-input-container');
+
+
   // Input for comment
   const textarea = document.createElement('textarea');
   textarea.id = 'commentTextarea';
   textarea.placeholder = 'Bir yorum yaz';
 
-  // Submit button
   const submitButton = document.createElement('button');
-  submitButton.id = 'submitButton';
-  submitButton.textContent = 'Submit';
-  submitButton.addEventListener('click', async () => {
+submitButton.id = 'submitButton';
+
+// Create the <i> element for the icon
+const icon = document.createElement('i');
+icon.className = 'fa-regular fa-paper-plane';  // FontAwesome icon class
+
+// Append the icon to the button
+submitButton.appendChild(icon);
+
+// Add event listener (same as before)
+submitButton.addEventListener('click', async () => {
     await saveComment(paragraphIndex, episodeId, usernameInput.value, textarea.value);
     usernameInput.value = '';
     textarea.value = '';
@@ -269,15 +312,21 @@ function showCommentBox(paragraphIndex, episodeId, container) {
     const newCommentDiv = document.createElement('div');
     newCommentDiv.innerHTML = `<strong>${newComment.username}:</strong> ${newComment.comment}`;
     commentDisplay.appendChild(newCommentDiv);
-  });
+});
+
+
+  commentInputContainer.appendChild(textarea);
+  commentInputContainer.appendChild(submitButton);  
 
   // Append elements to modal content
   modalContent.appendChild(closeButton);
+  modalContent.appendChild(bookTitle);
   modalContent.appendChild(modalTitle);
   modalContent.appendChild(commentDisplay);
   modalContent.appendChild(usernameInput);
-  modalContent.appendChild(textarea);
-  modalContent.appendChild(submitButton);
+  // modalContent.appendChild(textarea);
+  // modalContent.appendChild(submitButton);
+  modalContent.appendChild(commentInputContainer);
   
 
   // Append modal content to modal container
@@ -420,4 +469,28 @@ function scrollToContentTop() {
   } else {
     console.error('#content not found.');
   }
+}
+
+function timeAgo(dateString) {
+  const now = new Date();
+  const past = new Date(dateString);
+  const diffInSeconds = Math.floor((now - past) / 1000);
+
+  const intervals = {
+    y: 31536000,
+    ay: 2592000,
+    hafta: 604800,
+    gün: 86400,
+    saat: 3600,
+    dk: 60,
+    sn: 1,
+  };
+
+  for (const [key, value] of Object.entries(intervals)) {
+    const count = Math.floor(diffInSeconds / value);
+    if (count > 0) {
+      return `${count}${key} önce`;  // e.g., 2 ay önce, 1 yıl önce
+    }
+  }
+  return "az önce";
 }

@@ -424,6 +424,7 @@
 <script src="https://unpkg.com/flickity-fullscreen@2/fullscreen.js" defer></script>
 <script defer>
   window.addEventListener('load', function() {
+    var flickityCarousel = document.querySelector('.replik-carousel');
     var flktyReplik = new Flickity('.replik-carousel', {
       wrapAround: true,
       selectedAttraction: 0.03,
@@ -431,6 +432,15 @@
       cellSelector: '.carousel-cell-replik',
       friction: 0.7,
       fullscreen: true,
+      on:{
+        ready: function(){
+          console.log('Flickty hazir');
+          var cells = flickityCarousel.querySelectorAll('.carousel-cell-replik');
+          cells.forEach(function(cell){
+            cell.style.visibility='visible';
+          })
+        }
+      }
     });
 
     // Ensure body overflow is restored after initialization

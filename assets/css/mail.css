@@ -109,7 +109,7 @@
     outline: none;
     background-color: transparent;
     font-size: 16px;
-    color: #555;
+    color: #fdfdfd;
     flex: 1;
     text-align: center;
     min-width: 0; /* Allows inputs to shrink */
@@ -121,7 +121,7 @@
     outline: none;
     background-color: transparent;
     font-size: 16px;
-    color: #555;
+    color: #fdfdfd;
     flex: 1;
     text-align: center;
     min-width: 0; /* Allows inputs to shrink */
@@ -279,4 +279,22 @@
 }
 .mail-contact h1, .mail-contact p{
     color: red;
+}
+.mail-icerik{
+    display: flex;
+    flex-direction: column;
+}
+.mail-icerik textarea{
+    margin-top:20px;
+}
+@media screen and (max-width: 768px) {
+    .mail-icerik form .group-form{
+        order: 1;
+    }
+    .mail-icerik form button {
+        order: -1;
+    }
+    .mail-icerik textarea{
+        order: 0;
+    }
 }

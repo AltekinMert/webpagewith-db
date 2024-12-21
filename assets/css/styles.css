@@ -183,7 +183,7 @@ strong {
 	font-weight: 700;
 }
 em {
-	font-weight: 300;
+	/* font-weight: 300; */
 }
 pre {
 	background: #ebebeb;
