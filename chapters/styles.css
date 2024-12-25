@@ -402,6 +402,7 @@ input:checked + label img.moon {
     right: 0;
     height: 100%;
     animation: fadeIn 0.3s ease-in-out;
+    overflow: scroll;
   }
   
   /* Modal Content */
@@ -415,6 +416,8 @@ input:checked + label img.moon {
     text-align: center;
     font-size: larger;
     font-weight: bold;
+    align-self: center;
+    max-width: 90%;
   }
   
   /* Close Button */
@@ -422,7 +425,7 @@ input:checked + label img.moon {
     position: absolute;
     top: 10px;
     right: 10px;
-    font-size: 20px;
+    font-size: 27px;
     font-weight: bold;
     color: #333;
     cursor: pointer;
@@ -438,7 +441,12 @@ input:checked + label img.moon {
     color: #444;
     background-color: #f6f6f6;
     padding: 20px;
+    padding-top: 10px;
     line-height: 1.5;
+    font-style: italic;
+    min-height: fit-content;
+    max-height: 50vh;
+    /* overflow: scroll; */
   }
   
   
@@ -456,6 +464,7 @@ input:checked + label img.moon {
     border-radius: 4px;
     order: 20;
     color: black;
+    overflow: visible;
   }
 
   .comment-display-modal div{
@@ -485,10 +494,16 @@ input:checked + label img.moon {
     margin-bottom: 10px;
     padding: 8px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 50px;
     font-size: 14px;
+    padding: 20px;
   }
-  
+  #usernameInput:focus-visible{
+    outline-color: #5c10ff;
+  }
+  .flickity-button:hover {
+    background: none;
+  }
   /* Comment Textarea */
   #commentTextarea {
     display: block;
@@ -497,14 +512,18 @@ input:checked + label img.moon {
     margin-bottom: 10px;
     padding: 8px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 50px;
     align-content: center;
     font-size: 14px;
+    padding: 20px;
+  }
+  #commentTextarea:focus-visible{
+    outline-color: #5c10ff;
   }
   
   /* Submit Button */
   #submitButton {
-    background-color: #00b2b2;
+    background-color: #3b19a9;
     color: white;
     border: none;
     padding: 10px 15px;
@@ -513,8 +532,8 @@ input:checked + label img.moon {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     position: absolute;
     right: 2%;
     top: 50%;
@@ -542,6 +561,12 @@ input:checked + label img.moon {
     right: 0; */
     align-self: center;
   }
+  @media (max-width: 768px) {
+    .paragraph-container button{
+      align-self: self-end;
+      transform: translateY(-15px);
+    }
+}
 
   .content div:first-child button{
     display: none;
@@ -581,6 +606,9 @@ input:checked + label img.moon {
     font-weight: bold;
     color: #f8f6f6;
     pointer-events: none;
+  }
+  .comment-count i {
+    color: white;
   }
 
   .yzk-html p{
@@ -651,7 +679,7 @@ input:checked + label img.moon {
         object-fit: cover;
     }
     .replik-slider-yzk{
-        height: 50vh;
+        height: 57vh;
     }
     .yzk-replik-cell-inside{
         padding-top: 0px;

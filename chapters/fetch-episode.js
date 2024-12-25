@@ -180,10 +180,20 @@ function loadDOCX(url, episodeId) {
         const commentButton = document.createElement('button');
         commentButton.classList.add('comment-button');
         const commentCount = commentsCache[index]?.length || 0;
-        commentButton.innerHTML = `
+
+        if(commentCount > 0){
+          commentButton.innerHTML = `
           <i class="fa-solid fa-message"></i>
           <span class="comment-count">${commentCount}</span>
         `;
+        } else {
+          commentButton.innerHTML = `
+          <i class="fa-solid fa-message"></i>
+          <span class="comment-count">
+          <i class="fa-solid fa-plus"></i>
+          </span>
+        `;
+        }
         commentButton.addEventListener('click', () => {
           showCommentBox(index, episodeId, paragraphContainer);
         });
@@ -275,9 +285,14 @@ function showCommentBox(paragraphIndex, episodeId, container) {
   });
 
   // Input for username
+  const divforinput = document.createElement('div');
+  divforinput.id = 'divforinput';
+
   const usernameInput = document.createElement('input');
   usernameInput.id = 'usernameInput';
-  usernameInput.placeholder = 'Kullanıcı Adı';
+  usernameInput.placeholder = ' Kullanıcı Adı';
+
+  divforinput.appendChild(usernameInput);
 
   const commentInputContainer = document.createElement('div');
 commentInputContainer.classList.add('comment-input-container');
@@ -286,7 +301,7 @@ commentInputContainer.classList.add('comment-input-container');
   // Input for comment
   const textarea = document.createElement('textarea');
   textarea.id = 'commentTextarea';
-  textarea.placeholder = 'Bir yorum yaz';
+  textarea.placeholder = 'Bir yorum yaz...';
 
   const submitButton = document.createElement('button');
 submitButton.id = 'submitButton';
@@ -301,16 +316,18 @@ submitButton.appendChild(icon);
 // Add event listener (same as before)
 submitButton.addEventListener('click', async () => {
     await saveComment(paragraphIndex, episodeId, usernameInput.value, textarea.value);
-    usernameInput.value = '';
-    textarea.value = '';
+    // usernameInput.value = '';
+    // textarea.value = '';
 
     // Update the modal with the new comment
     const newComment = {
       username: usernameInput.value,
       comment: textarea.value,
+      time: "1sn önce",
     };
     const newCommentDiv = document.createElement('div');
-    newCommentDiv.innerHTML = `<strong>${newComment.username}:</strong> ${newComment.comment}`;
+    newCommentDiv.innerHTML = `<strong>${newComment.username}:</strong> ${newComment.comment}
+    <span class="time-ago">1sn önce</span>`;
     commentDisplay.appendChild(newCommentDiv);
 });
 
@@ -323,7 +340,7 @@ submitButton.addEventListener('click', async () => {
   modalContent.appendChild(bookTitle);
   modalContent.appendChild(modalTitle);
   modalContent.appendChild(commentDisplay);
-  modalContent.appendChild(usernameInput);
+  modalContent.appendChild(divforinput);
   // modalContent.appendChild(textarea);
   // modalContent.appendChild(submitButton);
   modalContent.appendChild(commentInputContainer);
@@ -361,7 +378,7 @@ async function saveComment(paragraphIndex, episodeId, username, comment) {
     if (!commentsCache[paragraphIndex]) {
       commentsCache[paragraphIndex] = [];
     }
-    commentsCache[paragraphIndex].push(commentData);
+    // commentsCache[paragraphIndex].push(commentData);
 
     // Update the comment counter in the UI
     const button = document.querySelector(
@@ -371,7 +388,7 @@ async function saveComment(paragraphIndex, episodeId, username, comment) {
       const countSpan = button.querySelector('.comment-count');
       const newCount = commentsCache[paragraphIndex].length;
       if (countSpan) {
-        countSpan.textContent = newCount; // Update the counter dynamically
+        // countSpan.textContent = newCount; 
       }
     }
 
@@ -416,7 +433,7 @@ function updateSelectedOption() {
   episodeName.textContent = episode.name;
 
   // Prefetch comments for the selected episode
-  preloadCommentsForEpisode(currentIndex);
+  // preloadCommentsForEpisode(currentIndex);
 
   loadDocument(episode.file, currentIndex); // Pass episode ID
   if (!isFirstLoad) {
@@ -424,6 +441,7 @@ function updateSelectedOption() {
   } else {
     isFirstLoad = false;
   }
+  preloadCommentsForEpisode(currentIndex);
 }
 
 async function preloadCommentsForEpisode(episodeId) {
@@ -438,7 +456,7 @@ async function preloadCommentsForEpisode(episodeId) {
         commentsCache[paragraphId] = Object.values(comments);
       });
     }
-
+    
     // Update counters in buttons after cache is ready
     const contentDiv = document.getElementById("content");
     const buttons = contentDiv.querySelectorAll(".comment-button");
@@ -446,7 +464,15 @@ async function preloadCommentsForEpisode(episodeId) {
       const commentCount = commentsCache[index]?.length || 0;
       const countSpan = button.querySelector(".comment-count");
       if (countSpan) {
-        countSpan.textContent = commentCount; // Update the count dynamically
+        if(commentCount > 0) {
+          countSpan.textContent = commentCount; // Update the count dynamically
+        } else {
+          // Create the <i> element for the icon
+          const icon = document.createElement('i');
+          icon.className = 'fa-solid fa-plus';  // FontAwesome icon class
+          countSpan.textContent= '';
+          countSpan.appendChild(icon);
+        }
       }
     });
   });
