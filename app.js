@@ -65,7 +65,7 @@ prev.onclick = function(){
 let refreshInterval = setInterval(() => {
     autoflag=true;
     next.click();
-}, 55000)
+}, 5000)
 function showSlider() {
     // remove item active old
     let itemActiveOld = document.querySelector('.slider .list .item.active');
@@ -90,7 +90,7 @@ function showSlider() {
     refreshInterval = setInterval(() => {
         autoflag = true;
         next.click();
-    }, 555000);
+    }, 8000);
     autoflag = false;
 }
 // Add click event listeners to dots
