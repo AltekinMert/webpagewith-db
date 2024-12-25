@@ -78,6 +78,13 @@ body{
     opacity: 0;
     animation: showContent .5s .3s ease-in-out 1 forwards;
 }
+
+.yzk-simdi{
+    transform: translateY(10px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent .5s .3s ease-in-out 1 forwards;
+}
 .slider .list .item.active h2{
     animation-delay: 0.5s;
 }
@@ -269,7 +276,7 @@ body{
 
 @media screen and (min-width: 768px) {
     .list .item:nth-child(1) .content3-left-side p {
-        margin-bottom: 80px;
+        margin-bottom: 30px;
     }
 }
 
