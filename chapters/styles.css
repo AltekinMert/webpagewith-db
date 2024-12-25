@@ -538,6 +538,7 @@ input:checked + label img.moon {
     right: 2%;
     top: 50%;
     transform: translateY(-60%);
+    margin-right: 11px;
 }
 
 #submitButton i {
@@ -553,6 +554,8 @@ input:checked + label img.moon {
   }
   .comment-input-container{
     position: relative;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
   .paragraph-container button{
@@ -587,7 +590,14 @@ input:checked + label img.moon {
     cursor: pointer;
     outline: none;
     transition: background-color 0.3s;
+    width: auto;
+    height: auto;
   }
+  @media (max-width: 768px) {
+    .comment-button {
+      /* font-size: 25px; */
+    }
+}
   
   .comment-button:hover i {
     color: #a3a3a3; /* Change color on hover */
@@ -687,6 +697,10 @@ input:checked + label img.moon {
     .flickity-page-dots{
         bottom: -22px;
     }
+}
+#divforinput{
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .carousel-cell-replik-yzk{
     justify-content: flex-end;
