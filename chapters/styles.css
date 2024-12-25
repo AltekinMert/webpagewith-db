@@ -612,7 +612,7 @@ input:checked + label img.moon {
   
   .comment-count {
     position: absolute;
-    top: 46%;
+    top: 43%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 0.5em;
@@ -701,6 +701,12 @@ input:checked + label img.moon {
         bottom: -22px;
     }
 }
+@media (min-height: 640px) {
+  .replik-content-yzk img{
+    object-fit: contain;
+  }
+}
+
 #divforinput{
   padding-left: 10px;
   padding-right: 10px;
