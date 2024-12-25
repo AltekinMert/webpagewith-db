@@ -22,10 +22,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/styleslider.css">
 <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+<link rel="stylesheet" href="https://unpkg.com/flickity-fullscreen@2/fullscreen.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.css" integrity="sha512-8BU3emz11z9iF75b10oPjjpamM4Mz23yQFQymbtwyPN3mNWHxpgeqyrYnkIUP6A8KyAj5k2p3MiYLtYqew7gIw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="assets/css/icons.css">
-<link rel="stylesheet" href="assets/css/new-navbar.css">
+<link rel="stylesheet" href="assets/css/footer.css">
 <link rel="stylesheet" href="assets/css/yzk.css">
+<link rel="stylesheet" href="assets/css/replik-slider.css">
+<link rel="stylesheet" href="chapters/styles.css">
+<link rel="stylesheet" href="assets/css/new-navbar.css">
+<link rel="stylesheet" href="assets/css/bugged.css">
+<!-- Include PDF.js library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+<!-- Include PDF.js worker -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js"></script>
+<!-- Include Mammoth.js library -->
+<script src="https://unpkg.com/mammoth@1.4.10/mammoth.browser.min.js"></script>
 <!-- <script src="jquery-3.7.1.min.js"></script> -->
 <script src="jQuery-plugins/jquery-ui-1.13.3.custom/jquery-ui.js"></script>
 <!-- <script src="jQuery-plugins/aos-master/dist/aos.js"></script> -->
@@ -44,36 +55,30 @@
     <![endif]-->
 
 </head>
-<body>
+<body style="height: max-content;">
   <div id="navbar-main"> 
     <div class="navbar-class">
       <ul class="sidebar">
           <div class="sidebar-logo">
-            <video
-            style="background-color: rgba(0, 0, 0, 0.0); outline-color: rgba(0, 0, 0, 0.0);"
-    id="my-video"
-    class="video-js logo-video"
-    autoplay
-    muted
-    playsinline
-    width="auto"
-    height="180"
-    data-setup='{}'
-  >
-    <source src="WhatsApp Video 2024-10-03 at 12.41.13.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
-            
+            <img
+            src="assets/videos/menu-logo-ezgif.com-optimize (1).gif"
+            alt="Logo Animation"
+            style="background-color: rgba(0, 0, 0, 0.0); outline-color: rgba(0, 0, 0, 0.0); object-fit: contain ;"
+            class="logo-video"
+            width="auto"
+            height="90"
+            max-width="100%"
+          />
           </div>
           <div class="sidebar-content-class">
-            <span><h1><a href="index.html">Home</a></h1></span>
+            <span><h1><a href="index.html" style="color: black;">Home</a></h1></span>
             <span>
               <h1>Kitaplar</h1>
             </span>
             <span><h1><a href="yzk.html">YZK</a></h1></span>
-          <span><h1><a href="valens.html">VALENS</a></h1></span>
-          <span><h1><a href="leza.html">LEZA</a></h1></span> 
-          <span><h1><a href="mabel.html">MABEL</a></h1></span>
+            <span><h1><a href="valens.html">VALENS</a></h1></span>
+            <span><h1><a href="leza.html">LEZA</a></h1></span> 
+            <span><h1><a href="mabel.html">MABEL</a></h1></span>
             <span><h1>Hakkında</h1></span>
             <span><h1>Çok Yakında</h1></span>
             <span><h1>Okuma Sırası</h1></span>
@@ -84,32 +89,46 @@
                 <!-- <svg class="instagram-svg" xmlns="http://www.w3.org/2000/svg" onclick="javascript:window.open('https://www.instagram.com/byzloey/', '_blank', 'noopener'); return false;" viewBox="0 0 50 50" width="50px" height="50px" fill="#ffffff" style="padding-left: 17px;"><path d="M 16 3 C 8.8324839 3 3 8.8324839 3 16 L 3 34 C 3 41.167516 8.8324839 47 16 47 L 34 47 C 41.167516 47 47 41.167516 47 34 L 47 16 C 47 8.8324839 41.167516 3 34 3 L 16 3 z M 16 5 L 34 5 C 40.086484 5 45 9.9135161 45 16 L 45 34 C 45 40.086484 40.086484 45 34 45 L 16 45 C 9.9135161 45 5 40.086484 5 34 L 5 16 C 5 9.9135161 9.9135161 5 16 5 z M 37 11 A 2 2 0 0 0 35 13 A 2 2 0 0 0 37 15 A 2 2 0 0 0 39 13 A 2 2 0 0 0 37 11 z M 25 14 C 18.936712 14 14 18.936712 14 25 C 14 31.063288 18.936712 36 25 36 C 31.063288 36 36 31.063288 36 25 C 36 18.936712 31.063288 14 25 14 z M 25 16 C 29.982407 16 34 20.017593 34 25 C 34 29.982407 29.982407 34 25 34 C 20.017593 34 16 29.982407 16 25 C 16 20.017593 20.017593 16 25 16 z"/></svg> -->
               </p>
               <h1 class="instagram-link-onsidebar" onclick="javascript:window.open('https://www.instagram.com/byzloey/', '_blank', 'noopener'); return false;">@byzloey</h1></span>
+              <span class="social-icons-container">
+                <div class="icon-container">
+                  <a href="https://www.instagram.com/byzloey/" class="icon-box"><i class="fab fa-instagram"></i></a>
+  
+                  <a href="https://www.wattpad.com/user/byzloey" class="icon-box">
+                    <img src="chapters/wattpad.svg" alt="Wattpad Logo" width="25" height="25" style="height: 30px; width: inherit;">
+                  </a>
+  
+                  <a href="https://whatsapp.com/channel/0029VajjevvKbYMNBYNTbd0c" class="icon-box"><i class="fab fa-whatsapp"></i></a>
+                  
+                  <a href="https://x.com/loeybyz" class="icon-box"><i class="fab fa-x-twitter"></i></a>
+                  
+                  <a href="https://www.kitappad.com/byzloey" class="icon-box" style="margin-top: 3px;">
+                    <img src="chapters/kitappad (4).svg" alt="Kitappad Logo" width="25" height="25" style="height: 34px; width: auto; vertical-align: baseline;">
+                  </a>
+  
+                  <a href="https://www.youtube.com/@beyzasurmen7504" class="icon-box" style="padding-right: 10px;"><i class="fab fa-youtube"></i></a>
+              </div>
+              </span>
           </div>
       </ul>
   
       <div class="container-navbar-new">
         <div class="logo-byzloey">
           <li>
-            <video
-            style="background-color: rgba(0, 0, 0, 0.0); outline-color: rgba(0, 0, 0, 0.0);"
-    id="my-video2"
-    class="video-js logo-video"
-    autoplay
-    muted
-    playsinline
-    width="auto"
-    height="180"
-    data-setup='{}'
-  >
-    <source src="WhatsApp Video 2024-10-03 at 12.41.13.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
-            
+            <img
+              src="assets/videos/best-result.gif"
+              alt="Logo Animation"
+              style="background-color: rgba(0, 0, 0, 0.0); outline-color: rgba(0, 0, 0, 0.0); object-fit: cover;"
+              class="logo-video"
+              width="auto"
+              height="180"
+              max-width="100%"
+            />
           </li>
       </div>
       <div class="logo-bottom hideonMobile">
         <span><h1><a href="index.html">Home</a></h1></span>
-            <span onclick=showDropdown() class="kitaplar-container" style="position: relative;">
+        <!-- altına gelicek function -->
+            <span class="kitaplar-container" style="position: relative;">
               <h1>Kitaplar</h1>
   
               <div class="kitaplar-dropdown">
@@ -130,11 +149,32 @@
   
   
       
-      <li class="menu-button" onclick=showSidebar()>
+      <div class="menu-button" onclick=showSidebar()>
         <input type="checkbox" role="button" aria-label="Display the menu" class="custom-menu-checkbox" style="box-shadow: none; outline: none;" >
-      </li>
+      </div>
   </div>
   </div>
+
+
+
+  <div class="custom-dropdown" id="customDropdown">
+    <button id="prevButton"><i class="fa-solid fa-angle-left"></i></button>
+    <div class="select-box">
+      <img src="assets/images/valens.jpg" alt="Book Cover">
+      <div class="dropdown-select">
+          <div class="selected-option">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mabel&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+          <div class="arrow"><i class="fa-solid fa-angle-down"></i></div>
+          <div class="episode-name" style="display: none;">Yarınlar Zifiri Karanlık</div>
+      </div>
+      
+    </div>
+    <button id="nextButton"><i class="fa-solid fa-angle-right"></i></button> <!-- Next Button -->
+    <div class="options" id="optionsList"></div>
+  </div>
+
+  <button id="scrollToTopBtn" class="scroll-to-top-btn">
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
 
 
 
@@ -144,28 +184,26 @@
         <div class="header3">
             <h1>Mabel</h1>
         </div>
-        <div class="content3">
-          <div class="left-side3">
-            <p class="description3 part1">In a shabby house, on a shabby street, in the new capital of Madrid, Luzia Cotado uses scraps of magic to get through her days of endless toil as a scullion.</p>
-            <p class="description3">But when her scheming mistress discovers the lump of a servant cowering in the kitchen is actually hiding a talent for little miracles, she demands Luzia use those gifts to improve the family's social position.</p>
-            <p class="description3">What begins as simple amusement for the nobility takes a perilous turn when Luzia garners the notice of Antonio Pérez, the disgraced secretary to Spain's king. Still reeling from the defeat of his armada, the king is desperate for any advantage in the war against England's heretic queen—and Pérez will stop at nothing to regain the king's favor.</p>
-            <div class="learn-more3">
-              <a class="elementor-button elementor-button-link elementor-size-sm" href="#">
-                <span class="elementor-button-content-wrapper">
-                      <span class="elementor-button-text">Learn More</span>
-              </span>
-              </a>
-            </div>
-            <div class="bottom-praise3">
-                <div class="praise-header3">
-                    <h1>Praise for the familiar</h1>
-                </div>
-                <div class="bottom-perc3">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae esse quisquam consequatur ad excepturi quas laboriosam expedita, voluptatum mollitia error, accusantium est illum neque facere corrupti molestiae. Expedita, ullam quibusdam.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae esse quisquam consequatur ad excepturi quas laboriosam expedita, voluptatum mollitia error, accusantium est illum neque facere corrupti molestiae. Expedita, ullam quibusdam.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae esse quisquam consequatur ad excepturi quas laboriosam expeditest illum nequiae. Expedita, ullam quibusdam.</p>
-                </div>
-            </div>
+        <div class="content3" style="overflow-x: hidden;">
+          <div class="left-side3 yzk-html">
+            <p >Küçükken duyduğum silah seslerini bastırabilmek için şarkılar söylerdim, sonra sesimi kestiler, silah seslerini yükselttiler. Bende sesimi silah yaptım ve o silahı hiç susturmadım.
+              <br><br>
+              En büyük hayalim aynı zamanda en büyük korkumdu sesim, bunu göstermek hayatımın en büyük hatasıydı ve hayatıma mal olmuştu</p>
+            <p>Sonra öğrendim; eğer korkunu her daim göz önünde tutarsan bir süre sonra korkuya bile alışırsın.
+              <br><br>
+              İnsanın eksik hissetmesi ruh eşini bulamadığındandır derler. Benim ruh eşim beni bulmak için çok geç kaldı çünkü ruhum paramparça.</p>
+              
+              <p>Yara kalpte açılır ama kalbe yayılmaz. Aklına sızar ve oraya yayılır.
+                <br>Yara kalpte açılır ama acısını zihnimiz çeker.<br>
+                Yara kalpte açılır ve kapanır ama zihninde devam eder.</p>
+                <p>
+                  <br>
+                  Yara dışarıda değil, yara içeride.
+                  <br>
+                  Yara çok içeride.</p>
+                <p>Bana bir gece vakti, ayın gölgesi denizmişiz gibi üzerimize yakamoz düşürdüğünde 'Hala kanadığını görüyorum.' Demiştin.
+                  <br> Ben de aya bakmıştım senin gibi, yakamozun yüzüne ne kadar yakıştığını görmek istememiştim çünkü aklımı kaybettirecek kadar güzeldin. Yüzüne bakmadan 'Her yara bir yere kadar kanar.' Demiştim.<br>
+                  <br>Salvor, merhem demekti ama kanayan bir yaraya merhem etki etmezdi.</p>
           </div>
           <div class="right-side3">
             <img loading="lazy" decoding="async" width="752" height="1024" src="assets/images/mabelkitap.png" class="attachment-large size-large wp-image-12739" alt="The Familiar by Leigh Bardugo" sizes="(max-width: 752px) 100vw, 752px">
@@ -173,89 +211,243 @@
         </div>
       </div>
 
-
-
-
-
+      <div class="replik-slider replik-slider-yzk" style="position: relative;">
+        <img 
+          src="assets/aimages/bg.jpeg" 
+          alt="Background image" 
+          class="background-image" 
+          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;" 
+          loading="lazy" />
+        <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.8); z-index: 0;"></div>
+        <!-- Flickity slider -->
+        <div class="replik-carousel" data-flickity='{ "wrapAround": true, "fullscreen":true, }' style="position: relative; z-index: 1;">
+          <div class="carousel-cell-replik carousel-cell-replik-yzk">
+            <div class="replik-content replik-content-yzk">
+              <img src="assets/aimages/yzk-1ai - Kopya.jpeg" alt="Description of the image" loading="lazy" />
+            </div>
+            <div class="quotes">
+              <p><i class="fa-solid fa-quote-left"></i>  Taş kaybetmemek için çok oyun kaybedilmiştir&nbsp;&nbsp;<i class="fa-solid fa-quote-right"></i></p>
+            </div>
+          </div>
+          <div class="carousel-cell-replik carousel-cell-replik-yzk">
+            <div class="replik-content replik-content-yzk">
+              <img src="assets/aimages/yzk-2ai.jpeg" alt="Description of the image" loading="lazy" />
+            </div>
+            <div class="quotes">
+              <p><i class="fa-solid fa-quote-left"></i>  Yanmak zevkli değil. Yanmanın tadını aldım, yakmak nasıl diye merak ediyorum artık&nbsp;&nbsp;<i class="fa-solid fa-quote-right"></i></p>
+            </div>
+          </div>
+          <div class="carousel-cell-replik carousel-cell-replik-yzk">
+            <div class="replik-content replik-content-yzk">
+              <img src="assets/aimages/yzk-3ai.jpeg" alt="Description of the image" loading="lazy" />
+            </div>
+            <div class="quotes">
+              <p><i class="fa-solid fa-quote-left"></i>  Yanmak zevkli değil. Yanmanın tadını aldım, yakmak nasıl diye merak ediyorum artık&nbsp;&nbsp;<i class="fa-solid fa-quote-right"></i></p>
+            </div>
+          </div>
+          <div class="carousel-cell-replik carousel-cell-replik-yzk">
+            <div class="replik-content replik-content-yzk">
+              <img src="assets/aimages/yzk-4ai - Kopya.jpeg" alt="Description of the image" loading="lazy" />
+            </div>
+            <div class="quotes">
+              <p><i class="fa-solid fa-quote-left"></i>  Yanmak zevkli değil. Yanmanın tadını aldım, yakmak nasıl diye merak ediyorum artık&nbsp;&nbsp;<i class="fa-solid fa-quote-right"></i></p>
+            </div>
+          </div>
+          <!-- Add more carousel cells as needed -->
+        </div>
+      </div>
 
       <div class="playlist-class">
-        <h1 style="text-align: center; color: gold;">Playlist</h1>
+        <h1 style="text-align: center; color: 	#000000; font-family: 'Cinzel Decorative',serif; ">Playlist </h1>
         <iframe class="spotify-class" src="https://open.spotify.com/embed/album/4R2ugTPR6ldbrhuCFoU3p1?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
       </div>
 
 
+      <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+    </div>
 
 
 
-      
-
-
-
-
-
-      <div id="footerwrap">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-8"> <span class="copyright">Copyright &copy; 2023. Design by Mert Altekin</a></span> </div>
-            <div class="col-md-4">
-              <ul class="list-inline social-buttons">
-                <li><a href="#"><i class="fa fa-twitter"></i></a> </li>
-                <li><a href="#"><i class="fa fa-facebook"></i></a> </li>
-                <li><a href="#"><i class="fa fa-google-plus"></i></a> </li>
-                <li><a href="#"><i class="fa fa-linkedin"></i></a> </li>
-              </ul>
-            </div>
-          </div>
+      <div class="kitap-oku">
+        <input type="checkbox" id="darkmode-toggle" />
+      <label for="darkmode-toggle">
+        <img src="chapters/sun.svg" class="sun" alt="Sun Icon" />
+        <img src="chapters/moon.svg" class="moon" alt="Moon Icon" />
+      </label>
+        <div id="content" class="content" style="min-height: 800px;">
+          <!-- Episode content will be displayed here -->
+        </div>
+        <div class="next-episode">
+          <h1 class="next-episode-context">Sonraki Bölümü Okumaya Devam Edin</h1>
         </div>
       </div>
 
-      
-      <script>
-        var flag=true;
-     
-        function showSidebar() {
-       const sidebar = document.querySelector('.sidebar');
-       const sidebarContent = document.querySelector('.sidebar-content-class');
-     
-       if (flag) {
-         sidebar.classList.add('show'); // Show sidebar
-         sidebarContent.classList.add('animate'); // Add class to trigger animation
-         flag = false;
-       } else {
-         sidebar.classList.remove('show'); // Hide sidebar
-         sidebarContent.classList.remove('animate'); // Reset animation
-         flag = true;
-       }
-     }
-     </script>
-     <script>
-       var flag=true;
-     
-     function showDropdown() {
-     const sidebar = document.querySelector('.kitaplar-dropdown');
-     const sidebarContent = document.querySelector('.kitaplar-content-class');
-     
-     if (flag) {
-      sidebar.classList.add('show'); // Show sidebar
-      sidebarContent.classList.add('animate'); // Add class to trigger animation
-      flag = false;
-     } else {
-      sidebar.classList.remove('show'); // Hide sidebar
-      sidebarContent.classList.remove('animate'); // Reset animation
-      flag = true;
-     }
-     }
-     document.querySelector('.kitaplar-container').addEventListener('mouseenter', showDropdown);
-     document.querySelector('.kitaplar-content-class').addEventListener('mouseleave', showDropdown);
-     </script>
-     <script>
-       var player = videojs('my-video', {
-       controls: false,
-       autoplay: true,
-       muted: true,
-       loop: false
-     });
-     </script>
 
+
+
+
+
+
+
+
+
+
+
+
+
+      <!-- containerfhgf -->
+<div id="ambient-light" style="background-color: #000;">
+  <div class="bottom-info" style="width: -webkit-fill-available; height: -webkit-fill-available;">
+    <div>
+      <h1 style="font-size: medium; text-align: -webkit-center; font-family: sans-serif;color: #838383;">Copyright © 2024. Design by Byzloey</h1>
+    </div>
+
+    <div class="icon-container">
+      <a href="https://www.instagram.com/byzloey/" class="icon-box"><i class="fab fa-instagram" style="color: white;"></i></a>
+
+      <a href="https://www.wattpad.com/user/byzloey" class="icon-box">
+        <img src="chapters/wattpad.svg" alt="Wattpad Logo" width="25" height="25" style="height: 30px; width: inherit; -webkit-filter: invert(1);">
+      </a>
+
+      <a href="https://whatsapp.com/channel/0029VajjevvKbYMNBYNTbd0c" class="icon-box"><i class="fab fa-whatsapp" style="color: white;"></i></a>
+      
+      <a href="https://x.com/loeybyz" class="icon-box"><i class="fab fa-x-twitter" style="color: white;"></i></a>
+      
+      <a href="https://www.kitappad.com/byzloey" class="icon-box" style="margin-top: 3px;">
+        <img src="chapters/kitappad (4).svg" alt="Kitappad Logo" width="25" height="25" style="height: 34px; width: auto; vertical-align: baseline; -webkit-filter: invert(1);">
+      </a>
+
+      <a href="https://www.youtube.com/@beyzasurmen7504" class="icon-box" style="padding-right: 10px;"><i class="fab fa-youtube" style="color: white;"></i></a>
+  </div>
+
+  </div>
+
+  <div class="circle one"></div>
+  <div class="circle two"></div>
+  <div class="circle three"></div>
+  <div class="circle four"></div>
+  <div class="circle five"></div>
+</div>
+
+<script defer>
+  document.addEventListener("DOMContentLoaded", function() {
+    const selectBox = document.querySelector('.select-box');
+    const optionsList = document.querySelector('.options');
+    const prevButton = document.querySelector('#prevButton');
+
+    // select-box genişliğini al ve options'a uygula
+    function matchWidth() {
+        const width = selectBox.getBoundingClientRect().width;
+        const buttonWidth = prevButton.getBoundingClientRect().width;
+        
+        optionsList.style.width = width + 'px';
+        optionsList.style.marginLeft = buttonWidth + 'px';
+    }
+
+    // Sayfa yüklendiğinde ve pencere boyutu değiştiğinde genişliği eşitle
+    matchWidth();
+    window.addEventListener('resize', matchWidth);
+});
+
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+      // Function to set the top value of the scroll progress container based on the height of .custom-dropdown
+      function setProgressBarTop() {
+          const customDropdown = document.querySelector('.custom-dropdown');
+          const scrollProgressContainer = document.querySelector('.scroll-progress-container');
+          
+          if (customDropdown) {
+              // Get the height of the custom-dropdown element
+              const dropdownHeight = customDropdown.getBoundingClientRect().height;
+              // Set the top attribute of the scroll-progress-container based on the dropdown height
+              scrollProgressContainer.style.top = dropdownHeight + 'px';
+          }
+      }
+
+      // Function to update the scroll progress bar
+      function updateProgressBar() {
+          const scrollProgressBar = document.getElementById('scrollProgressBar');
+          const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+          const scrollPosition = window.scrollY;
+          const progressPercentage = (scrollPosition / totalHeight) * 100;
+          scrollProgressBar.style.width = progressPercentage + '%';
+      }
+
+      // Set the initial top value when the page loads
+      setProgressBarTop();
+
+      // Update the top value when the window is resized
+      window.addEventListener('resize', setProgressBarTop);
+
+      // Event listener for scrolling
+      window.addEventListener('scroll', updateProgressBar);
+  });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+      const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+      // Show or hide the button based on the scroll position
+      window.addEventListener('scroll', function() {
+          if (window.scrollY > 300) { // Show the button when scrolled 300px down
+              scrollToTopBtn.classList.add('show');
+          } else {
+              scrollToTopBtn.classList.remove('show');
+          }
+      });
+
+      // Smooth scroll to the top when the button is clicked
+      scrollToTopBtn.addEventListener('click', function() {
+          window.scrollTo({
+              top: 0,
+              behavior: 'smooth'
+          });
+      });
+  });
+</script>
+<script>
+	// JavaScript to toggle dark mode
+	const toggle = document.getElementById('darkmode-toggle');
+	const content = document.querySelector('.content');
+  const modalcontent = document.querySelector('.modal-content');
+
+	toggle.addEventListener('change', () => {
+		content.classList.toggle('dark-mode');
+    customDropdown.classList.toggle('dark-mode');
+	});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="sidebar.js"></script>
+<script src="dropdown.js"></script>
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.js" defer></script>
+<script src="https://unpkg.com/flickity-fullscreen@2/fullscreen.js" defer></script>
+<script defer>
+  window.addEventListener('load', function() {
+    var flickityCarousel = document.querySelector('.replik-carousel');
+    var flktyReplik = new Flickity('.replik-carousel', {
+      wrapAround: true,
+      selectedAttraction: 0.03,
+      prevNextButtons: true,
+      cellSelector: '.carousel-cell-replik',
+      friction: 0.7,
+      fullscreen: true,
+      on:{
+        ready: function(){
+          console.log('Flickty hazir');
+          var cells = flickityCarousel.querySelectorAll('.carousel-cell-replik');
+          cells.forEach(function(cell){
+            cell.style.visibility='visible';
+          })
+        }
+      }
+    });
+
+    // Ensure body overflow is restored after initialization
+    document.body.style.overflow = 'visible';
+  });
+</script>
+<script type="module" src="chapters/fetch-episode.js"></script>
 </body>
 </html>

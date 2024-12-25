@@ -47,6 +47,17 @@ let currentIndex = 0; // Set to 0 to select the first episode by default
 let isFirstLoad = true; // Flag to prevent scrolling on first load
 let globalEpisodeTitle = '';  // Store episode name globally
 
+// Extract book name from current HTML file name
+function getBookNameFromURL() {
+  const pathArray = window.location.pathname.split('/');
+  const fileName = pathArray[pathArray.length - 1];  // Get file name (e.g., yzk.html)
+  const bookName = fileName.replace('.html', '');   // Remove .html to get book name
+  return bookName.charAt(0).toUpperCase() + bookName.slice(1);  // Capitalize
+}
+
+const currentBook = getBookNameFromURL();
+console.log('Current Book:', currentBook);  // For debugging
+
 import {
   ref,
   push,
@@ -367,12 +378,12 @@ async function saveComment(paragraphIndex, episodeId, username, comment) {
 
   try {
     // Reference to the Firebase Realtime Database
-    const commentsRef = ref(db, `comments/${episodeId}/${paragraphIndex}`);
+    const commentsRef = ref(db, `comments/${currentBook}/${episodeId}/${paragraphIndex}`);
 
     // Push the new comment to Firebase
     await push(commentsRef, commentData);
 
-    console.log('Comment saved successfully:', commentData);
+    console.log('Comment saved for book:', currentBook);
 
     // Update commentsCache locally
     if (!commentsCache[paragraphIndex]) {
@@ -445,7 +456,7 @@ function updateSelectedOption() {
 }
 
 async function preloadCommentsForEpisode(episodeId) {
-  const commentsRef = ref(db, `comments/${episodeId}`);
+  const commentsRef = ref(db, `comments/${currentBook}/${episodeId}`);
 
   onValue(commentsRef, (snapshot) => {
     const episodeComments = snapshot.val();
