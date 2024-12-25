@@ -448,6 +448,9 @@ input:checked + label img.moon {
     max-height: 50vh;
     /* overflow: scroll; */
   }
+  #modalTitle strong{
+    font-weight: 100;
+  }
   
   
   /* Comment Display Section */
