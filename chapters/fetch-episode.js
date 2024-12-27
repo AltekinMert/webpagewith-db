@@ -1,7 +1,4 @@
-// List of episodes (your existing array)
-// const API_URL = 'https://this-should-work-l9hj.onrender.com'; 
-
-const episodes = [
+const episodesYzk = [
     { name: 'YZK 1.Bölüm', file: 'yzk-1.docx' },
     { name: 'YZK 2.Bölüm', file: 'yzk-2.docx' },
     { name: 'YZK 3.Bölüm', file: 'yzk-3.docx' },
@@ -27,8 +24,52 @@ const episodes = [
     { name: 'YZK 23.Bölüm', file: 'yzk-23.docx' },
     { name: 'YZK 24.Bölüm', file: 'yzk-24.docx' },
     { name: 'YZK 25.Bölüm', file: 'yzk-25.docx' },
-    // Add more episodes as needed
   ];
+  const episodesLeza = [
+    { name: 'Leza 1.Bölüm', file: 'Leza/leza-1.docx' },
+    { name: 'Leza 2.Bölüm', file: 'Leza/leza-2.docx' },
+    { name: 'Leza 3.Bölüm', file: 'Leza/leza-3.docx' },
+    { name: 'Leza 4.Bölüm', file: 'Leza/leza-4.docx' },
+    { name: 'Leza 5.Bölüm', file: 'Leza/leza-5.docx' },
+    { name: 'Leza 6.Bölüm', file: 'Leza/leza-6.docx' },
+    { name: 'Leza 7.Bölüm', file: 'Leza/leza-7.docx' },
+    { name: 'Leza 8.Bölüm', file: 'Leza/leza-8.docx' },
+    { name: 'Leza 9.Bölüm', file: 'Leza/leza-9.docx' },
+    { name: 'Leza 10.Bölüm', file: 'Leza/leza-10.docx' },
+    { name: 'Leza 11.Bölüm', file: 'Leza/leza-11.docx' },
+    { name: 'Leza 12.Bölüm', file: 'Leza/leza-12.docx' },
+    { name: 'Leza 13.Bölüm', file: 'Leza/leza-13.docx' },
+    { name: 'Leza 14.Bölüm', file: 'Leza/leza-14.docx' },
+    { name: 'Leza 15.Bölüm', file: 'Leza/leza-15.docx' },
+    { name: 'Leza 16.Bölüm', file: 'Leza/leza-16.docx' },
+    { name: 'Leza 17.Bölüm', file: 'Leza/leza-17.docx' },
+    { name: 'Leza 18.Bölüm', file: 'Leza/leza-18.docx' },
+    { name: 'Leza 19.Bölüm', file: 'Leza/leza-19.docx' },
+    { name: 'Leza 20.Bölüm', file: 'Leza/leza-20.docx' },
+    { name: 'Leza 21.Bölüm', file: 'Leza/leza-21.docx' },
+    { name: 'Leza 22.Bölüm', file: 'Leza/leza-22.docx' },
+    { name: 'Leza 23.Bölüm', file: 'Leza/leza-23.docx' },
+    { name: 'Leza 24.Bölüm', file: 'Leza/leza-24.docx' },
+    { name: 'Leza 25.Bölüm', file: 'Leza/leza-25.docx' },
+    { name: 'Leza 26.Bölüm', file: 'Leza/leza-26.docx' },
+    { name: 'Leza 27.Bölüm', file: 'Leza/leza-27.docx' },
+    { name: 'Leza 28.Bölüm', file: 'Leza/leza-28.docx' },
+    { name: 'Leza 29.Bölüm', file: 'Leza/leza-29.docx' },
+    { name: 'Leza 30.Bölüm', file: 'Leza/leza-30.docx' },
+    { name: 'Leza 31.Bölüm', file: 'Leza/leza-31.docx' },
+    { name: 'Leza 32.Bölüm', file: 'Leza/leza-32.docx' },
+    { name: 'Leza 33.Bölüm', file: 'Leza/leza-33.docx' },
+    { name: 'Leza 34.Bölüm', file: 'Leza/leza-34.docx' },
+    { name: 'Leza 35.Bölüm', file: 'Leza/leza-35.docx' },
+    { name: 'Leza 36.Bölüm', file: 'Leza/leza-36.docx' },
+    { name: 'Leza 37.Bölüm', file: 'Leza/leza-37.docx' },
+    { name: 'Leza 38.Bölüm', file: 'Leza/leza-38.docx' },
+    { name: 'Leza 39.Bölüm', file: 'Leza/leza-39.docx' },
+    { name: 'Leza 40.Bölüm', file: 'Leza/leza-40.docx' },
+    { name: 'Leza 41.Bölüm', file: 'Leza/leza-41.docx' },
+    { name: 'Leza 42.Bölüm', file: 'Leza/leza-42.docx' },
+];
+
   
  // References to elements
  let commentsCache = {}; // Cache to store preloaded comments for the current episode
@@ -57,7 +98,29 @@ function getBookNameFromURL() {
 
 const currentBook = getBookNameFromURL();
 console.log('Current Book:', currentBook);  // For debugging
-
+let episodes;
+switch (currentBook.toLowerCase()) {
+  case 'yzk':
+      episodes = episodesYzk;
+      break;
+  case 'leza':
+      episodes = episodesLeza;
+      break;
+  case 'mabel':
+      episodes = episodesMabel;
+      break;
+  case 'sonun-başlangıcı':
+      episodes = episodesSonunBaslangici;
+      break;
+  case 'derin-sular':
+      episodes = episodesDerinSular;
+      break;
+  case 'valens':
+      episodes = episodesValens;
+      break;
+  default:
+      episodes = []; // or handle the case where no match is found
+}
 import {
   ref,
   push,
@@ -158,7 +221,7 @@ function loadDocument(filename, episodeId) {
 
 function loadDOCX(url, episodeId) {
   const contentDiv = document.getElementById('content');
-  contentDiv.innerHTML = 'Loading DOCX...';
+  contentDiv.innerHTML = 'Bölüm Yükleniyor...';
 
   fetch(url)
     .then((response) => response.arrayBuffer())
@@ -216,7 +279,7 @@ function loadDOCX(url, episodeId) {
     })
     .catch((error) => {
       console.error('Error loading DOCX:', error);
-      contentDiv.innerHTML = 'Error loading document.';
+      contentDiv.innerHTML = 'Bölüm Yüklenirken Hata Oluştu Lütfen Hatayı Bizlerle Paylaşınız';
     });
 }
 
