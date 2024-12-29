@@ -458,7 +458,7 @@ input:checked + label img.moon {
   .comment-display-modal {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
     /* max-height: 200px; */
     overflow-y: auto;
     margin: 10px 0;
@@ -473,14 +473,31 @@ input:checked + label img.moon {
 
   .comment-display-modal div{
     display: flex;
-    flex-direction: column;
-    border-bottom: groove;
-    border-bottom-right-radius: 40px;
-    gap: 10px;
+    /* flex-direction: column; */
+    /* border-bottom: groove;
+    border-bottom-right-radius: 40px; */
+    /* gap: 10px; */
     font-family: monospace;
   }
-  .comment-display-modal div{
-    padding-bottom: 15px;
+  .other-div{
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+  }
+  .other-div strong{
+    padding-bottom: 10px;
+  }
+  .other-div p{
+    margin: 0;
+  }
+  .other-div span{
+    color: rgba(18, 18, 18, 0.64);
+  }
+  .user-icon{
+    font-size: xxx-large;
+  }
+  .user-icon i{
+    color: #3b19a9;
   }
   .comment-display-modal strong{
     /* color: crimson; */
@@ -707,7 +724,7 @@ input:checked + label img.moon {
 }
 @media (min-height: 640px) {
   .replik-content-yzk img{
-    object-fit: contain;
+    /* object-fit: contain; */
   }
 }
 

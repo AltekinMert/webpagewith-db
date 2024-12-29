@@ -350,10 +350,19 @@ function showCommentBox(paragraphIndex, episodeId, container) {
   cachedComments.forEach((comment) => {
     const commentDiv = document.createElement('div');
     const timeAgoText = timeAgo(comment.timestamp);
-    
-    commentDiv.innerHTML = `
-    <strong>${comment.username}:</strong> ${comment.comment} 
+    const userDiv = document.createElement('div');
+    userDiv.classList.add('user-icon');
+    const otherDiv = document.createElement('div');
+    otherDiv.classList.add('other-div');
+    otherDiv.innerHTML=`
+    <strong>${comment.username}</strong> <p>${comment.comment}</p>
     <span class="time-ago">${timeAgoText}</span>
+  `;
+
+    userDiv.innerHTML= '<i class="fa-solid fa-circle-user"></i>'
+    commentDiv.innerHTML = `
+    ${userDiv.outerHTML}
+    ${otherDiv.outerHTML}
   `;
     commentDisplay.appendChild(commentDiv);
   });
@@ -400,8 +409,24 @@ submitButton.addEventListener('click', async () => {
       time: "1sn önce",
     };
     const newCommentDiv = document.createElement('div');
-    newCommentDiv.innerHTML = `<strong>${newComment.username}:</strong> ${newComment.comment}
-    <span class="time-ago">1sn önce</span>`;
+
+    const userDiv = document.createElement('div');
+    userDiv.classList.add('user-icon');
+
+    const otherDiv = document.createElement('div');
+    otherDiv.classList.add('other-div');
+
+    otherDiv.innerHTML=`
+    <strong>${newComment.username}</strong> <p>${newComment.comment}</p>
+    <span class="time-ago">${newComment.time}</span>
+  `;
+
+    userDiv.innerHTML= '<i class="fa-solid fa-circle-user"></i>';
+
+    newCommentDiv.innerHTML = `
+    ${userDiv.outerHTML}
+    ${otherDiv.outerHTML}
+  `;
     commentDisplay.appendChild(newCommentDiv);
 });
 
