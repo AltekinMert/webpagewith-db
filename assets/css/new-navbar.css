@@ -296,8 +296,8 @@ box-sizing: content-box;
 .sidebar-content-class{
     margin-top: 126px;
     height: calc(100vh - 126px);
-    /* display: flex; */
-    display: grid;
+    display: flex;
+    /* display: grid; */
     flex-direction: column;
     width: 100%;
     gap: 20px;
@@ -779,7 +779,7 @@ box-sizing: content-box;
 }
 
 .social-icons-container{
-    /* margin-top: auto; */
+    margin-top: auto;
 }
 
 .icon-container {
