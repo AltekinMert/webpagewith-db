@@ -73,15 +73,20 @@
           </div>
           <span><h1><a href="index.html" style="color: black;">Ana Sayfa</a></h1>
           </span>
-          <span><h1>Kitaplar</h1></span>
-          <span><h1><a href="yzk.html">YZK</a></h1></span>
-          <span><h1><a href="valens.html">VALENS</a></h1></span>
-          <span><h1><a href="leza.html">LEZA</a></h1></span> 
-          <span><h1><a href="mabel.html">MABEL</a></h1></span>
-          <span><h1>Hakkında</h1></span>
-          <span><h1>Çok Yakında</h1></span>
-          <span><h1><a href="">SONUN BAŞLANGICI</a></h1></span> 
-          <span><h1><a href="">DERİN SULAR</a></h1></span>
+          <span onclick="toggleDropdown()"><h1>Kitaplar <i id="dropdown-icon" class="fa-solid fa-angle-down"></i></h1></span>
+          <span id="kitap-menu-drop" style="display: none;">
+            <h1 style="animation-delay: 0.2s;"> <a href="yzk.html">Yarınlar Zifiri Karanlık</a></h1>
+            <h1 style="animation-delay: 0.4s;"> <a href="valens.html">VALENS</a></h1>
+            <h1 style="animation-delay: 0.6s;"> <a href="leza.html">LEZA</a></h1>
+            <h1 style="animation-delay: 0.8s;"> <a href="mabel.html">MABEL</a></h1>
+          </span>
+          <span><h1>Tanıtım</h1></span>
+          <span onclick="toggleDropdown2()"><h1>Çok Yakında <i id="dropdown-icon2" class="fa-solid fa-angle-down"></i></h1></span>
+          <span id="kitap-menu-drop2" style="display: none;">
+            <h1 style="animation-delay: 0.2s;"> <a href="yzk.html">SONUN BAŞLANGICI</a></h1>
+            <h1 style="animation-delay: 0.4s;"> <a href="valens.html">DERİN SULAR</a></h1>
+            
+          </span>
           <span style="display: flex; justify-content: center;">
             <p style="margin: 0; display: flex; flex-direction: column; justify-content: center;">
               <!-- <svg class="instagram-svg" xmlns="http://www.w3.org/2000/svg" onclick="javascript:window.open('https://www.instagram.com/byzloey/', '_blank', 'noopener'); return false;" viewBox="0 0 50 50" width="50px" height="50px" fill="#ffffff" style="padding-left: 17px;"><path d="M 16 3 C 8.8324839 3 3 8.8324839 3 16 L 3 34 C 3 41.167516 8.8324839 47 16 47 L 34 47 C 41.167516 47 47 41.167516 47 34 L 47 16 C 47 8.8324839 41.167516 3 34 3 L 16 3 z M 16 5 L 34 5 C 40.086484 5 45 9.9135161 45 16 L 45 34 C 45 40.086484 40.086484 45 34 45 L 16 45 C 9.9135161 45 5 40.086484 5 34 L 5 16 C 5 9.9135161 9.9135161 5 16 5 z M 37 11 A 2 2 0 0 0 35 13 A 2 2 0 0 0 37 15 A 2 2 0 0 0 39 13 A 2 2 0 0 0 37 11 z M 25 14 C 18.936712 14 14 18.936712 14 25 C 14 31.063288 18.936712 36 25 36 C 31.063288 36 36 31.063288 36 25 C 36 18.936712 31.063288 14 25 14 z M 25 16 C 29.982407 16 34 20.017593 34 25 C 34 29.982407 29.982407 34 25 34 C 20.017593 34 16 29.982407 16 25 C 16 20.017593 20.017593 16 25 16 z"/></svg> -->
@@ -134,7 +139,7 @@
             </div>
           </span>
 
-          <span><h1>Hakkında</h1></span>
+          <span><h1>Tanıtım</h1></span>
           
           <span class="kitaplar-container" style="position: relative;">
             <h1>Çok Yakında</h1>
@@ -200,6 +205,14 @@
               <p>
                 Vera Mehan, okul değişikliğiyle ülkenin en iyi kolejine geçiş yapmış bir lise son öğrencisidir ve okula gitmeden önce tek düşündüğü geleceğidir. Fakat okula gittiği ilk an geleceğine daha da uzaklaştığını fark etmiştir çünkü gittiği o okul, öğrencilerin içinde ikiye bölündüğü motor ve araba yarışlarının yapıldığı ve madde bağımlılığı bulunan parlak göründüğü halde karanlık öğrencilerle dolu bir okuldur.
                 Tanıştığı Zeyd Vuran’ın diğerlerine göre edebiyat düşkünü ve sessizliğiyle parlak olduğunu düşündüğünde ise büyük bir yanılgıya uğrar çünkü gündüz sesini çıkarmayan Zeyd Vuran geceleri kafes dövüşlerinde kulak kanatıcı seslerle sessizliğini örter.
+
+                <div class="learn-more3 yzk-simdi" style="text-align: center; align-self: center;">
+                  <a class="elementor-button elementor-button-link elementor-size-sm" href="yzk.html" style="background-color: black;transform: translateY(2vh);">
+                    <span class="elementor-button-content-wrapper">
+                      <span class="elementor-button-text">Şimdi Oku</span>
+                    </span>
+                  </a>
+                </div>
               </p>
             </div>
             <div class="right-side3">
@@ -222,6 +235,13 @@
 
                 ''Kaç kimliğin var Mabel?'' diye fısıldadım.
                 Ben Mabel, gözlerinde bazen masumluğun bazen ise katilin bakışlarını taşıyan, henüz reşit olmayı yeni başarmış bir insanım, en azından benim bildiğim ben öyleydi. Tanımadığım beni sorarsanız, onu bende sizinle tanıyacağım ve benim Katil bakışlarım, kan kokan ellerim bana onun hiç de iyi biri olmadığını söylüyor. Benim masumluğumun aksine, onun benim sonum olduğunu söylüyordu.
+                <div class="learn-more3 yzk-simdi" style="text-align: center; align-self: center;">
+                  <a class="elementor-button elementor-button-link elementor-size-sm" href="yzk.html" style="background-color: #6b3d3d;transform: translateY(2vh);">
+                    <span class="elementor-button-content-wrapper">
+                      <span class="elementor-button-text">Şimdi Oku</span>
+                    </span>
+                  </a>
+                </div>
               </p>
             </div>
             <div class="right-side3">
@@ -245,6 +265,14 @@
                 Asıl garip olan ise insanların şeytandan kaçmasına rağmen sığındığının yine şeytan olmasıydı. 
 
                 Bu hikayenin bir gölgesi bir de avcısı vardı. İkisi de Şeytanın hizmetkarıydı, görevlerini yapmadıklarında herkesin korktuğu o ateşe girmiş, cehennem azabını tatmışlardı. Bu acıyı duyan ve hisseden yer yüzünde ki tek insan ise ben olmuştum. Onların yer altında yandığı ateşte, ben yer yüzünde yanıyordum.
+
+                <div class="learn-more3 yzk-simdi" style="text-align: center; align-self: center;">
+                  <a class="elementor-button elementor-button-link elementor-size-sm" href="yzk.html" style="background-color: #645426;transform: translateY(2vh);">
+                    <span class="elementor-button-content-wrapper">
+                      <span class="elementor-button-text">Şimdi Oku</span>
+                    </span>
+                  </a>
+                </div>
               </p>
             </div>
             <div class="right-side3">
@@ -288,7 +316,7 @@
         <div class="learn-more3">
           <a class="elementor-button elementor-button-link elementor-size-sm" href="yzk.html">
             <span class="elementor-button-content-wrapper">
-              <span class="elementor-button-text">Learn More</span>
+              <span class="elementor-button-text">Şimdi Oku</span>
             </span>
           </a>
         </div>
@@ -313,7 +341,7 @@
         <div class="learn-more3">
           <a class="elementor-button elementor-button-link elementor-size-sm" style="background-color: #298196;" href="yzk.html">
             <span class="elementor-button-content-wrapper">
-              <span class="elementor-button-text">Learn More</span>
+              <span class="elementor-button-text">Şimdi Oku</span>
             </span>
           </a>
         </div>
@@ -330,49 +358,49 @@
       <div class="replik-carousel" data-flickity='{ "wrapAround": true, }'>
         <div class="carousel-cell-replik">
           <div class="replik-content">
-            <p>“Korkumun ne olduğunu bilmesem de ölüm olmadığını biliyorum. Ölümden hiç korkmadım.”<br>
-              “Çünkü ölümle aranda hep ben vardım.”</p>
+            <p><i class="fa-solid fa-quote-left"></i>&nbsp;&nbsp;&nbsp;Korkumun ne olduğunu bilmesem de ölüm olmadığını biliyorum. Ölümden hiç korkmadım&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-quote-left"></i><br>
+              <i class="fa-solid fa-quote-left"></i>&nbsp;&nbsp;&nbsp;Çünkü ölümle aranda hep ben vardım&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-quote-left"></i></p>
             <h1>-Yarınlar Zifiri Karanlık</h1>
             <!-- <button class="read-now-button">Read Now</button> -->
           </div>
         </div>
         <div class="carousel-cell-replik">
           <div class="replik-content">
-            <p>“Neden bana özgürlüğümü vermiyorsun?”<br>
-              “Senin özgürlüğün benim.” </p>
+            <p><i class="fa-solid fa-quote-left"></i>&nbsp;&nbsp;&nbsp;Neden bana özgürlüğümü vermiyorsun?&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-quote-left"></i><br>
+              <i class="fa-solid fa-quote-left"></i>&nbsp;&nbsp;&nbsp;Senin özgürlüğün benim&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-quote-left"></i> </p>
             <h1>-Kimliksizler, Mabel</h1>
             <!-- <button class="read-now-button">Read Now</button> -->
           </div>
         </div>
         <div class="carousel-cell-replik">
           <div class="replik-content">
-            <p>“Bizi sonsuzluk bekliyor
+            <p><i class="fa-solid fa-quote-left"></i>&nbsp;&nbsp;&nbsp;Bizi sonsuzluk bekliyor
               ya yer yüzünde birbirimizin teninde
-              ya da yer altında cehennemin dibinde”</p>
+              ya da yer altında cehennemin dibinde&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-quote-left"></i></p>
             <h1>-Leza</h1>
             <!-- <button class="read-now-button">Read Now</button> -->
           </div>
         </div>
         <div class="carousel-cell-replik">
           <div class="replik-content">
-            <p>“Beni mahvettin.”<br>
-              “Ben seni var ettim.”</p>
+            <p><i class="fa-solid fa-quote-left"></i>&nbsp;&nbsp;&nbsp;Beni mahvettin&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-quote-left"></i><br>
+              <i class="fa-solid fa-quote-left"></i>&nbsp;&nbsp;&nbsp;Ben seni var ettim&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-quote-left"></i></p>
             <h1>-Yarınlar Zifiri Karanlık</h1>
             <!-- <button class="read-now-button">Read Now</button> -->
           </div>
         </div>
         <div class="carousel-cell-replik">
           <div class="replik-content">
-            <p>“Korkumun ne olduğunu bilmesem de ölüm olmadığını biliyorum. Ölümden hiç korkmadım.”
+            <p><i class="fa-solid fa-quote-left"></i>&nbsp;&nbsp;&nbsp;Korkumun ne olduğunu bilmesem de ölüm olmadığını biliyorum. Ölümden hiç korkmadım&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-quote-left"></i>
               <br>
-              “Çünkü ölümle aranda hep ben vardım.”</p>
+              <i class="fa-solid fa-quote-left"></i>&nbsp;&nbsp;&nbsp;Çünkü ölümle aranda hep ben vardım&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-quote-left"></i></p>
             <h1>-Yarınlar Zifiri Karanlık</h1>
             <!-- <button class="read-now-button">Read Now</button> -->
           </div>
         </div>
         <div class="carousel-cell-replik">
           <div class="replik-content">
-            <p>“İkimizde aynı gökyüzüne bakıyoruz ama sen bir gün parlayan yıldızları görebileceğini düşünürken ben bir daha yıldız görebilir miyim diye düşünüyorum”</p>
+            <p><i class="fa-solid fa-quote-left"></i>&nbsp;&nbsp;&nbsp;İkimizde aynı gökyüzüne bakıyoruz ama sen bir gün parlayan yıldızları görebileceğini düşünürken ben bir daha yıldız görebilir miyim diye düşünüyorum&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-quote-left"></i></p>
             <h1>-Yarınlar Zifiri Karanlık</h1>
             <!-- <button class="read-now-button">Read Now</button> -->
           </div>
@@ -418,7 +446,7 @@
             <h1>GÖRÜSLERiNiZi BiZE iLETiN</h1>
           </div>
           <div class="container-others">
-            <p>Byzloey dünyasındaki gelişmelerden ilk haberdar olan kişi olmak ister misiniz? Haber bültenine abone olun; haberler, düşünceler ve bonus içerikler sizi bekliyor.</p>
+            <!-- <p>Byzloey dünyasındaki gelişmelerden ilk haberdar olan kişi olmak ister misiniz? Haber bültenine abone olun; haberler, düşünceler ve bonus içerikler sizi bekliyor.</p> -->
             <div class="mail-icerik">
               <form>
                 <div class="group-form">
@@ -528,5 +556,33 @@
       video.play();
     });
   </script>
+  <script>
+    function toggleDropdown() {
+        var dropdown = document.getElementById("kitap-menu-drop");
+        var icon = document.getElementById("dropdown-icon");
+        dropdown.classList.toggle("show");
+        // Change icon class based on dropdown visibility
+        if (dropdown.classList.contains("show")) {
+            icon.classList.remove("fa-angle-down");
+            icon.classList.add("fa-angle-up");
+        } else {
+            icon.classList.remove("fa-angle-up");
+            icon.classList.add("fa-angle-down");
+        }
+    }
+    function toggleDropdown2() {
+        var dropdown = document.getElementById("kitap-menu-drop2");
+        var icon = document.getElementById("dropdown-icon2");
+        dropdown.classList.toggle("show");
+        // Change icon class based on dropdown visibility
+        if (dropdown.classList.contains("show")) {
+            icon.classList.remove("fa-angle-down");
+            icon.classList.add("fa-angle-up");
+        } else {
+            icon.classList.remove("fa-angle-up");
+            icon.classList.add("fa-angle-down");
+        }
+    }
+</script>
 </body>
 </html>

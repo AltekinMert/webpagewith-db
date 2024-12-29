@@ -90,7 +90,7 @@ function showSlider() {
     refreshInterval = setInterval(() => {
         autoflag = true;
         next.click();
-    }, 98000);
+    }, 95000);
     autoflag = false;
 }
 // Add click event listeners to dots

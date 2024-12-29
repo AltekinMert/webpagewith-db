@@ -25,6 +25,20 @@
     text-align: center;
     color: rgb(217, 216, 216);
     align-items: center;
+    font-size: larger;
+}
+.replik-content {
+  font-style: italic;
+  font-family: serif;
+}
+.replik-content h1{
+  font-style: italic;
+  font-family: serif;
+}
+@media (max-width: 678px) {
+  .carousel-cell-replik p{
+    font-size: smaller;
+  }
 }
 .carousel-cell-replik h1{
     margin: 0;

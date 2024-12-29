@@ -722,6 +722,9 @@ box-sizing: content-box;
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
   }
   .kitaplar-content-class{
     display: flex;
@@ -806,4 +809,9 @@ box-sizing: content-box;
 .sidebar-content-class span:not(:first-child):not(:last-child):hover {
     transition: transform 0.2s;
     transform: scale(1.1);
+}
+.show{
+    display: flex !important;
+    flex-direction: column;
+    gap: 20px;
 }
