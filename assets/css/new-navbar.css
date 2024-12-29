@@ -782,6 +782,18 @@ box-sizing: content-box;
     margin-top: auto;
 }
 
+.menu-list{
+    display: flex;
+     flex-direction: column; 
+     gap: 4vh; 
+     margin-top: 12vh;
+}
+
+@media(max-width: 768px) and (max-height: 700px) {
+    .menu-list {
+        margin-top: 4vh;
+    }
+}
 .icon-container {
     display: flex;
     align-items: center;
