@@ -1,5 +1,6 @@
 html,body{
     /* overflow-x: hidden; */
+    overflow-x: hidden;
 }
 .navbar-class{
     background-color: white;
@@ -826,7 +827,7 @@ box-sizing: content-box;
     transition: transform 0.2s;
     transform: scale(1.1);
     transition: color 0.2s ease;
-    color: #b6203e;
+    color: #bb942c;
 }
 
 .show{

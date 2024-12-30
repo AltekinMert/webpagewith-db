@@ -505,6 +505,7 @@ input:checked + label img.moon {
   }
   .comment-display-modal strong{
     /* color: crimson; */
+    color: #3b19a9;
   }
   @media screen and (max-width: 768px) {
     #commentModal{
@@ -688,7 +689,7 @@ input:checked + label img.moon {
     .quotes p{
     }
     .quotes{
-        height: 45px;
+        height: 55px;
         align-content: center;
     }
     .quotes p .fa-quote-left{
@@ -697,6 +698,10 @@ input:checked + label img.moon {
     .quotes p .fa-quote-right{
         margin-right: 14px;
     }
+}
+.quotes{
+  border-bottom-style: solid;
+  border-bottom-color: white;
 }
   .fa-solid {
     /* margin: 0 0.5rem;  */
@@ -791,6 +796,7 @@ html{
 .quotes.dark-mode {
   background-color: #242424;
   transition: background-color 0.5s ease;
+  border-bottom-color: #242424 !important;
 }
 .quotes.dark-mode p{
   color: white;
@@ -830,7 +836,7 @@ html{
   background: #353434;
 }
 .comment-modal.dark-mode .other-div strong{
-color: white;
+color: #00b2b2;
 }
 .comment-modal.dark-mode .other-div p{
   color: white;

@@ -61,12 +61,16 @@ prev.onclick = function(){
     }
     showSlider();
 }
+
 // auto run slider
 let refreshInterval = setInterval(() => {
     autoflag=true;
     next.click();
-}, 95000)
+}, 6000)
+
+
 function showSlider() {
+    clearInterval(refreshInterval);
     // remove item active old
     let itemActiveOld = document.querySelector('.slider .list .item.active');
     itemActiveOld.classList.remove('active');
@@ -86,11 +90,10 @@ function showSlider() {
     }    
 
     // clear auto time run slider
-    clearInterval(refreshInterval);
     refreshInterval = setInterval(() => {
         autoflag = true;
         next.click();
-    }, 95000);
+    }, 6000);
     autoflag = false;
 }
 // Add click event listeners to dots
@@ -108,8 +111,8 @@ function scrollHomeSectionToCenter() {
     let homeSectionBottom = homeSection.offsetTop + homeSection.offsetHeight;
     let navbar = document.querySelector('#navbar-main');
     let navbarHeight = navbar.offsetHeight;
-    let thumbnaile = document.querySelector('.thumbnaile');
-    let thumbnaileBottom = thumbnaile.offsetTop + thumbnaile.offsetHeight;
+    // let thumbnaile = document.querySelector('.thumbnaile');
+    // let thumbnaileBottom = thumbnaile.offsetTop + thumbnaile.offsetHeight;
 
     if(window.scrollY > homeSectionBottom){
         return;
