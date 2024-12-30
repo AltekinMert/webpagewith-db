@@ -356,7 +356,8 @@ input:checked + label img.moon {
 
 
 .next-episode{
-    height: 60px; width: 40%; background-color: #00b2b2;
+    height: 60px; width: 40%; 
+    /* background-color: #00b2b2; */
     justify-self: center;
     margin-bottom: 20px;
     border-radius: 24px;
@@ -366,7 +367,7 @@ input:checked + label img.moon {
     position: absolute;
     margin-top: -80px;
     z-index: 10;
-    left: 50%;
+    left: 49%;
     transform: translateX(-50%);
     cursor: pointer;
     transition: transform 0.3s ease, background-color 0.3s ease; /* Add transition for transform and background-color */
@@ -384,8 +385,9 @@ input:checked + label img.moon {
 }
 
 .next-episode-context{
-    color: white;
+    color: black;
     font-size: medium;
+    border-bottom-style: solid;
 }
 
 /* Modal Container */
@@ -849,4 +851,8 @@ color: white;
 }
 .comment-modal.dark-mode .other-div span{
   color: #9c9c9c;
+  }
+
+  .kitap-oku.dark-mode .next-episode h1 {
+    color: white !important;
   }
