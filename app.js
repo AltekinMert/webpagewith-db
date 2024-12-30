@@ -66,7 +66,7 @@ prev.onclick = function(){
 let refreshInterval = setInterval(() => {
     autoflag=true;
     next.click();
-}, 6000)
+}, 8000)
 
 
 function showSlider() {
@@ -86,14 +86,14 @@ function showSlider() {
 
 
     if (!autoflag) {
-        scrollHomeSectionToCenter();
+        // scrollHomeSectionToCenter();
     }    
 
     // clear auto time run slider
     refreshInterval = setInterval(() => {
         autoflag = true;
         next.click();
-    }, 6000);
+    }, 8000);
     autoflag = false;
 }
 // Add click event listeners to dots

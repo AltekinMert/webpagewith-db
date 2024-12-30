@@ -546,7 +546,7 @@ submitButton.addEventListener('click', async () => {
 
 async function saveComment(paragraphIndex, episodeId, username, comment) {
   if (!username || !comment) {
-    alert('Please enter both username and comment.');
+    alert('Lütfen Kullanıcı Adı ve Yorum Bölümünü Doldurunuz');
     return;
   }
 

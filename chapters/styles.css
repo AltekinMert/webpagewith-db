@@ -374,8 +374,12 @@ input:checked + label img.moon {
 }
 
 .next-episode:hover {
-    transform: translateX(-50%) translateY(-5px); /* Add a slight upward translation */
-    background-color: #0bf0f0; /* Darken the background color */
+     /* transform: translateX(-50%) translateY(-5px);  */
+    /* background-color: #0bf0f0;  */
+}
+.next-episode:hover h1{
+  transform: scale(1.1);
+  transition: transform 0.5s ease;
 }
 
 @media screen and (max-width: 678px) {

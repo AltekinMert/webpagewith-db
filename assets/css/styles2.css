@@ -127,6 +127,7 @@ body{
     cursor: pointer; /* Ensure it looks clickable */
     margin: 0; /* Remove default margin */
     line-height: 40px; /* Center text vertically */
+    font-size: 4em;
 }
 
 .arrows h1:hover {
