@@ -176,7 +176,7 @@ select{
     background-color: #e0e0e0;
     position: sticky;
     top: 0;
-    margin-top: 20px;
+    /* margin-top: 20px; */
     overflow: hidden;
 }
 
@@ -403,7 +403,7 @@ input:checked + label img.moon {
     right: 0;
     height: 100%;
     animation: fadeIn 0.3s ease-in-out;
-    overflow: scroll;
+    overflow: overlay;
   }
   
   /* Modal Content */
@@ -478,6 +478,8 @@ input:checked + label img.moon {
     border-bottom-right-radius: 40px; */
     /* gap: 10px; */
     font-family: monospace;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
   .other-div{
     display: flex;
@@ -767,3 +769,84 @@ html{
     opacity: 1;
   }
 }
+.kitap-oku {
+  transition: background-color 0.5s ease;
+}
+.kitap-oku.dark-mode{
+
+  background-color: #242424;
+  
+}
+
+.playlist-class.dark-mode{
+  background-color: #242424;
+  transition: background-color 0.5s ease;
+}
+.playlist-class.dark-mode h1{
+  color: white !important;
+  transition: color 0.5s ease;
+}
+.quotes.dark-mode {
+  background-color: #242424;
+  transition: background-color 0.5s ease;
+}
+.quotes.dark-mode p{
+  color: white;
+  transition: background-color 0.5s ease;
+}
+.container3.dark-mode{
+  background-color: #242424;
+  transition: background-color 0.5s ease;
+}
+
+.container3.dark-mode .header3 h1{
+  color: white !important;
+  transition: color 0.5s ease;
+}
+.container3.dark-mode .content3 .left-side3 p{
+  color: white !important;
+  transition: color 0.5s ease;
+}
+
+.comment-modal.dark-mode .modal-content{
+  background-color: #242424;
+  transition: background-color 0.5s ease;
+}
+.comment-modal.dark-mode .modal-content h3{
+  color: white !important;
+  transition: color 0.5s ease;
+}
+.comment-modal.dark-mode .modal-content #modalTitle{
+  background-color: #353434;
+  transition: background-color 0.5 ease;
+}
+.comment-modal.dark-mode .modal-content #closeButton{
+  color: white !important;
+}
+
+.comment-modal.dark-mode .comment-display-modal{
+  background: #353434;
+}
+.comment-modal.dark-mode .other-div strong{
+color: white;
+}
+.comment-modal.dark-mode .other-div p{
+  color: white;
+  }
+.comment-modal.dark-mode .comment-display-modal .user-icon i{
+  color: #00b2b2 !important;
+}
+.comment-modal.dark-mode #submitButton{
+  background-color: #00b2b2;
+}
+.comment-modal.dark-mode #commentTextarea{
+  background: unset;
+  color: white;
+}
+.comment-modal.dark-mode #usernameInput{
+  background: unset;
+  color: white;
+}
+.comment-modal.dark-mode .other-div span{
+  color: #9c9c9c;
+  }

@@ -69,6 +69,93 @@ const episodesYzk = [
     { name: 'Leza 41.Bölüm', file: 'Leza/leza-41.docx' },
     { name: 'Leza 42.Bölüm', file: 'Leza/leza-42.docx' },
 ];
+const episodesValens = [
+  { name: 'Valens 1.Bölüm', file: 'valens/valens-1.docx' },
+  { name: 'Valens 2.Bölüm', file: 'valens/valens-2.docx' },
+  { name: 'Valens 3.Bölüm', file: 'valens/valens-3.docx' },
+  { name: 'Valens 4.Bölüm', file: 'valens/valens-4.docx' },
+  { name: 'Valens 5.Bölüm', file: 'valens/valens-5.docx' },
+  { name: 'Valens 6.Bölüm', file: 'valens/valens-6.docx' },
+  { name: 'Valens 7.Bölüm', file: 'valens/valens-7.docx' },
+  { name: 'Valens 8.Bölüm', file: 'valens/valens-8.docx' },
+  { name: 'Valens 9.Bölüm', file: 'valens/valens-9.docx' },
+  { name: 'Valens 10.Bölüm', file: 'valens/valens-10.docx' },
+  { name: 'Valens 11.Bölüm', file: 'valens/valens-11.docx' },
+  { name: 'Valens 12.Bölüm', file: 'valens/valens-12.docx' },
+  { name: 'Valens 13.Bölüm', file: 'valens/valens-13.docx' },
+  { name: 'Valens 14.Bölüm', file: 'valens/valens-14.docx' },
+  { name: 'Valens 15.Bölüm', file: 'valens/valens-15.docx' },
+  { name: 'Valens 16.Bölüm', file: 'valens/valens-16.docx' },
+  { name: 'Valens 17.Bölüm', file: 'valens/valens-17.docx' },
+  { name: 'Valens 18.Bölüm', file: 'valens/valens-18.docx' },
+  { name: 'Valens 19.Bölüm', file: 'valens/valens-19.docx' },
+  { name: 'Valens 20.Bölüm', file: 'valens/valens-20.docx' },
+  { name: 'Valens 21.Bölüm', file: 'valens/valens-21.docx' },
+  { name: 'Valens 22.Bölüm', file: 'valens/valens-22.docx' },
+  { name: 'Valens 23.Bölüm', file: 'valens/valens-23.docx' },
+  { name: 'Valens 24.Bölüm', file: 'valens/valens-24.docx' },
+  { name: 'Valens 25.Bölüm', file: 'valens/valens-25.docx' },
+  { name: 'Valens 26.Bölüm', file: 'valens/valens-26.docx' },
+  { name: 'Valens 27.Bölüm', file: 'valens/valens-27.docx' },
+  { name: 'Valens 28.Bölüm', file: 'valens/valens-28.docx' },
+  { name: 'Valens 29.Bölüm', file: 'valens/valens-29.docx' },
+  { name: 'Valens 30.Bölüm', file: 'valens/valens-30.docx' },
+  { name: 'Valens 31.Bölüm', file: 'valens/valens-31.docx' },
+  { name: 'Valens 32.Bölüm', file: 'valens/valens-32.docx' },
+  { name: 'Valens 33.Bölüm', file: 'valens/valens-33.docx' },
+  { name: 'Valens 34.Bölüm', file: 'valens/valens-34.docx' },
+  { name: 'Valens 35.Bölüm', file: 'valens/valens-35.docx' },
+  { name: 'Valens 36.Bölüm', file: 'valens/valens-36.docx' },
+  { name: 'Valens 37.Bölüm', file: 'valens/valens-37.docx' },
+  { name: 'Valens 38.Bölüm', file: 'valens/valens-38.docx' },
+  { name: 'Valens 39.Bölüm', file: 'valens/valens-39.docx' },
+  { name: 'Valens 40.Bölüm', file: 'valens/valens-40.docx' },
+  { name: 'Valens 41.Bölüm', file: 'valens/valens-41.docx' },
+  { name: 'Valens 42.Bölüm', file: 'valens/valens-42.docx' },
+];
+const episodesMabel = [
+  { name: 'Mabel 1.Bölüm', file: 'mabel/mabel-1.docx' },
+  { name: 'Mabel 2.Bölüm', file: 'mabel/mabel-2.docx' },
+  { name: 'Mabel 3.Bölüm', file: 'mabel/mabel-3.docx' },
+  { name: 'Mabel 4.Bölüm', file: 'mabel/mabel-4.docx' },
+  { name: 'Mabel 5.Bölüm', file: 'mabel/mabel-5.docx' },
+  { name: 'Mabel 6.Bölüm', file: 'mabel/mabel-6.docx' },
+  { name: 'Mabel 7.Bölüm', file: 'mabel/mabel-7.docx' },
+  { name: 'Mabel 8.Bölüm', file: 'mabel/mabel-8.docx' },
+  { name: 'Mabel 9.Bölüm', file: 'mabel/mabel-9.docx' },
+  { name: 'Mabel 10.Bölüm', file: 'mabel/mabel-10.docx' },
+  { name: 'Mabel 11.Bölüm', file: 'mabel/mabel-11.docx' },
+  { name: 'Mabel 12.Bölüm', file: 'mabel/mabel-12.docx' },
+  { name: 'Mabel 13.Bölüm', file: 'mabel/mabel-13.docx' },
+  { name: 'Mabel 14.Bölüm', file: 'mabel/mabel-14.docx' },
+  { name: 'Mabel 15.Bölüm', file: 'mabel/mabel-15.docx' },
+  { name: 'Mabel 16.Bölüm', file: 'mabel/mabel-16.docx' },
+  { name: 'Mabel 17.Bölüm', file: 'mabel/mabel-17.docx' },
+  { name: 'Mabel 18.Bölüm', file: 'mabel/mabel-18.docx' },
+  { name: 'Mabel 19.Bölüm', file: 'mabel/mabel-19.docx' },
+  { name: 'Mabel 20.Bölüm', file: 'mabel/mabel-20.docx' },
+  { name: 'Mabel 21.Bölüm', file: 'mabel/mabel-21.docx' },
+  { name: 'Mabel 22.Bölüm', file: 'mabel/mabel-22.docx' },
+  { name: 'Mabel 23.Bölüm', file: 'mabel/mabel-23.docx' },
+  { name: 'Mabel 24.Bölüm', file: 'mabel/mabel-24.docx' },
+  { name: 'Mabel 25.Bölüm', file: 'mabel/mabel-25.docx' },
+  { name: 'Mabel 26.Bölüm', file: 'mabel/mabel-26.docx' },
+  { name: 'Mabel 27.Bölüm', file: 'mabel/mabel-27.docx' },
+  { name: 'Mabel 28.Bölüm', file: 'mabel/mabel-28.docx' },
+  { name: 'Mabel 29.Bölüm', file: 'mabel/mabel-29.docx' },
+];
+
+const episodesSonunBaslangici = [
+  { name: 'Sonun Başlangıcı 1.Bölüm', file: 'sonun-başlangıcı/sonun-başlangıcı-1.docx' },
+  { name: 'Sonun Başlangıcı 2.Bölüm', file: 'sonun-başlangıcı/sonun-başlangıcı-2.docx' },
+];
+const episodesDerinSular = [
+  { name: 'Derin Sular 1.Bölüm', file: 'derin-sular/derin-sular-1.docx' },
+  { name: 'Derin Sular 2.Bölüm', file: 'derin-sular/derin-sular-2.docx' },
+  { name: 'Derin Sular 3.Bölüm', file: 'derin-sular/derin-sular-3.docx' },
+  { name: 'Derin Sular 4.Bölüm', file: 'derin-sular/derin-sular-4.docx' },
+  { name: 'Derin Sular 5.Bölüm', file: 'derin-sular/derin-sular-5.docx' },
+];
 
   
  // References to elements
@@ -109,7 +196,7 @@ switch (currentBook.toLowerCase()) {
   case 'mabel':
       episodes = episodesMabel;
       break;
-  case 'sonun-başlangıcı':
+  case 'sonun-baslangici':
       episodes = episodesSonunBaslangici;
       break;
   case 'derin-sular':
@@ -315,6 +402,11 @@ function showCommentBox(paragraphIndex, episodeId, container) {
   const modal = document.createElement('div');
   modal.id = 'commentModal';
   modal.classList.add('comment-modal');
+
+  const kitapOkuDiv = document.querySelector('.kitap-oku');
+  if (kitapOkuDiv && kitapOkuDiv.classList.contains('dark-mode')) {
+    modal.classList.add('dark-mode'); // Add dark-mode class to the modal
+  }
 
   // Create modal content
   const modalContent = document.createElement('div');

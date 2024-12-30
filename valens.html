@@ -84,7 +84,7 @@
             <span><h1>Tanıtım</h1></span>
             <span onclick="toggleDropdown2()"><h1>Çok Yakında <i id="dropdown-icon2" class="fa-solid fa-angle-down"></i></h1></span>
             <span id="kitap-menu-drop2" style="display: none;">
-              <h1 style="animation-delay: 0.2s;"> <a href="sonun-başlangıcı.html">SONUN BAŞLANGICI</a></h1>
+              <h1 style="animation-delay: 0.2s;"> <a href="sonun-baslangici.html">SONUN BAŞLANGICI</a></h1>
               <h1 style="animation-delay: 0.4s;"> <a href="derin-sular.html">DERİN SULAR</a></h1>
               
             </span>
@@ -147,7 +147,7 @@
             <h1>Çok Yakında</h1>
             <div class="kitaplar-dropdown">
               <div class="kitaplar-content-class" style="margin-top: 0px;">
-                <span><h1><a href="sonun-başlangıcı.html">SONUN BAŞLANGICI</a></h1></span>
+                <span><h1><a href="sonun-baslangici.html">SONUN BAŞLANGICI</a></h1></span>
                 <span><h1><a href="derin-sular.html">DERİN SULAR</a></h1></span>
               </div>
             </div>
@@ -189,28 +189,17 @@
 
       <div class="container3" style="padding: 20px;">
         <div class="header3">
-            <h1>Valens</h1>
+            <h1 style="color: black;">Valens</h1>
         </div>
         <div class="content3" style="overflow-x: hidden;">
           <div class="left-side3 yzk-html">
-            <p >Küçükken duyduğum silah seslerini bastırabilmek için şarkılar söylerdim, sonra sesimi kestiler, silah seslerini yükselttiler. Bende sesimi silah yaptım ve o silahı hiç susturmadım.
+            <p style="color: black;" ><br> <br>
+              Vera Mehan, okul değişikliğiyle ülkenin en iyi kolejine geçiş yapmış bir lise son öğrencisidir ve okula gitmeden önce tek düşündüğü geleceğidir. 
               <br><br>
-              En büyük hayalim aynı zamanda en büyük korkumdu sesim, bunu göstermek hayatımın en büyük hatasıydı ve hayatıma mal olmuştu</p>
-            <p>Sonra öğrendim; eğer korkunu her daim göz önünde tutarsan bir süre sonra korkuya bile alışırsın.
+              Fakat okula gittiği ilk an geleceğine daha da uzaklaştığını fark etmiştir çünkü gittiği o okul, öğrencilerin içinde ikiye bölündüğü motor ve araba yarışlarının yapıldığı ve madde bağımlılığı bulunan parlak göründüğü halde karanlık öğrencilerle dolu bir okuldur.
               <br><br>
-              İnsanın eksik hissetmesi ruh eşini bulamadığındandır derler. Benim ruh eşim beni bulmak için çok geç kaldı çünkü ruhum paramparça.</p>
-              
-              <p>Yara kalpte açılır ama kalbe yayılmaz. Aklına sızar ve oraya yayılır.
-                <br>Yara kalpte açılır ama acısını zihnimiz çeker.<br>
-                Yara kalpte açılır ve kapanır ama zihninde devam eder.</p>
-                <p>
-                  <br>
-                  Yara dışarıda değil, yara içeride.
-                  <br>
-                  Yara çok içeride.</p>
-                <p>Bana bir gece vakti, ayın gölgesi denizmişiz gibi üzerimize yakamoz düşürdüğünde 'Hala kanadığını görüyorum.' Demiştin.
-                  <br> Ben de aya bakmıştım senin gibi, yakamozun yüzüne ne kadar yakıştığını görmek istememiştim çünkü aklımı kaybettirecek kadar güzeldin. Yüzüne bakmadan 'Her yara bir yere kadar kanar.' Demiştim.<br>
-                  <br>Salvor, merhem demekti ama kanayan bir yaraya merhem etki etmezdi.</p>
+              Tanıştığı Zeyd Vuran’ın diğerlerine göre edebiyat düşkünü ve sessizliğiyle parlak olduğunu düşündüğünde ise büyük bir yanılgıya uğrar çünkü gündüz sesini çıkarmayan Zeyd Vuran geceleri kafes dövüşlerinde kulak kanatıcı seslerle sessizliğini örter.
+            </p>
           </div>
           <div class="right-side3">
             <img loading="lazy" decoding="async" width="752" height="1024" src="assets/images/valenskitap.png" class="attachment-large size-large wp-image-12739" alt="The Familiar by Leigh Bardugo" sizes="(max-width: 752px) 100vw, 752px">
@@ -414,17 +403,7 @@
       });
   });
 </script>
-<script>
-	// JavaScript to toggle dark mode
-	const toggle = document.getElementById('darkmode-toggle');
-	const content = document.querySelector('.content');
-  const modalcontent = document.querySelector('.modal-content');
-
-	toggle.addEventListener('change', () => {
-		content.classList.toggle('dark-mode');
-    customDropdown.classList.toggle('dark-mode');
-	});
-</script>
+<script src="dark-mode.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 <script src="sidebar.js"></script>
 <script src="dropdown.js"></script>

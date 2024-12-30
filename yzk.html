@@ -84,7 +84,7 @@
             <span><h1>Tanıtım</h1></span>
             <span onclick="toggleDropdown2()"><h1>Çok Yakında <i id="dropdown-icon2" class="fa-solid fa-angle-down"></i></h1></span>
             <span id="kitap-menu-drop2" style="display: none;">
-              <h1 style="animation-delay: 0.2s;"> <a href="sonun-başlangıcı.html">SONUN BAŞLANGICI</a></h1>
+              <h1 style="animation-delay: 0.2s;"> <a href="sonun-baslangici.html">SONUN BAŞLANGICI</a></h1>
               <h1 style="animation-delay: 0.4s;"> <a href="derin-sular.html">DERİN SULAR</a></h1>
               
             </span>
@@ -147,7 +147,7 @@
             <h1>Çok Yakında</h1>
             <div class="kitaplar-dropdown">
               <div class="kitaplar-content-class" style="margin-top: 0px;">
-                <span><h1><a href="sonun-başlangıcı.html">SONUN BAŞLANGICI</a></h1></span>
+                <span><h1><a href="sonun-baslangici.html">SONUN BAŞLANGICI</a></h1></span>
                 <span><h1><a href="derin-sular.html">DERİN SULAR</a></h1></span>
               </div>
             </div>
@@ -267,8 +267,8 @@
       </div>
 
       <div class="playlist-class">
-        <h1 style="text-align: center; color: 	#000000; font-family: 'Cinzel Decorative',serif; ">Playlist </h1>
-        <iframe class="spotify-class" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/4G9pry5O9IpJRwFgfycamS?utm_source=generator&theme=0" width="80%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <h1 style="text-align: center; font-family: 'Cinzel Decorative',serif; ">Playlist </h1>
+        <iframe class="spotify-class" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/4G9pry5O9IpJRwFgfycamS?utm_source=generator&theme=1" width="80%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
       </div>
 
 
@@ -416,17 +416,7 @@
       });
   });
 </script>
-<script>
-	// JavaScript to toggle dark mode
-	const toggle = document.getElementById('darkmode-toggle');
-	const content = document.querySelector('.content');
-  const modalcontent = document.querySelector('.modal-content');
-
-	toggle.addEventListener('change', () => {
-		content.classList.toggle('dark-mode');
-    customDropdown.classList.toggle('dark-mode');
-	});
-</script>
+<script src="dark-mode.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 <script src="sidebar.js"></script>
 <script src="dropdown.js"></script>
