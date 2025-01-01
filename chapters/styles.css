@@ -453,6 +453,7 @@ input:checked + label img.moon {
     font-style: italic;
     min-height: fit-content;
     max-height: 50vh;
+    font-weight: bold;
     /* overflow: scroll; */
   }
   #modalTitle strong{
@@ -867,3 +868,8 @@ color: #00b2b2;
   .kitap-oku.dark-mode .next-episode h1 {
     color: white !important;
   }
+  @media (max-width: 768px) {
+    .özel-görsel img{
+      object-position: 13%;
+    }
+}
