@@ -457,7 +457,10 @@ input:checked + label img.moon {
     /* overflow: scroll; */
   }
   #modalTitle strong{
-    font-weight: 100;
+    /* font-weight: 100; */
+  }
+  #modalTitle strong em{
+    font-weight: bold;
   }
   
   
