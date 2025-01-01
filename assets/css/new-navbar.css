@@ -835,3 +835,12 @@ box-sizing: content-box;
     flex-direction: column;
     gap: 20px;
 }
+ul {
+    margin-top: 0;
+}
+input[type="checkbox"]{
+    -webkit-appearance: none;
+}
+input{
+    margin: 0;
+}

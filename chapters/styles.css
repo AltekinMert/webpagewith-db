@@ -693,7 +693,7 @@ input:checked + label img.moon {
     .quotes p{
     }
     .quotes{
-        height: 55px;
+        height: 55px !important;
         align-content: center;
     }
     .quotes p .fa-quote-left{
@@ -706,6 +706,7 @@ input:checked + label img.moon {
 .quotes{
   border-bottom-style: solid;
   border-bottom-color: white;
+  height: 75px;
 }
   .fa-solid {
     /* margin: 0 0.5rem;  */
@@ -726,7 +727,7 @@ input:checked + label img.moon {
         object-fit: cover;
     }
     .replik-slider-yzk{
-        height: 57vh;
+        height: 60vh;
     }
     .yzk-replik-cell-inside{
         padding-top: 0px;
