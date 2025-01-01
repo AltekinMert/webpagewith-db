@@ -24,6 +24,9 @@ const episodesYzk = [
     { name: 'YZK 23.Bölüm', file: 'yzk/yzk-23.docx' },
     { name: 'YZK 24.Bölüm', file: 'yzk/yzk-24.docx' },
     { name: 'YZK 25.Bölüm', file: 'yzk/yzk-25.docx' },
+    { name: 'YZK 27.Bölüm', file: 'yzk/yzk-27.docx' },
+    { name: 'YZK 30.Bölüm', file: 'yzk/yzk-30.docx' },
+    { name: 'YZK 33.Bölüm', file: 'yzk/yzk-33.docx' },
   ];
   const episodesLeza = [
     { name: 'Leza 1.Bölüm', file: 'Leza/leza-1.docx' },
