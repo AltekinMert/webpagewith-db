@@ -309,6 +309,9 @@ input:checked + .theme-toggle-label img.moon {
 	color: white;
 	transition: color 0.5s ease;
 }
+.custom-dropdown{
+  transition: background-color 0.5s ease;
+}
 
 .custom-dropdown.dark-mode {
 	background-color: #242424;
@@ -808,6 +811,9 @@ html{
 }
 .quotes.dark-mode p{
   color: white;
+  transition: background-color 0.5s ease;
+}
+.container3 {
   transition: background-color 0.5s ease;
 }
 .container3.dark-mode{
