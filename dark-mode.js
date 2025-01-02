@@ -29,4 +29,5 @@
     container3_new.classList.toggle('dark-mode');
     commentmodal.classList.toggle('dark-mode');
     nextepisode2.classList.toggle('dark-mode');
+    toggle.click();
 	});
