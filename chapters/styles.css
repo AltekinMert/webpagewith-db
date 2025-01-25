@@ -23,12 +23,17 @@ select{
 }
 .content p{
     width: 100%;
-    font-family: 'Cinzel', serif;
+    font-family: "Source Sans Pro",Arial,sans-serif;
+    color: black;
 }
 .content p strong em{
     font-weight: bold; /* Matches the bold effect of <strong> */
     color: inherit; /* Use the same color as the parent or <strong> */
     font-style: normal; /* Removes the italicized style of <em> */
+    
+}
+.paragraph-container p strong{
+  color: black;
 }
 .content ol:first-child li {
     font-size: 1.4em;
@@ -306,9 +311,13 @@ input:checked + .theme-toggle-label img.moon {
 
 .content.dark-mode ol,
 .content.dark-mode p {
-	color: white;
+	color: #f7f7f7;
 	transition: color 0.5s ease;
 }
+.content.dark-mode .paragraph-container p strong {
+  color: white;
+}
+
 .custom-dropdown{
   transition: background-color 0.5s ease;
 }

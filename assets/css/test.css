@@ -1,0 +1,28 @@
+#quiz-container {
+    margin-bottom: 20px;
+  }
+  #question {
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+  }
+  .answer {
+    display: block;
+    margin-bottom: 10px;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  .answer:hover {
+    background-color: #e0e0e0;
+  }
+  #result {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #444;
+    padding: 20px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+  }
