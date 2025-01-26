@@ -1,158 +1,310 @@
-// Sorular ve cevaplar dizisi
-  // Her cevabın 'names' alanına göre puanlama yapılacak
-  const questions = [
-    {
-      question: "Bir sabah uyandığında ilk işin ne olur?",
-      answers: [
-        { text: "Pencereyi açıp derin bir nefes almak", names: ["YEVAL LARDEN"] },
-        { text: "Hemen kahve yapıp kendime gelmek", names: ["BARKIN KARADUMAN (SALVOR)"] },
-        { text: "Sosyal medyada arkadaşlarımı kontrol etmek", names: ["HAZAN PARLAS"] },
-        { text: "Güne egzersizle başlamak", names: ["KUTAY TOLUN"] },
-        { text: "Beyzayı düşünmek", names: ["Mert"] },
-      ],
-    },
-    {
-      question: "En sevdiğin aktivite hangisi?",
-      answers: [
-        { text: "Resim yapıp yeni şeyler üretmek", names: ["KARMEN"] },
-        { text: "Gece yürüyüşlerinde doğanın tadını çıkarmak", names: ["DOLUNAY AKKOR (ZELAL)"] },
-        { text: "Bilgisayar oyunu oynayıp rekabet etmek", names: ["ÇAKIR ALABORA"] },
-        { text: "Arkadaşlarla uzun sohbetler yapmak", names: ["SELCEN ALAKURT"] },
-        { text: "Beyzaaaa", names: ["Mert"] },
-      ],
-    },
-    {
-      question: "Hangisi seni daha çok heyecanlandırır?",
-      answers: [
-        { text: "Yeni kültürler ve diller öğrenmek", names: ["KARMEN"] },
-        { text: "Zor bir görevi başarıyla tamamlamak", names: ["BARKIN KARADUMAN (SALVOR)"] },
-        { text: "Kendi yazdığım hikayeleri paylaşmak", names: ["LEMAN SAVSA"] },
-        { text: "Çevremdeki insanlara rehberlik etmek", names: ["SELCEN ALAKURT"] },
-        { text: "Beyzaaaaaaaa", names: ["Mert"] },
-      ],
-    },
-    {
-      question: "Kendini en rahat hissettiğin ortam hangisi?",
-      answers: [
-        { text: "Kalabalık şehir caddelerinde enerjik yürüyüşler", names: ["HAZAN PARLAS"] },
-        { text: "Sakin bir göl kenarında yıldızları seyretmek", names: ["DOLUNAY AKKOR (ZELAL)"] },
-        { text: "Kendi iç dünyamda meditasyon yapmak", names: ["YEVAL LARDEN"] },
-        { text: "Arkadaşlarla kamp yapıp yeni yerler keşfetmek", names: ["KUTAY TOLUN"] },
-        { text: "Beyzamın yanı", names: ["Mert"] },
-      ],
-    },
-    {
-      question: "Bir kitap yazacak olsan hangi türde olurdu?",
-      answers: [
-        { text: "Gizem ve macera dolu bir dedektif romanı", names: ["ÇAKIR ALABORA"] },
-        { text: "Duygusal ve ilham veren kişisel gelişim kitabı", names: ["LEMAN SAVSA"] },
-        { text: "Bilim kurgu ve yenilikçi buluşlar üzerine", names: ["BARKIN KARADUMAN (SALVOR)"] },
-        { text: "Felsefi ve içsel yolculukları anlatan bir roman", names: ["YEVAL LARDEN"] },
-        { text: "Beyzamı anlatan (yaz yaz bitiremem)", names: ["Mert"] },
-      ],
-    },
-    // Daha fazla soru eklemek isterseniz buraya ekleyebilirsiniz
-  ];
+// Kitaplara göre sorular ve karakterler
+const books = {
+  "yarınlar_zifiri_karanlık": {
+    name: "Yarınlar Zifiri Karanlık",
+    characters: [
+      "AYŞE DEMİR",
+      "EMRE KARA",
+      "SENA YILMAZ",
+      "MERT ÖZCAN",
+      "DİLAN TÜRK"
+    ],
+    questions: [
+      {
+        question: "Bir sabah uyandığında ilk işin ne olur?",
+        answers: [
+          { text: "Pencereyi açıp derin bir nefes almak", names: ["AYŞE DEMİR"] },
+          { text: "Hemen kahve yapıp kendime gelmek", names: ["EMRE KARA"] },
+          { text: "Sosyal medyada arkadaşlarımı kontrol etmek", names: ["SENA YILMAZ"] },
+          { text: "Güne egzersizle başlamak", names: ["MERT ÖZCAN"] },
+          { text: "Güne egzerasdasasdsizle başlamak", names: ["MERT ÖZCAN"] },
+          { text: "Güne egzerasdasasdsizle başlamak", names: ["MERT ÖZCAN"] },
+        ],
+      },
+      {
+        question: "En sevdiğin aktivite hangisi?",
+        answers: [
+          { text: "Resim yapıp yeni şeyler üretmek", names: ["DİLAN TÜRK"] },
+          { text: "Gece yürüyüşlerinde doğanın tadını çıkarmak", names: ["AYŞE DEMİR"] },
+          { text: "Bilgisayar oyunu oynayıp rekabet etmek", names: ["EMRE KARA"] },
+          { text: "Arkadaşlarla uzun sohbetler yapmak", names: ["SENA YILMAZ"] },
+        ],
+      },
+      // Daha fazla soru eklemek için buraya ekleyin
+    ]
+  },
+  "leza": {
+    name: "Leza",
+    characters: [
+      "LEZA ŞAHİN",
+      "KADİR GÜL",
+      "ELİF ÖZTÜRK",
+      "SERDAR YILMAZ",
+      "BELİK KOÇ"
+    ],
+    questions: [
+      {
+        question: "Hafta sonunu nasıl geçirmeyi seversin?",
+        answers: [
+          { text: "Kitap okuyarak", names: ["LEZA ŞAHİN"] },
+          { text: "Doğa yürüyüşlerine çıkarak", names: ["KADİR GÜL"] },
+          { text: "Film izleyerek", names: ["ELİF ÖZTÜRK"] },
+          { text: "Arkadaşlarla buluşarak", names: ["SERDAR YILMAZ"] },
+        ],
+      },
+      {
+        question: "En büyük korkun nedir?",
+        answers: [
+          { text: "Yükseklik", names: ["BELİK KOÇ"] },
+          { text: "Karanlık", names: ["LEZA ŞAHİN"] },
+          { text: "Yalnızlık", names: ["ELİF ÖZTÜRK"] },
+          { text: "Başarısızlık", names: ["SERDAR YILMAZ"] },
+        ],
+      },
+      // Daha fazla soru eklemek için buraya ekleyin
+    ]
+  },
+  // Diğer kitaplar için benzer yapılar ekleyin
+  "mabel": {
+    name: "Mabel",
+    characters: [
+      "MABEL ERDEM",
+      "TÜLAY KAPLAN",
+      "CAN KILIÇ",
+      "FERHAT YILDIZ",
+      "BÜNYAMİN ÖZDEMİR"
+    ],
+    questions: [
+      {
+        question: "Hangi müzik türünü daha çok seversin?",
+        answers: [
+          { text: "Klasik", names: ["MABEL ERDEM"] },
+          { text: "Rock", names: ["CAN KILIÇ"] },
+          { text: "Pop", names: ["TÜLAY KAPLAN"] },
+          { text: "Caz", names: ["FERHAT YILDIZ"] },
+        ],
+      },
+      {
+        question: "En çok hangi mevsimi seversin?",
+        answers: [
+          { text: "İlkbahar", names: ["BÜNYAMİN ÖZDEMİR"] },
+          { text: "Yaz", names: ["MABEL ERDEM"] },
+          { text: "Sonbahar", names: ["CAN KILIÇ"] },
+          { text: "Kış", names: ["FERHAT YILDIZ"] },
+        ],
+      },
+      // Daha fazla soru eklemek için buraya ekleyin
+    ]
+  },
+  "sonun_baslangici": {
+    name: "Sonun Başlangıcı",
+    characters: [
+      "DENİZ ÇELİK",
+      "SİLA KAYA",
+      "ONUR ŞEN",
+      "GÖKHAN ARAS",
+      "NURİYE YILDIZ"
+    ],
+    questions: [
+      {
+        question: "Hangi sporu yapmayı seversin?",
+        answers: [
+          { text: "Futbol", names: ["DENİZ ÇELİK"] },
+          { text: "Yüzme", names: ["SİLA KAYA"] },
+          { text: "Tenis", names: ["ONUR ŞEN"] },
+          { text: "Basketbol", names: ["GÖKHAN ARAS"] },
+        ],
+      },
+      {
+        question: "En çok hangi yemeği seversin?",
+        answers: [
+          { text: "Pizza", names: ["NURİYE YILDIZ"] },
+          { text: "Sushi", names: ["DENİZ ÇELİK"] },
+          { text: "Kebap", names: ["ONUR ŞEN"] },
+          { text: "Salata", names: ["SİLA KAYA"] },
+        ],
+      },
+      // Daha fazla soru eklemek için buraya ekleyin
+    ]
+  },
+  "derin_sular": {
+    name: "Derin Sular",
+    characters: [
+      "ALİ VURAL",
+      "AYLA DEMİR",
+      "SERAP KAYA",
+      "TUNÇ ÖZTÜRK",
+      "ELİF TÜRKER"
+    ],
+    questions: [
+      {
+        question: "En çok hangi hobin var?",
+        answers: [
+          { text: "Fotoğrafçılık", names: ["ALİ VURAL"] },
+          { text: "Pişirme", names: ["AYLA DEMİR"] },
+          { text: "Yüzme", names: ["SERAP KAYA"] },
+          { text: "Yazılım geliştirme", names: ["TUNÇ ÖZTÜRK"] },
+        ],
+      },
+      {
+        question: "Hangi tür filmleri izlemeyi seversin?",
+        answers: [
+          { text: "Bilim Kurgu", names: ["ELİF TÜRKER"] },
+          { text: "Dram", names: ["ALİ VURAL"] },
+          { text: "Komedi", names: ["SERAP KAYA"] },
+          { text: "Gerilim", names: ["TUNÇ ÖZTÜRK"] },
+        ],
+      },
+      // Daha fazla soru eklemek için buraya ekleyin
+    ]
+  },
+  "valens": {
+    name: "Valens",
+    characters: [
+      "VALİ ÖZKAN",
+      "ESRA KARA",
+      "BERKAY DEMİR",
+      "MELİH ŞEN",
+      "ZEYNEP YILMAZ"
+    ],
+    questions: [
+      {
+        question: "En çok hangi tatili seversin?",
+        answers: [
+          { text: "Plajda dinlenmek", names: ["VALİ ÖZKAN"] },
+          { text: "Dağda kamp yapmak", names: ["ESRA KARA"] },
+          { text: "Şehir turu yapmak", names: ["BERKAY DEMİR"] },
+          { text: "Evde kitap okumak", names: ["MELİH ŞEN"] },
+        ],
+      },
+      {
+        question: "Hangi dili öğrenmek istersin?",
+        answers: [
+          { text: "İspanyolca", names: ["ZEYNEP YILMAZ"] },
+          { text: "Fransızca", names: ["VALİ ÖZKAN"] },
+          { text: "Almanca", names: ["BERKAY DEMİR"] },
+          { text: "Japonca", names: ["MELİH ŞEN"] },
+        ],
+      },
+      // Daha fazla soru eklemek için buraya ekleyin
+    ]
+  }
+};
 
-  // Tüm karakter isimleri
-  const allNames = [
-    "YEVAL LARDEN",
-    "BARKIN KARADUMAN (SALVOR)",
-    "KARMEN",
-    "DOLUNAY AKKOR (ZELAL)",
-    "ÇAKIR ALABORA",
-    "SELCEN ALAKURT",
-    "KUTAY TOLUN",
-    "LEMAN SAVSA",
-    "HAZAN PARLAS",
-    "Mert"
-  ];
+// HTML elemanları
+const bookSelect = document.getElementById("book-select");
+const startQuizButton = document.getElementById("start-quiz");
+const setupContainer = document.getElementById("setup-container");
+const quizContainer = document.getElementById("quiz-container");
+const questionEl = document.getElementById("question");
+const answersEl = document.getElementById("answers");
+const resultEl = document.getElementById("result");
 
-  // Her karakterin kaç kere seçildiğini tutacağımız obje
-  const score = {};
+// Seçilen kitap verilerini saklamak için değişkenler
+let selectedBook = null;
+let score = {};
+let currentQuestionIndex = 0;
 
-  // Başlangıçta tüm puanları sıfırla
-  allNames.forEach(name => {
+// Kitap seçildiğinde "Testi Başlat" butonunu etkinleştir
+bookSelect.addEventListener("change", () => {
+  if (bookSelect.value) {
+    startQuizButton.disabled = false;
+  } else {
+    startQuizButton.disabled = true;
+  }
+});
+
+// "Testi Başlat" butonuna tıklandığında testi başlat
+startQuizButton.addEventListener("click", () => {
+  const bookKey = bookSelect.value;
+  selectedBook = books[bookKey];
+
+  if (!selectedBook) {
+    alert("Lütfen geçerli bir kitap seçiniz.");
+    return;
+  }
+
+  // Başlangıç ayarlarını yap
+  initializeQuiz();
+});
+
+function initializeQuiz() {
+  // Setup bölümünü gizle ve test bölümünü göster
+  setupContainer.style.display = "none";
+  quizContainer.style.display = "flex";
+  resultEl.style.display = "none";
+
+  // Skoru sıfırla ve tüm karakterleri sıfırla
+  score = {};
+  selectedBook.characters.forEach(name => {
     score[name] = 0;
   });
 
-  // Hangi soruda olduğumuzu tutan indeks
-  let currentQuestionIndex = 0;
-
-  // HTML elemanları
-  const questionEl = document.getElementById("question");
-  const answersEl = document.getElementById("answers");
-  const resultEl = document.getElementById("result");
-
   // İlk soruyu göster
+  currentQuestionIndex = 0;
   showQuestion();
+}
 
-  function showQuestion() {
-    const currentQuestion = questions[currentQuestionIndex];
-    questionEl.textContent = currentQuestion.question;
-    answersEl.innerHTML = "";
+function showQuestion() {
+  if (currentQuestionIndex >= selectedBook.questions.length) {
+    // Test bitti, sonuçları göster
+    showResult();
+    return;
+  }
 
-    currentQuestion.answers.forEach((answer) => {
-      const btn = document.createElement("div");
-      btn.className = "answer";
-      btn.textContent = answer.text; // Kullanıcıya sadece metni gösteriyoruz
+  const currentQuestion = selectedBook.questions[currentQuestionIndex];
+  questionEl.textContent = currentQuestion.question;
+  answersEl.innerHTML = "";
 
-      // Cevabın tıklanma olayı
-      btn.addEventListener("click", () => {
-        // Seçilen cevabın names değerine göre puan arttırma
-        answer.names.forEach((name) => {
-          if (score[name] !== undefined) {
-            score[name]++;
-          }
-        });
+  currentQuestion.answers.forEach(answer => {
+    const btn = document.createElement("div");
+    btn.className = "answer";
+    btn.textContent = answer.text;
 
-        // Sıradaki soruya geç
-        currentQuestionIndex++;
-        if (currentQuestionIndex < questions.length) {
-          showQuestion();
-        } else {
-          // Test bitti, sonuçları göster
-          showResult();
+    btn.addEventListener("click", () => {
+      // Seçilen cevabın isimlerine göre puan arttır
+      answer.names.forEach(name => {
+        if (score[name] !== undefined) {
+          score[name]++;
         }
       });
 
-      answersEl.appendChild(btn);
+      // Sonraki soruya geç
+      currentQuestionIndex++;
+      showQuestion();
     });
+
+    answersEl.appendChild(btn);
+  });
+}
+
+function showResult() {
+  // Test bölümünü gizle ve sonuç bölümünü göster
+  quizContainer.style.display = "none";
+  resultEl.style.display = "block";
+
+  // En yüksek puanı bul
+  const maxScore = Math.max(...Object.values(score));
+
+  // En yüksek puanı alan tüm isimleri bul
+  const topNames = Object.keys(score).filter(name => score[name] === maxScore);
+
+  // Eğer tie varsa rastgele seçim yap
+  let finalName;
+  if (topNames.length === 1) {
+    finalName = topNames[0];
+  } else {
+    const randomIndex = Math.floor(Math.random() * topNames.length);
+    finalName = topNames[randomIndex];
   }
 
-  function showResult() {
-    // Quiz içeriğini gizlemek için
-    document.getElementById("quiz-container").style.display = "none";
-
-    // En yüksek puanı bulmak
-    let maxScore = Math.max(...Object.values(score));
-
-    // En yüksek puanı alan tüm isimleri bulmak
-    let topNames = [];
-    for (let name in score) {
-      if (score[name] === maxScore) {
-        topNames.push(name);
-      }
-    }
-
-    // Eğer tek bir isim varsa onu seç, birden fazlaysa rastgele seç
-    let finalName;
-    if (topNames.length === 1) {
-      finalName = topNames[0];
-    } else {
-      // Rastgele seçim için Math.random kullanıyoruz
-      const randomIndex = Math.floor(Math.random() * topNames.length);
-      finalName = topNames[randomIndex];
-    }
-
-    // Debug amaçlı tüm isimleri ve puanlarını listelemek
-    let debugText = "Seçtiğin isimlerin sayıları:\n";
-    for (const name in score) {
-      debugText += `- ${name}: ${score[name]} defa\n`;
-    }
-    debugText += `\nEn çok ${finalName} ile benzeşiyorsun!`;
-
-    // Sonucu ekrana yaz
-    resultEl.style.display = "block";
-    resultEl.textContent = debugText;
+  // Debug amaçlı tüm isimlerin puanlarını listele
+  let debugText = "Seçtiğin isimlerin sayıları:\n";
+  for (const name in score) {
+    debugText += `- ${name}: ${score[name]} defa\n`;
   }
+  debugText += `\nEn çok ${finalName} ile benzeşiyorsun!`;
+
+  // Sonucu ekrana yaz
+  resultEl.textContent = debugText;
+}
