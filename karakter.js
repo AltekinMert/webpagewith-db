@@ -3,31 +3,65 @@ const books = {
   "yarınlar_zifiri_karanlık": {
     name: "Yarınlar Zifiri Karanlık",
     characters: [
-      "AYŞE DEMİR",
-      "EMRE KARA",
-      "SENA YILMAZ",
-      "MERT ÖZCAN",
-      "DİLAN TÜRK"
+      "YEVAL",
+      "BARKIN",
+      "SELCEN",
+      "LEMAN",
+      "HAZAN",
+      "ZELAL",
+      "BARKIN",
+      "ÇAKIR",
+      "KUTAY",
+      "KARMEN"
     ],
     questions: [
       {
-        question: "Bir sabah uyandığında ilk işin ne olur?",
+        question: "En sevdiğin an?",
         answers: [
-          { text: "Pencereyi açıp derin bir nefes almak", names: ["AYŞE DEMİR"] },
-          { text: "Hemen kahve yapıp kendime gelmek", names: ["EMRE KARA"] },
-          { text: "Sosyal medyada arkadaşlarımı kontrol etmek", names: ["SENA YILMAZ"] },
-          { text: "Güne egzersizle başlamak", names: ["MERT ÖZCAN"] },
-          { text: "Güne egzerasdasasdsizle başlamak", names: ["MERT ÖZCAN"] },
-          { text: "Güne egzerasdasasdsizle başlamak", names: ["MERT ÖZCAN"] },
+          { text: "Yalnız kaldığım an", names: ["YEVAL"] },
+          { text: "Sevgilimle geçirdiğim an", names: ["BARKIN"] },
+          { text: "Arkadaşlarımla geçirdiğim an", names: ["SELCEN"] },
+          { text: "Oyun oynadığım an", names: ["ÇAKIR"] },
         ],
       },
       {
-        question: "En sevdiğin aktivite hangisi?",
+        question: "En büyük korkun?",
         answers: [
-          { text: "Resim yapıp yeni şeyler üretmek", names: ["DİLAN TÜRK"] },
-          { text: "Gece yürüyüşlerinde doğanın tadını çıkarmak", names: ["AYŞE DEMİR"] },
-          { text: "Bilgisayar oyunu oynayıp rekabet etmek", names: ["EMRE KARA"] },
-          { text: "Arkadaşlarla uzun sohbetler yapmak", names: ["SENA YILMAZ"] },
+          { text: "Civciv", names: ["LEMAN"] },
+          { text: "Dışlanmak", names: ["HAZAN"] },
+          { text: "Güçsüz olmak", names: ["ZELAL"] },
+          { text: "Yalnız olmak", names: ["YEVAL"] },
+        ],
+      },
+      {
+        question: "İnsanlara zarar veren özelliğin?",
+        answers: [
+          { text: "Takıntılı olman", names: ["YEVAL","KARMEN"] },
+          { text: "Öfken", names: ["ZELAL","BARKIN"] },
+          { text: "Saflığın", names: ["HAZAN","LEMAN"] },
+          { text: "Cesaretin", names: ["ÇAKIR"] },
+        ],
+      },
+      {
+        question: "Seni ağlatacak şey ne olurdu?",
+        answers: [
+          { text: "Ölüm", names: ["SELCEN","BARKIN"] },
+          { text: "Kırgınlık", names: ["KUTAY","ÇAKIR"] },
+          { text: "Öfke", names: ["ZELAL"] },
+          { text: "Geçmişin", names: ["KARMEN","YEVAL"] },
+          { text: "Öfke", names: ["ZELAL"] },
+          { text: "Geçmişin", names: ["KARMEN","YEVAL"] },
+          { text: "Öfke", names: ["ZELAL"] },
+          { text: "Geçmişin", names: ["KARMEN","YEVAL"] },
+        ],
+      },
+      {
+        question: "Başın dertte olsaydı ilk hangisini arardın?",
+        answers: [
+          { text: "Barkın", names: ["BARKIN"] },
+          { text: "Karmen", names: ["KARMEN"] },
+          { text: "Yeval", names: ["YEVAL"] },
+          { text: "Zelal", names: ["ZELAL"] },
         ],
       },
       // Daha fazla soru eklemek için buraya ekleyin

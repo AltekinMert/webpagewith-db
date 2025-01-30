@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Playlist Gallery</title>
+    <link rel="icon" type="image/png" href="assets/svg/Rectangle.png">
+<link rel="apple-touch-icon" href="assets/svg/Rectangle.png">
+<!-- Custom CSS -->
+<!-- <link href="assets/css/font-awesome.min.css" rel="stylesheet"> -->
+<!-- <link href="assets/css/animate-custom.css" rel="stylesheet"> -->
+<!-- <link rel="stylesheet" href="jQuery-plugins/bxslider-4-4.2.17/src/css/jquery.bxslider.css"> -->
+<link rel="stylesheet" href="jQuery-plugins/jquery-ui-1.13.3.custom/jquery-ui.css">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css"> -->
+<!-- <link rel="stylesheet" href="jQuery-plugins/aos-master/dist/aos.css"> -->
+<link href="assets/css/styles.css" rel="stylesheet">
+<link href="assets/css/styles3.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styleslider.css">
+<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.css" integrity="sha512-8BU3emz11z9iF75b10oPjjpamM4Mz23yQFQymbtwyPN3mNWHxpgeqyrYnkIUP6A8KyAj5k2p3MiYLtYqew7gIw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="assets/css/icons.css">
+<link rel="stylesheet" href="assets/css/new-navbar.css">
+<link rel="stylesheet" href="assets/css/bottom.css">
+<link rel="stylesheet" href="assets/css/footer.css">
+<link rel="stylesheet" href="assets/css/mail.css">
+<link rel="stylesheet" href="assets/css/replik-slider.css">
+<link href="https://fonts.cdnfonts.com/css/cormorant-unicase" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<link href="assets/css/styles2.css" rel="stylesheet">
+<link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet" />
+<link href="https://fonts.cdnfonts.com/css/eur42" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+<!-- <script src="jquery-3.7.1.min.js"></script> -->
+<!-- <script src="jQuery-plugins/jquery-ui-1.13.3.custom/jquery-ui.js"></script>  deleted last step-->
+<!-- <script src="jQuery-plugins/aos-master/dist/aos.js"></script> -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<!-- <script src="jQuery-plugins/bxslider-4-4.2.17/src/js/jquery.bxslider.js"></script> -->
+<script src="index.js" defer></script>
+<!-- <script src="assets/js/jquery.min.js"></script>  Burayı ben kapadım-->
+<script type="text/javascript" src="assets/js/modernizr.custom.js"></script>
+    <!-- Flickity CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link rel="stylesheet" href="assets/css/galery.css">
+</head>
+<body>
+    <div id="navbar-main"> 
+        <div class="navbar-class">
+          <ul class="sidebar">
+            <div class="sidebar-content-class">
+              <div class="sidebar-logo">
+                <img
+                  src="assets/videos/menu-logo-ezgif.com-optimize (1).gif"
+                  alt="Logo Animation"
+                  style="background-color: rgba(0, 0, 0, 0.0); outline-color: rgba(0, 0, 0, 0.0); object-fit: contain ;"
+                  class="logo-video"
+                  width="auto"
+                  height="90"
+                  max-width="100%"
+                />
+              </div>
+              <div class="menu-list">
+                <span><h1><a href="index.html" style="color: black;">Ana Sayfa</a></h1>
+                </span>
+                <span onclick="toggleDropdown()"><h1>Kitaplar <i id="dropdown-icon" class="fa-solid fa-angle-down"></i></h1></span>
+                <span id="kitap-menu-drop" style="display: none;">
+                  <h1 style="animation-delay: 0.2s;"> <a href="yzk.html">Yarınlar Zifiri Karanlık</a></h1>
+                  <h1 style="animation-delay: 0.4s;"> <a href="valens.html">VALENS</a></h1>
+                  <h1 style="animation-delay: 0.6s;"> <a href="leza.html">LEZA</a></h1>
+                  <h1 style="animation-delay: 0.8s;"> <a href="mabel.html">MABEL</a></h1>
+                </span>
+                <span><h1>Tanıtım</h1></span>
+                <span onclick="toggleDropdown2()"><h1>Çok Yakında <i id="dropdown-icon2" class="fa-solid fa-angle-down"></i></h1></span>
+                <span id="kitap-menu-drop2" style="display: none;">
+                  <h1 style="animation-delay: 0.2s;"> <a href="sonun-baslangici.html">SONUN BAŞLANGICI</a></h1>
+                  <h1 style="animation-delay: 0.4s;"> <a href="derin-sular.html">DERİN SULAR</a></h1>
+                  
+                </span>
+                <span style="display: flex; justify-content: center;">
+                  <p style="margin: 0; display: flex; flex-direction: column; justify-content: center;">
+                    <!-- <svg class="instagram-svg" xmlns="http://www.w3.org/2000/svg" onclick="javascript:window.open('https://www.instagram.com/byzloey/', '_blank', 'noopener'); return false;" viewBox="0 0 50 50" width="50px" height="50px" fill="#ffffff" style="padding-left: 17px;"><path d="M 16 3 C 8.8324839 3 3 8.8324839 3 16 L 3 34 C 3 41.167516 8.8324839 47 16 47 L 34 47 C 41.167516 47 47 41.167516 47 34 L 47 16 C 47 8.8324839 41.167516 3 34 3 L 16 3 z M 16 5 L 34 5 C 40.086484 5 45 9.9135161 45 16 L 45 34 C 45 40.086484 40.086484 45 34 45 L 16 45 C 9.9135161 45 5 40.086484 5 34 L 5 16 C 5 9.9135161 9.9135161 5 16 5 z M 37 11 A 2 2 0 0 0 35 13 A 2 2 0 0 0 37 15 A 2 2 0 0 0 39 13 A 2 2 0 0 0 37 11 z M 25 14 C 18.936712 14 14 18.936712 14 25 C 14 31.063288 18.936712 36 25 36 C 31.063288 36 36 31.063288 36 25 C 36 18.936712 31.063288 14 25 14 z M 25 16 C 29.982407 16 34 20.017593 34 25 C 34 29.982407 29.982407 34 25 34 C 20.017593 34 16 29.982407 16 25 C 16 20.017593 20.017593 16 25 16 z"/></svg> -->
+                  </p>
+                  <h1 class="instagram-link-onsidebar" onclick="javascript:window.open('https://www.instagram.com/byzloey/', '_blank', 'noopener'); return false;" style="cursor: pointer;">@byzloey</h1>
+                </span>
+              </div>
+              <span class="social-icons-container">
+                <div class="icon-container">
+                  <a href="https://www.instagram.com/byzloey/" class="icon-box"><i class="fab fa-instagram"></i></a>
+                  <a href="https://www.wattpad.com/user/byzloey" class="icon-box">
+                    <img src="chapters/wattpad.svg" alt="Wattpad Logo" width="25" height="25" style="height: 30px; width: inherit;">
+                  </a>
+                  <a href="https://whatsapp.com/channel/0029VajjevvKbYMNBYNTbd0c" class="icon-box"><i class="fab fa-whatsapp"></i></a>
+                  <a href="https://x.com/loeybyz" class="icon-box"><i class="fab fa-x-twitter"></i></a>
+                  <a href="https://www.kitappad.com/byzloey" class="icon-box" style="margin-top: 3px;">
+                    <img src="chapters/kitappad (4).svg" alt="Kitappad Logo" width="25" height="25" style="height: 34px; width: auto; vertical-align: baseline;">
+                  </a>
+                  <a href="https://www.youtube.com/@beyzasurmen7504" class="icon-box" style="padding-right: 10px;"><i class="fab fa-youtube"></i></a>
+                </div>
+              </span>
+            </div>
+          </ul>
+    
+          <div class="container-navbar-new">
+            <div onclick="window.location.href='index.html';" style="
+            width: 49%;
+            cursor: pointer;
+            height: 50%;
+            position: absolute;
+            z-index: 100;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -80%);">
+            </div>
+            <a class="logo-byzloey">
+              <li>
+                <img
+                  src="assets/videos/best-result.gif"
+                  alt="Logo Animation"
+                  style="background-color: rgba(0, 0, 0, 0.0); outline-color: rgba(0, 0, 0, 0.0); object-fit: cover;"
+                  class="logo-video"
+                  width="auto"
+                  height="180"
+                  max-width="100%"
+                />
+              </li>
+            </a>
+            <div class="logo-bottom hideonMobile">
+              <span><h1><a href="index.html">Ana Sayfa</a></h1></span>
+              <!-- altına gelicek function -->
+              <span class="kitaplar-container" style="position: relative;">
+                <h1>Kitaplar</h1>
+                <div class="kitaplar-dropdown">
+                  <div class="kitaplar-content-class" style="margin-top: 0px;">
+                    <span><h1><a href="yzk.html">YZK</a></h1></span>
+                    <span><h1><a href="valens.html">VALENS</a></h1></span>
+                    <span><h1><a href="mabel.html">MABEL</a></h1></span>
+                    <span><h1><a href="leza.html">LEZA</a></h1></span> 
+                  </div>
+                </div>
+              </span>
+    
+              <span><h1><a href="galery.html">Tanıtım</a></h1></span>
+              
+              <span class="kitaplar-container" style="position: relative;">
+                <h1>Çok Yakında</h1>
+                <div class="kitaplar-dropdown">
+                  <div class="kitaplar-content-class" style="margin-top: 0px;">
+                    <span><h1><a href="sonun-baslangici.html">SONUN BAŞLANGICI</a></h1></span>
+                    <span><h1><a href="derin-sular.html">DERİN SULAR</a></h1></span>
+                  </div>
+                </div>
+              </span>
+              
+            </div>
+          </div>
+    
+          <li class="menu-button" onclick=showSidebar()>
+            <input type="checkbox" role="button" aria-label="Display the menu" class="custom-menu-checkbox" style="box-shadow: none; outline: none;" >
+          </li>
+        </div>
+      </div>
+
+
+    <div class="gallery-container">
+        <h1>Tanıtımlar</h1>
+        <div class="video-carousel" id="carousel"></div>
+    </div>
+
+    <!-- containerfhgf -->
+  <div id="ambient-light" style="background-color: #000;">
+    <div class="bottom-info" style="width: -webkit-fill-available; height: -webkit-fill-available;">
+      <div>
+        <h1 style="font-size: medium; text-align: -webkit-center; font-family: sans-serif;color: #838383;">Copyright © 2025. Design by Byzloey</h1>
+      </div>
+
+      <div class="icon-container">
+        <a href="https://www.instagram.com/byzloey/" class="icon-box"><i class="fab fa-instagram" style="color: white;"></i></a>
+        <a href="https://www.wattpad.com/user/byzloey" class="icon-box">
+          <img src="chapters/wattpad.svg" alt="Wattpad Logo" width="25" height="25" style="height: 30px; width: inherit; -webkit-filter: invert(1);">
+        </a>
+        <a href="https://whatsapp.com/channel/0029VajjevvKbYMNBYNTbd0c" class="icon-box"><i class="fab fa-whatsapp" style="color: white;"></i></a>
+        <a href="https://x.com/loeybyz" class="icon-box"><i class="fab fa-x-twitter" style="color: white;"></i></a>
+        <a href="https://www.kitappad.com/byzloey" class="icon-box" style="margin-top: 3px;">
+          <img src="chapters/kitappad (4).svg" alt="Kitappad Logo" width="25" height="25" style="height: 34px; width: auto; vertical-align: baseline; -webkit-filter: invert(1);">
+        </a>
+        <a href="https://www.youtube.com/@beyzasurmen7504" class="icon-box" style="padding-right: 10px;"><i class="fab fa-youtube" style="color: white;"></i></a>
+      </div>
+    </div>
+    <div>
+      <div class="circle one"></div>
+      <div class="circle two"></div>
+      <div class="circle three"></div>
+      <div class="circle four"></div>
+      <div class="circle five"></div>
+    </div>
+  </div>
+
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script>
+        const API_KEY = 'AIzaSyDKyb0cr1ZXTYCNptkR4kMWKm5o9e2NLxQ';
+        const PLAYLIST_ID = 'PLAZmKwyJesMRHmfVCt9IncwU-s6js4hjy';
+        
+        // Initialize Flickity with proper options
+        let flkty = new Flickity('#carousel', {
+            cellAlign: 'center',
+            contain: true,
+            wrapAround: true,
+            autoPlay: false,
+            prevNextButtons: true,
+            pageDots: true,
+            freescroll: false,
+            imagesLoaded: true // Important for thumbnail loading
+            
+        });
+
+        async function loadPlaylist() {
+            try {
+                const response = await fetch(
+                    `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=10&playlistId=${PLAYLIST_ID}&key=${API_KEY}`
+                );
+                
+                if (!response.ok) throw new Error('YouTube API request failed');
+                
+                const data = await response.json();
+                if (!data.items) throw new Error('No videos in playlist');
+
+                // Clear existing cells
+                flkty.select(0);
+                while(flkty.cells.length) {
+                    flkty.remove(flkty.cells[0].element);
+                }
+
+                data.items.forEach(item => {
+                    const videoId = item.snippet.resourceId.videoId;
+                    const videoUrl = `https://www.youtube.com/watch?v=${videoId}`;
+                    const thumbnail = item.snippet.thumbnails.maxres?.url || 
+                                    item.snippet.thumbnails.standard?.url || 
+                                    item.snippet.thumbnails.high?.url;
+
+                    const videoItem = createVideoItem(item.snippet.title, item.snippet.channelTitle, thumbnail, videoUrl, videoId);
+                    flkty.append(videoItem);
+                });
+
+                // Refresh Flickity after all items are added
+                flkty.reloadCells();
+                flkty.select(0);
+
+            } catch (error) {
+                console.error('Error:', error);
+                showError(error.message);
+            }
+        }
+
+        function createVideoItem(title, channel, thumbnail, url, videoId) {
+            const div = document.createElement('div');
+            div.className = 'video-item';
+            div.innerHTML = `
+                <img class="video-thumbnail" src="${thumbnail}" alt="${title}" loading="lazy">
+                <div class="play-button"></div>
+                <div class="video-info">
+                    <h3>${title.substring(0, 50)}${title.length > 50 ? '...' : ''}</h3>
+                    <p>${channel}</p>
+                </div>
+                <a href="${url}" class="youtube-link" target="_blank">Watch on YouTube</a>
+            `;
+
+            div.querySelector('.play-button').addEventListener('click', () => {
+                playVideo(videoId, div);
+            });
+
+            return div;
+        }
+
+        function playVideo(videoId, container) {
+            const iframe = document.createElement('iframe');
+            iframe.width = '100%';
+            iframe.height = '100%';
+            iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+            iframe.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';
+            iframe.allowFullscreen = true;
+            
+            container.querySelector('.video-thumbnail').replaceWith(iframe);
+            container.querySelector('.play-button').style.display = 'none';
+        }
+
+        function showError(message) {
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error-message';
+            errorDiv.innerHTML = `
+                <p style="color: red; text-align: center; padding: 20px;">
+                    Error loading videos: ${message}
+                </p>
+            `;
+            document.querySelector('.gallery-container').appendChild(errorDiv);
+        }
+
+        // Start loading the playlist
+        loadPlaylist();
+    </script>
+    <!-- Placed at the end of the document so the pages load faster --> 
+  <script type="text/javascript" src="assets/js/bootstrap.min.js" defer ></script> 
+  <script type="text/javascript" src="assets/js/jquery.easing.1.3.js" defer ></script> 
+  <script type="text/javascript" src="assets/js/smoothscroll.js"defer ></script> 
+  <script type="text/javascript" src="assets/js/custom-scripts.js" defer ></script>
+  <script src="https://vjs.zencdn.net/7.20.3/video.min.js" defer ></script>
+  <script type="module" src="chapters/subscribe.js" defer></script>
+  <script src="app.js"></script>
+  <script src="sliderjs.js"></script>
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js" defer></script>
+  <script defer>
+    window.addEventListener('load', function() {
+      var flkty = new Flickity('.carousel', {
+        wrapAround: true,
+        selectedAttraction: 0.03,
+        friction: 0.7,
+      });
+
+      var flktyReplik = new Flickity('.replik-carousel', {
+        wrapAround: true,
+        selectedAttraction: 0.03,
+        prevNextButtons: true,
+        cellSelector: '.carousel-cell-replik',
+        friction: 0.7,
+        autoPlay: 4000,
+      });
+
+      // Ensure body overflow is restored after initialization
+      document.body.style.overflow = 'visible';
+
+      // Auto-scroll functionality for both carousels
+      setInterval(function() {
+        flkty.next();
+        // flktyReplik.next();
+      }, 4000); // Change every 4 seconds
+    });
+  </script>
+  <!-- <script>
+    function openWithDelay(url, delay) {
+        setTimeout(function() {
+            window.open(url, '_blank', 'noopener');
+        }, delay);
+    }
+  </script> -->
+  <script defer>
+    var player = videojs('my-video', {
+      controls: false,
+      autoplay: true,
+      muted: true,
+      loop: false
+    });
+  </script>
+  <script src="dropdown.js" defer></script>
+  <script src="sidebar.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const video = document.querySelector('.logo-video');
+      
+      // Ensure the video is muted and autoplay
+      video.muted = true;
+      video.play();
+    });
+  </script>
+</body>
+</html>
