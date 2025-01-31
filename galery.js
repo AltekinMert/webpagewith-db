@@ -3,22 +3,22 @@ const videos = [
     {
         title: "Yzk",
         path: "assets/videos/Yzk2.mp4",
-        thumbnail: "assets/images/yzk.jpg"
+        thumbnail: "assets/thum/yzk1.png"
     },
     {
         title: "Yzk",
         path: "assets/videos/Yzk3.mp4",
-        thumbnail: "assets/images/yzk.jpg"
+        thumbnail: "assets/thum/yzk2.png"
     },
     {
         title: "Yzk",
         path: "assets/videos/Yzk3.mp4",
-        thumbnail: "assets/images/yzk.jpg"
+        thumbnail: "assets/thum/yzk2.png"
     },
     {
         title: "Sb",
         path: "assets/videos/Sb.mp4",
-        thumbnail: "assets/images/derinsular.jpg"
+        thumbnail: "assets/thum/sb1.png"
     }
 ];
 
