@@ -84,8 +84,6 @@ const episodesYzk = [
     { name: 'Leza 40.Bölüm', file: 'Leza/leza-40.docx' },
     { name: 'Leza 41.Bölüm', file: 'Leza/leza-41.docx' },
 ];
-
-const episodesValens = [];
 const episodesValens = [
   { name: 'Valens 1.Bölüm', file: 'valens/valens-1.docx' },
   { name: 'Valens 2.Bölüm', file: 'valens/valens-2.docx' },
