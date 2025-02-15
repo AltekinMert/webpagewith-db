@@ -84,50 +84,51 @@ const episodesYzk = [
     { name: 'Leza 40.Bölüm', file: 'Leza/leza-40.docx' },
     { name: 'Leza 41.Bölüm', file: 'Leza/leza-41.docx' },
 ];
-const episodesValens = [
-  { name: 'Valens 1.Bölüm', file: 'valens/valens-1.docx' },
-  { name: 'Valens 2.Bölüm', file: 'valens/valens-2.docx' },
-  { name: 'Valens 3.Bölüm', file: 'valens/valens-3.docx' },
-  { name: 'Valens 4.Bölüm', file: 'valens/valens-4.docx' },
-  { name: 'Valens 5.Bölüm', file: 'valens/valens-5.docx' },
-  { name: 'Valens 6.Bölüm', file: 'valens/valens-6.docx' },
-  { name: 'Valens 7.Bölüm', file: 'valens/valens-7.docx' },
-  { name: 'Valens 8.Bölüm', file: 'valens/valens-8.docx' },
-  { name: 'Valens 9.Bölüm', file: 'valens/valens-9.docx' },
-  { name: 'Valens 10.Bölüm', file: 'valens/valens-10.docx' },
-  { name: 'Valens 11.Bölüm', file: 'valens/valens-11.docx' },
-  { name: 'Valens 12.Bölüm', file: 'valens/valens-12.docx' },
-  { name: 'Valens 13.Bölüm', file: 'valens/valens-13.docx' },
-  { name: 'Valens 14.Bölüm', file: 'valens/valens-14.docx' },
-  { name: 'Valens 15.Bölüm', file: 'valens/valens-15.docx' },
-  { name: 'Valens 16.Bölüm', file: 'valens/valens-16.docx' },
-  { name: 'Valens 17.Bölüm', file: 'valens/valens-17.docx' },
-  { name: 'Valens 18.Bölüm', file: 'valens/valens-18.docx' },
-  { name: 'Valens 19.Bölüm', file: 'valens/valens-19.docx' },
-  { name: 'Valens 20.Bölüm', file: 'valens/valens-20.docx' },
-  { name: 'Valens 21.Bölüm', file: 'valens/valens-21.docx' },
-  { name: 'Valens 22.Bölüm', file: 'valens/valens-22.docx' },
-  { name: 'Valens 23.Bölüm', file: 'valens/valens-23.docx' },
-  { name: 'Valens 24.Bölüm', file: 'valens/valens-24.docx' },
-  { name: 'Valens 25.Bölüm', file: 'valens/valens-25.docx' },
-  { name: 'Valens 26.Bölüm', file: 'valens/valens-26.docx' },
-  { name: 'Valens 27.Bölüm', file: 'valens/valens-27.docx' },
-  { name: 'Valens 28.Bölüm', file: 'valens/valens-28.docx' },
-  { name: 'Valens 29.Bölüm', file: 'valens/valens-29.docx' },
-  { name: 'Valens 30.Bölüm', file: 'valens/valens-30.docx' },
-  { name: 'Valens 31.Bölüm', file: 'valens/valens-31.docx' },
-  { name: 'Valens 32.Bölüm', file: 'valens/valens-32.docx' },
-  { name: 'Valens 33.Bölüm', file: 'valens/valens-33.docx' },
-  { name: 'Valens 34.Bölüm', file: 'valens/valens-34.docx' },
-  { name: 'Valens 35.Bölüm', file: 'valens/valens-35.docx' },
-  { name: 'Valens 36.Bölüm', file: 'valens/valens-36.docx' },
-  { name: 'Valens 37.Bölüm', file: 'valens/valens-37.docx' },
-  { name: 'Valens 38.Bölüm', file: 'valens/valens-38.docx' },
-  { name: 'Valens 39.Bölüm', file: 'valens/valens-39.docx' },
-  { name: 'Valens 40.Bölüm', file: 'valens/valens-40.docx' },
-  { name: 'Valens 41.Bölüm', file: 'valens/valens-41.docx' },
-  { name: 'Valens 42.Bölüm', file: 'valens/valens-42.docx' },
-];
+const episodesValens = [];
+
+  async function discoverValensEpisodes() {
+    let i = 1;
+
+    while (true) {
+      const url = `valens/valens-${i}.docx`;
+
+      try {
+        // Dosyanın varlığını HEAD isteği ile kontrol ediyoruz
+        const response = await fetch(url, { method: 'HEAD' });
+        if (!response.ok) {
+          // Eğer sunucu 404 (veya başka hata) döndürürse, döngüyü bitir
+          break;
+        }
+
+        // Dosya varsa episodesValens listemize ekle
+        episodesValens.push({
+          name: `Valens ${i}.Bölüm`,
+          file: url,
+        });
+      } catch (error) {
+        // Ağ hatası gibi durumlarda da döngüyü bitirelim
+        break;
+      }
+
+      i++;
+    }
+
+    // Test amaçlı konsolda görelim
+    console.log("Yüklenen bölümler:", episodesValens);
+
+    // Burada episodesValens'i dropdown vs. istediğiniz yerde kullanabilirsiniz
+    // örnek olarak basitçe ekrana yazdırıyoruz:
+    const ul = document.createElement('ul');
+    episodesValens.forEach(ep => {
+      const li = document.createElement('li');
+      li.textContent = ep.name;
+      ul.appendChild(li);
+    });
+    document.body.appendChild(ul);
+  }
+
+  // Sayfa yüklendikten sonra bölümleri keşfet
+  discoverValensEpisodes();
 const episodesMabel = [
   { name: 'Mabel 1.Bölüm', file: 'mabel/mabel-1.docx' },
   { name: 'Mabel 2.Bölüm', file: 'mabel/mabel-2.docx' },
