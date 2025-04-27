@@ -66,7 +66,7 @@ prev.onclick = function(){
 let refreshInterval = setInterval(() => {
     autoflag=true;
     next.click();
-}, 8000)
+}, 80000)
 
 
 function showSlider() {
@@ -93,7 +93,7 @@ function showSlider() {
     refreshInterval = setInterval(() => {
         autoflag = true;
         next.click();
-    }, 8000);
+    }, 80000);
     autoflag = false;
 }
 // Add click event listeners to dots

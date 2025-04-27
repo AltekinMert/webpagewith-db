@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
 <meta name="author" content="webthemez">
+<meta property="og:image" content="assets/aimages/yzk-1ai.jpeg">
 <title>Beyza Sürmen</title>
 
 <!-- Bootstrap core CSS -->
@@ -37,6 +38,7 @@
 <link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet" />
 <link href="https://fonts.cdnfonts.com/css/eur42" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/last.css">
 <!-- <script src="jquery-3.7.1.min.js"></script> -->
 <!-- <script src="jQuery-plugins/jquery-ui-1.13.3.custom/jquery-ui.js"></script>  deleted last step-->
 <!-- <script src="jQuery-plugins/aos-master/dist/aos.js"></script> -->
@@ -187,13 +189,60 @@
               <div style="place-items: center; display: flex; flex-direction: column;">
                 <p style=>
                   Önüme bir kadeh koydu, içine şarap doldurdu ve ince uzun parmaklarıyla masa da bana doğru ittirdi. Kimse dokunmadı, sadece gözlerimiz değdi kadehe ama o kadeh devrildi, kucağıma düştü ve içinde ki şarap bedenime yayıldı. Bu şarap benim kanımdı, şarap şişesinin kırılan cam parçaları benim kalbimdi ve kucağıma düşen bu kadeh benim hayallerimdi.  Kadehi bana uzatan bu adam ise ölümle aramda ki tek engeldi.
-                  <div class="learn-more3 yzk-simdi" style="text-align: center; align-self: center;">
-                    <a class="elementor-button elementor-button-link elementor-size-sm" href="yzk.html" style="background-color: #7c1c1f;transform: translateY(2vh);">
+                  <div class="learn-more3 yzk-simdi" style="text-align: center; align-self: center; display: flex; flex-direction:column; gap: 1em; align-items: center;">
+                    <a class="elementor-button elementor-button-link elementor-size-sm" href="yzk.html" style="background-color: #7c1c1f;transform: translateY(2vh); width: 50%;">
                       <span class="elementor-button-content-wrapper">
                         <span class="elementor-button-text">Şimdi Oku</span>
                       </span>
                     </a>
+                    <a id="openModal" class="elementor-button elementor-button-link elementor-size-sm" href="javascript:void(0);" style="background-color: #7c1c1f; transform: translateY(2vh); width: 50%;">
+                      <span class="elementor-button-content-wrapper">
+                        <span class="elementor-button-text">Satın Al</span>
+                      </span>
+                  </a>
                   </div>
+                  <!-- Modal Arkaplanı -->
+<div id="modalBackground" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 9998;">
+
+  <!-- Modal Kutu -->
+  <!-- Modal Kutu -->
+  <div id="modalBox" style="
+      position: absolute;
+      top: 50%;
+      right: 50%;
+      transform: translate(50%, -50%);
+      background: black;
+      width: 70%;
+      max-width: 400px;
+      padding: 30px;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      padding-top: 3em;
+      z-index: 9999;
+    ">
+
+    <!-- Kapatma Butonu -->
+    <button id="closeModal" style="color: white; position: absolute; top: 10px; right: 10px; background: none; border: none; font-size: 24px; cursor: pointer;">
+      <i class="fa fa-times"></i> <!-- FontAwesome ikonu -->
+    </button>
+
+    <!-- 5 Tane Buton -->
+
+    <button onclick="window.location.href='https://www.bkmkitap.com/yarinlar-zifiri-karanlik-set?waw_keyword=yar%C4%B1nlar%20zifiri%20karanl%C4%B1k&_gl=1*1om01b1*_gcl_aw*R0NMLjE3NDU3Njc5MzAuQ2p3S0NBandxN2ZBQmhCMkVpd0F3ay1ZYkM2bDlKNl9JSlNrVUw2bWRSRDNjVy1jZnNLSmw0ZEplZUZKaUdYVGs3am50V21OaXZtNG1Sb0NYQ0FRQXZEX0J3RQ..*_gcl_au*MTYyMzYzODM5LjE3NDEzNTI2MDQ.'" style="padding: 12px; font-size: 16px; cursor: pointer;"><img src="https://cdn.bkmkitap.com/Data/EditorFiles/logonew23.png" alt="logonew23.png (3 KB)" width="150" height="auto"></button>
+
+    <button onclick="window.location.href='https://www.trendyol.com/ren-kitap/yarinlar-zifiri-karanlik-set-p-906575541?boutiqueId=61&merchantId=172038'" style="padding: 12px; font-size: 16px; cursor: pointer;"><img style="width:146px; height:100%; margin-bottom:-3px;" src="https://cdn.dsmcdn.com/web/logo/ty-web.svg" alt="Trendyol Türkçe"></button>
+
+    <button onclick="window.location.href='https://www.amazon.com.tr/Yar%C4%B1nlar-Zifiri-Karanl%C4%B1k-Set-Ciltli/dp/6256079957/ref=sr_1_2?crid=3L1FC7XTEL1IZ&dib=eyJ2IjoiMSJ9.OBlEar_aDgKCHQjqU5sJv6ftF6gYIMYj-6Rx5xXFzUhS8cKXvOmgouSQeuiLsx7O.gGJuOgE581ytcnz4NWOi6kKvleK94IjudO5qnctQlqI&dib_tag=se&keywords=yar%C4%B1nlar+zifiri+karanl%C4%B1k&qid=1745767856&sprefix=yar%C4%B1nlar+%2Caps%2C219&sr=8-2'" style="padding: 12px; font-size: 16px; cursor: pointer;"><img src="assets/svg/Amazon_logo.svg" alt="Logo" width="160" height="auto"></button>
+
+    <button onclick="window.location.href='https://tamadres.com/yarinlar-zifiri-karanlik-set-ciltli-beyza-surmen-kitabi-345454-9786256079953'" style="padding: 12px; font-size: 16px; cursor: pointer;"><img src="assets/svg/tamadres.svg" alt="Logo" width="150" height="60"></button>
+
+    <button onclick="window.location.href='https://www.dr.com.tr/kitap/yarinlar-zifiri-karanlik-seti/edebiyat/roman/turk-romani/urunno=0002164676001'" style="padding: 12px; font-size: 16px; cursor: pointer;"><img src="assets/svg/dnr.svg" alt="Logo" width="85" height="60"></button>
+
+  </div>
+
+</div>
                 </p>
               </div>
             </div>
@@ -598,6 +647,33 @@
       video.muted = true;
       video.play();
     });
+  </script>
+  <script>
+    const openBtn = document.getElementById('openModal');
+    const closeBtn = document.getElementById('closeModal');
+    const modalBackground = document.getElementById('modalBackground');
+    const modalBox = document.getElementById('modalBox');
+  
+    openBtn.addEventListener('click', () => {
+      modalBackground.style.display = 'block';
+      modalBackground.style.animation = 'fadeIn 0.3s forwards';
+      modalBox.style.animation = 'modalFade 0.3s forwards';
+    });
+  
+    closeBtn.addEventListener('click', closeModal);
+    modalBackground.addEventListener('click', (e) => {
+      if (e.target === modalBackground) {
+        closeModal();
+      }
+    });
+  
+    function closeModal() {
+      modalBackground.style.animation = 'fadeOut 0.3s forwards';
+      modalBox.style.animation = 'modalFadeOut 0.3s forwards';
+      setTimeout(() => {
+        modalBackground.style.display = 'none';
+      }, 300); // Animasyon süresiyle aynı
+    }
   </script>
 </body>
 </html>

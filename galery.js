@@ -11,14 +11,14 @@ const videos = [
         thumbnail: "assets/thum/yzk2.png"
     },
     {
-        title: "Yzk",
-        path: "assets/videos/Yzk3.mp4",
-        thumbnail: "assets/thum/yzk2.png"
-    },
-    {
         title: "Sb",
         path: "assets/videos/Sb.mp4",
         thumbnail: "assets/thum/sb1.png"
+    },
+    {
+        title: "As",
+        path: "assets/videos/as1.mp4",
+        thumbnail: "assets/thum/as1.png"
     }
 ];
 
@@ -59,7 +59,8 @@ function initGallery() {
     // Create containers for each category
     const categories = {
         yzk: createCategorySection("Yarınlar Zifiri Karanlık"),
-        sb: createCategorySection("Sonun Başlangıcı")
+        sb: createCategorySection("Sonun Başlangıcı"),
+        as: createCategorySection("Askadar")
     };
 
     // Add all videos to their respective categories
@@ -70,12 +71,16 @@ function initGallery() {
             categories.yzk.grid.appendChild(card);
         } else if (video.title === "Sb") {
             categories.sb.grid.appendChild(card);
+        } else if (video.title === "As") {
+            categories.as.grid.appendChild(card);
         }
+        
     });
 
     // Add sections to main container
     container.appendChild(categories.yzk.section);
     container.appendChild(categories.sb.section);
+    container.appendChild(categories.as.section);
 }
 
 // Rest of the code remains the same
