@@ -1,177 +1,46 @@
-const episodesYzk = [
-    { name: 'YZK 1.Bölüm', file: 'yzk/yzk-1.docx' },
-    { name: 'YZK 2.Bölüm', file: 'yzk/yzk-2.docx' },
-    { name: 'YZK 3.Bölüm', file: 'yzk/yzk-3.docx' },
-    { name: 'YZK 4.Bölüm', file: 'yzk/yzk-4.docx' },
-    { name: 'YZK 5.Bölüm', file: 'yzk/yzk-5.docx' },
-    { name: 'YZK 6.Bölüm', file: 'yzk/yzk-6.docx' },
-    { name: 'YZK 7.Bölüm', file: 'yzk/yzk-7.docx' },
-    { name: 'YZK 8.Bölüm', file: 'yzk/yzk-8.docx' },
-    { name: 'YZK 9.Bölüm', file: 'yzk/yzk-9.docx' },
-    { name: 'YZK 10.Bölüm', file: 'yzk/yzk-10.docx' },
-    { name: 'YZK 11.Bölüm', file: 'yzk/yzk-11.docx' },
-    { name: 'YZK 12.Bölüm', file: 'yzk/yzk-12.docx' },
-    { name: 'YZK 13.Bölüm', file: 'yzk/yzk-13.docx' },
-    { name: 'YZK 14.Bölüm', file: 'yzk/yzk-14.docx' },
-    { name: 'YZK 15.Bölüm', file: 'yzk/yzk-15.docx' },
-    { name: 'YZK 16.Bölüm', file: 'yzk/yzk-16.docx' },
-    { name: 'YZK 17.Bölüm', file: 'yzk/yzk-17.docx' },
-    { name: 'YZK 18.Bölüm', file: 'yzk/yzk-18.docx' },
-    { name: 'YZK 19.Bölüm', file: 'yzk/yzk-19.docx' },
-    { name: 'YZK 20.Bölüm', file: 'yzk/yzk-20.docx' },
-    { name: 'YZK 21.Bölüm', file: 'yzk/yzk-21.docx' },
-    { name: 'YZK 22.Bölüm', file: 'yzk/yzk-22.docx' },
-    { name: 'YZK 23.Bölüm', file: 'yzk/yzk-23.docx' },
-    { name: 'YZK 24.Bölüm', file: 'yzk/yzk-24.docx' },
-    { name: 'YZK 25.Bölüm', file: 'yzk/yzk-25.docx' },
-    { name: 'YZK 26.Bölüm', file: 'yzk/yzk-26.docx' },
-    { name: 'YZK 27.Bölüm', file: 'yzk/yzk-27.docx' },
-    { name: 'YZK 28.Bölüm', file: 'yzk/yzk-28.docx' },
-    { name: 'YZK 29.Bölüm', file: 'yzk/yzk-29.docx' },
-    { name: 'YZK 30.Bölüm', file: 'yzk/yzk-30.docx' },
-    { name: 'YZK 31.Bölüm', file: 'yzk/yzk-31.docx' },
-    { name: 'YZK 32.Bölüm', file: 'yzk/yzk-32.docx' },
-    { name: 'YZK 33.Bölüm', file: 'yzk/yzk-33.docx' },
-    { name: 'YZK 34.Bölüm', file: 'yzk/yzk-34.docx' },
-    { name: 'YZK 35.Bölüm', file: 'yzk/yzk-35.docx' },
-    { name: 'YZK 36.Bölüm', file: 'yzk/yzk-36.docx' },
-    { name: 'YZK 37.Bölüm', file: 'yzk/yzk-37.docx' },
-    { name: 'YZK 38.Bölüm', file: 'yzk/yzk-38.docx' },
-    { name: 'YZK 39.Bölüm', file: 'yzk/yzk-39.docx' },
-    { name: 'YZK 40.Bölüm', file: 'yzk/yzk-40.docx' },
-    { name: 'YZK 41.Bölüm', file: 'yzk/yzk-41.docx' },
-  ];
-  const episodesLeza = [
-    { name: 'Leza 1.Bölüm', file: 'Leza/leza-1.docx' },
-    { name: 'Leza 2.Bölüm', file: 'Leza/leza-2.docx' },
-    { name: 'Leza 3.Bölüm', file: 'Leza/leza-3.docx' },
-    { name: 'Leza 4.Bölüm', file: 'Leza/leza-4.docx' },
-    { name: 'Leza 5.Bölüm', file: 'Leza/leza-5.docx' },
-    { name: 'Leza 6.Bölüm', file: 'Leza/leza-6.docx' },
-    { name: 'Leza 7.Bölüm', file: 'Leza/leza-7.docx' },
-    { name: 'Leza 8.Bölüm', file: 'Leza/leza-8.docx' },
-    { name: 'Leza 9.Bölüm', file: 'Leza/leza-9.docx' },
-    { name: 'Leza 10.Bölüm', file: 'Leza/leza-10.docx' },
-    { name: 'Leza 11.Bölüm', file: 'Leza/leza-11.docx' },
-    { name: 'Leza 12.Bölüm', file: 'Leza/leza-12.docx' },
-    { name: 'Leza 13.Bölüm', file: 'Leza/leza-13.docx' },
-    { name: 'Leza 14.Bölüm', file: 'Leza/leza-14.docx' },
-    { name: 'Leza 15.Bölüm', file: 'Leza/leza-15.docx' },
-    { name: 'Leza 16.Bölüm', file: 'Leza/leza-16.docx' },
-    { name: 'Leza 17.Bölüm', file: 'Leza/leza-17.docx' },
-    { name: 'Leza 18.Bölüm', file: 'Leza/leza-18.docx' },
-    { name: 'Leza 19.Bölüm', file: 'Leza/leza-19.docx' },
-    { name: 'Leza 20.Bölüm', file: 'Leza/leza-20.docx' },
-    { name: 'Leza 21.Bölüm', file: 'Leza/leza-21.docx' },
-    { name: 'Leza 22.Bölüm', file: 'Leza/leza-22.docx' },
-    { name: 'Leza 23.Bölüm', file: 'Leza/leza-23.docx' },
-    { name: 'Leza 24.Bölüm', file: 'Leza/leza-24.docx' },
-    { name: 'Leza 25.Bölüm', file: 'Leza/leza-25.docx' },
-    { name: 'Leza 26.Bölüm', file: 'Leza/leza-26.docx' },
-    { name: 'Leza 27.Bölüm', file: 'Leza/leza-27.docx' },
-    { name: 'Leza 28.Bölüm', file: 'Leza/leza-28.docx' },
-    { name: 'Leza 29.Bölüm', file: 'Leza/leza-29.docx' },
-    { name: 'Leza 30.Bölüm', file: 'Leza/leza-30.docx' },
-    { name: 'Leza 31.Bölüm', file: 'Leza/leza-31.docx' },
-    { name: 'Leza 32.Bölüm', file: 'Leza/leza-32.docx' },
-    { name: 'Leza 33.Bölüm', file: 'Leza/leza-33.docx' },
-    { name: 'Leza 34.Bölüm', file: 'Leza/leza-34.docx' },
-    { name: 'Leza 35.Bölüm', file: 'Leza/leza-35.docx' },
-    { name: 'Leza 36.Bölüm', file: 'Leza/leza-36.docx' },
-    { name: 'Leza 37.Bölüm', file: 'Leza/leza-37.docx' },
-    { name: 'Leza 38.Bölüm', file: 'Leza/leza-38.docx' },
-    { name: 'Leza 39.Bölüm', file: 'Leza/leza-39.docx' },
-    { name: 'Leza 40.Bölüm', file: 'Leza/leza-40.docx' },
-    { name: 'Leza 41.Bölüm', file: 'Leza/leza-41.docx' },
-];
-const episodesValens = [
-  { name: 'Valens 1.Bölüm', file: 'valens/valens-1.docx' },
-  { name: 'Valens 2.Bölüm', file: 'valens/valens-2.docx' },
-  { name: 'Valens 3.Bölüm', file: 'valens/valens-3.docx' },
-  { name: 'Valens 4.Bölüm', file: 'valens/valens-4.docx' },
-  { name: 'Valens 5.Bölüm', file: 'valens/valens-5.docx' },
-  { name: 'Valens 6.Bölüm', file: 'valens/valens-6.docx' },
-  { name: 'Valens 7.Bölüm', file: 'valens/valens-7.docx' },
-  { name: 'Valens 8.Bölüm', file: 'valens/valens-8.docx' },
-  { name: 'Valens 9.Bölüm', file: 'valens/valens-9.docx' },
-  { name: 'Valens 10.Bölüm', file: 'valens/valens-10.docx' },
-  { name: 'Valens 11.Bölüm', file: 'valens/valens-11.docx' },
-  { name: 'Valens 12.Bölüm', file: 'valens/valens-12.docx' },
-  { name: 'Valens 13.Bölüm', file: 'valens/valens-13.docx' },
-  { name: 'Valens 14.Bölüm', file: 'valens/valens-14.docx' },
-  { name: 'Valens 15.Bölüm', file: 'valens/valens-15.docx' },
-  { name: 'Valens 16.Bölüm', file: 'valens/valens-16.docx' },
-  { name: 'Valens 17.Bölüm', file: 'valens/valens-17.docx' },
-  { name: 'Valens 18.Bölüm', file: 'valens/valens-18.docx' },
-  { name: 'Valens 19.Bölüm', file: 'valens/valens-19.docx' },
-  { name: 'Valens 20.Bölüm', file: 'valens/valens-20.docx' },
-  { name: 'Valens 21.Bölüm', file: 'valens/valens-21.docx' },
-  { name: 'Valens 22.Bölüm', file: 'valens/valens-22.docx' },
-  { name: 'Valens 23.Bölüm', file: 'valens/valens-23.docx' },
-  { name: 'Valens 24.Bölüm', file: 'valens/valens-24.docx' },
-  { name: 'Valens 25.Bölüm', file: 'valens/valens-25.docx' },
-  { name: 'Valens 26.Bölüm', file: 'valens/valens-26.docx' },
-  { name: 'Valens 27.Bölüm', file: 'valens/valens-27.docx' },
-  { name: 'Valens 28.Bölüm', file: 'valens/valens-28.docx' },
-  { name: 'Valens 29.Bölüm', file: 'valens/valens-29.docx' },
-  { name: 'Valens 30.Bölüm', file: 'valens/valens-30.docx' },
-  { name: 'Valens 31.Bölüm', file: 'valens/valens-31.docx' },
-  { name: 'Valens 32.Bölüm', file: 'valens/valens-32.docx' },
-  { name: 'Valens 33.Bölüm', file: 'valens/valens-33.docx' },
-  { name: 'Valens 34.Bölüm', file: 'valens/valens-34.docx' },
-  { name: 'Valens 35.Bölüm', file: 'valens/valens-35.docx' },
-  { name: 'Valens 36.Bölüm', file: 'valens/valens-36.docx' },
-  { name: 'Valens 37.Bölüm', file: 'valens/valens-37.docx' },
-  { name: 'Valens 38.Bölüm', file: 'valens/valens-38.docx' },
-  { name: 'Valens 39.Bölüm', file: 'valens/valens-39.docx' },
-  { name: 'Valens 40.Bölüm', file: 'valens/valens-40.docx' },
-  { name: 'Valens 41.Bölüm', file: 'valens/valens-41.docx' },
-  { name: 'Valens 42.Bölüm', file: 'valens/valens-42.docx' },
-];
-const episodesMabel = [
-  { name: 'Mabel 1.Bölüm', file: 'mabel/mabel-1.docx' },
-  { name: 'Mabel 2.Bölüm', file: 'mabel/mabel-2.docx' },
-  { name: 'Mabel 3.Bölüm', file: 'mabel/mabel-3.docx' },
-  { name: 'Mabel 4.Bölüm', file: 'mabel/mabel-4.docx' },
-  { name: 'Mabel 5.Bölüm', file: 'mabel/mabel-5.docx' },
-  { name: 'Mabel 6.Bölüm', file: 'mabel/mabel-6.docx' },
-  { name: 'Mabel 7.Bölüm', file: 'mabel/mabel-7.docx' },
-  { name: 'Mabel 8.Bölüm', file: 'mabel/mabel-8.docx' },
-  { name: 'Mabel 9.Bölüm', file: 'mabel/mabel-9.docx' },
-  { name: 'Mabel 10.Bölüm', file: 'mabel/mabel-10.docx' },
-  { name: 'Mabel 11.Bölüm', file: 'mabel/mabel-11.docx' },
-  { name: 'Mabel 12.Bölüm', file: 'mabel/mabel-12.docx' },
-  { name: 'Mabel 13.Bölüm', file: 'mabel/mabel-13.docx' },
-  { name: 'Mabel 14.Bölüm', file: 'mabel/mabel-14.docx' },
-  { name: 'Mabel 15.Bölüm', file: 'mabel/mabel-15.docx' },
-  { name: 'Mabel 16.Bölüm', file: 'mabel/mabel-16.docx' },
-  { name: 'Mabel 17.Bölüm', file: 'mabel/mabel-17.docx' },
-  { name: 'Mabel 18.Bölüm', file: 'mabel/mabel-18.docx' },
-  { name: 'Mabel 19.Bölüm', file: 'mabel/mabel-19.docx' },
-  { name: 'Mabel 20.Bölüm', file: 'mabel/mabel-20.docx' },
-  { name: 'Mabel 21.Bölüm', file: 'mabel/mabel-21.docx' },
-  { name: 'Mabel 22.Bölüm', file: 'mabel/mabel-22.docx' },
-  { name: 'Mabel 23.Bölüm', file: 'mabel/mabel-23.docx' },
-  { name: 'Mabel 24.Bölüm', file: 'mabel/mabel-24.docx' },
-  { name: 'Mabel 25.Bölüm', file: 'mabel/mabel-25.docx' },
-  { name: 'Mabel 26.Bölüm', file: 'mabel/mabel-26.docx' },
-  { name: 'Mabel 27.Bölüm', file: 'mabel/mabel-27.docx' },
-  { name: 'Mabel 28.Bölüm', file: 'mabel/mabel-28.docx' },
-  { name: 'Mabel 29.Bölüm', file: 'mabel/mabel-29.docx' },
-];
 
-const episodesSonunBaslangici = [
-  { name: 'Sonun Başlangıcı 1.Bölüm', file: 'sonun-başlangıcı/sonun-başlangıcı-1.docx' },
-  { name: 'Sonun Başlangıcı 2.Bölüm', file: 'sonun-başlangıcı/sonun-başlangıcı-2.docx' },
-];
-const episodesDerinSular = [
-  { name: 'Derin Sular 1.Bölüm', file: 'derin-sular/derin-sular-1.docx' },
-  { name: 'Derin Sular 2.Bölüm', file: 'derin-sular/derin-sular-2.docx' },
-  { name: 'Derin Sular 3.Bölüm', file: 'derin-sular/derin-sular-3.docx' },
-  { name: 'Derin Sular 4.Bölüm', file: 'derin-sular/derin-sular-4.docx' },
-  { name: 'Derin Sular 5.Bölüm', file: 'derin-sular/derin-sular-5.docx' },
-];
 
+const episodeCounts = {
+  yzk: 41,
+  leza: 41,
+  valens: 42,
+  mabel: 29,
+  sonunBaslangici: 2,
+  derinSular: 5
+};
+
+
+function generateEpisodes(bookName, count) {
+  return Array.from({ length: count }, (_, i) => {
+    // Special handling for books with hyphens in their names
+    const fileSafeName = bookName.toLowerCase()
+      .replace(/\s+/g, '-')  // Replace spaces with hyphens
+      .replace(/ı/g, 'i')    // Replace Turkish 'ı' with 'i'
+      .replace(/ğ/g, 'g')    // Replace Turkish 'ğ' with 'g'
+      .replace(/ü/g, 'u')    // Replace Turkish 'ü' with 'u')
+      .replace(/ş/g, 's')    // Replace Turkish 'ş' with 's')
+      .replace(/ç/g, 'c');   // Replace Turkish 'ç' with 'c'
+
+    // Special cases for specific books
+    let folderName = fileSafeName;
+    if (bookName === 'Sonun Başlangıcı') {
+      folderName = 'sonun-başlangıcı';
+    } else if (bookName === 'Derin Sular') {
+      folderName = 'derin-sular';
+    }
+
+    return {
+      name: `${bookName} ${i + 1}.Bölüm`,
+      file: `${folderName}/${folderName}-${i + 1}.docx`
+    };
+  });
+}
+const episodesYzk = generateEpisodes('YZK', episodeCounts.yzk);
+const episodesLeza = generateEpisodes('Leza', episodeCounts.leza);
+const episodesValens = generateEpisodes('Valens', episodeCounts.valens);
+const episodesMabel = generateEpisodes('Mabel', episodeCounts.mabel);
+const episodesSonunBaslangici = generateEpisodes('Sonun Başlangıcı', episodeCounts.sonunBaslangici);
+const episodesDerinSular = generateEpisodes('Derin Sular', episodeCounts.derinSular);
   
  // References to elements
  let commentsCache = {}; // Cache to store preloaded comments for the current episode
