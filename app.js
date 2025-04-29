@@ -22,8 +22,19 @@ items.forEach(item => {
 });
 
 
+function vwToPixels(vw) {
+    return (window.innerWidth * vw) / 100;
+}
+
+// Add timing variables
+let touchStartTime = 0;
+let touchEndTime = 0;
+const SWIPE_THRESHOLD_VW = 15; // 5% of viewport width
+const SWIPE_TIME_THRESHOLD = 200; // milliseconds
+
 function handleTouchStart(event) {
     touchStartX = event.changedTouches[0].screenX;
+    touchStartTime = Date.now();
 }
 
 function handleTouchMove(event) {
@@ -31,18 +42,37 @@ function handleTouchMove(event) {
 }
 
 function handleTouchEnd() {
+    touchEndTime = Date.now();
+    const swipeDuration = touchEndTime - touchStartTime;
+    
     if (touchEndX == 0) {
         return;
     }
-    else if (touchStartX - touchEndX > 50) {
-        // Swipe left
-        next.click();
-        touchEndX = 0;
-    } else if (touchStartX - touchEndX < -50) {
-        // Swipe right
-        prev.click();
-        touchEndX = 0;
+    
+    const swipeDistance = touchStartX - touchEndX;
+    const thresholdPixels = vwToPixels(SWIPE_THRESHOLD_VW);
+    
+    // Check if it's a valid swipe (both distance and time thresholds)
+    if (Math.abs(swipeDistance) > thresholdPixels && swipeDuration < SWIPE_TIME_THRESHOLD) {
+        if (swipeDistance > thresholdPixels) {
+            // Swipe left
+            next.click();
+            // Reset all touch variables
+            touchStartX = 0;
+            touchEndX = 0;
+            touchStartTime = 0;
+            touchEndTime = 0;
+        } else if (swipeDistance < -thresholdPixels) {
+            // Swipe right
+            prev.click();
+            // Reset all touch variables
+            touchStartX = 0;
+            touchEndX = 0;
+            touchStartTime = 0;
+            touchEndTime = 0;
+        }
     }
+    touchEndX = 0;
 }
 
 // event next click
@@ -66,7 +96,7 @@ prev.onclick = function(){
 let refreshInterval = setInterval(() => {
     autoflag=true;
     next.click();
-}, 80000)
+}, 8000)
 
 
 function showSlider() {
@@ -93,7 +123,7 @@ function showSlider() {
     refreshInterval = setInterval(() => {
         autoflag = true;
         next.click();
-    }, 80000);
+    }, 8000);
     autoflag = false;
 }
 // Add click event listeners to dots
