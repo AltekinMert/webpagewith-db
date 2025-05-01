@@ -11,10 +11,11 @@
   color: black;
 }
 .test-content{
-  height: 80%;
+  /* height: 80%; */
   display: flex;
     flex-direction: column;
     justify-content: center;
+    background-color: #000000;
 }
 #quiz-container{
   flex-direction: column;
@@ -38,6 +39,9 @@
   font-size: 1em;
   margin-top: 10px;
 }
+#setup-container p {
+  color: white;
+}
 #question {
   font-weight: bold;
   margin-bottom: 15px;
@@ -51,13 +55,13 @@
   border: 2px solid #000000;
   border-radius: 4px;
   transition: background-color 0.3s ease, border-color 0.3s ease;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   font-weight: bold;
   border-radius: 20px;
   text-align: center;
   width: 283px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-
+background-color: #8b1f1f;
 }
 #start-quiz{
   display: block;
@@ -66,6 +70,7 @@
   padding: 10px;
   border: 2px solid #000000;
   border-radius: 4px;
+  background-color: #8b1f1f;
   transition: background-color 0.3s ease, border-color 0.3s ease;
   color: rgb(0, 0, 0);
   font-weight: bold;
@@ -75,12 +80,12 @@
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
 }
 #start-quiz:hover{
-  background-color: #e0f7fa;
-  border-color: #000000;
+  background-color: #ec0b0b;
+  border-color: #ffffff;
 }
 .answer:hover {
-  background-color: #e0f7fa;
-  border-color: #000000;
+  background-color: #ec0b0b;
+  border-color: #ffffff;
   transform: scale(1.08);
   transition: transform 0.3s ease;
 }
@@ -89,8 +94,34 @@
   font-weight: bold;
   color: #444;
   padding: 20px;
-  border: 2px solid #26c6da;
+  /* border: 2px solid #26c6da; */
   border-radius: 4px;
   background-color: #e0f7fa;
   white-space: pre-line; /* \n ifadelerini satır başı olarak göstermek için */
+}
+#result{
+  width: -webkit-fill-available;
+    max-width: 360px; /* 9:16 ratio için genişlik */
+    aspect-ratio: 9/16;
+    background-image: url('../images/ch-bg.png');
+    background-size: cover;
+    background-position: center;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+#result_text{
+  font-size: 1.2em;
+  font-weight: bold;
+  white-space: pre-line; /* \n ifadelerini satır başı olarak göstermek için */
+  color: white;
+  text-align: center;
+  padding-bottom: 10vh;
+  background: black;
 }

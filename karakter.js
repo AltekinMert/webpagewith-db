@@ -49,10 +49,6 @@ const books = {
           { text: "Kırgınlık", names: ["KUTAY","ÇAKIR"] },
           { text: "Öfke", names: ["ZELAL"] },
           { text: "Geçmişin", names: ["KARMEN","YEVAL"] },
-          { text: "Öfke", names: ["ZELAL"] },
-          { text: "Geçmişin", names: ["KARMEN","YEVAL"] },
-          { text: "Öfke", names: ["ZELAL"] },
-          { text: "Geçmişin", names: ["KARMEN","YEVAL"] },
         ],
       },
       {
@@ -233,6 +229,7 @@ const quizContainer = document.getElementById("quiz-container");
 const questionEl = document.getElementById("question");
 const answersEl = document.getElementById("answers");
 const resultEl = document.getElementById("result");
+const result_text = document.getElementById("result_text");
 
 // Seçilen kitap verilerini saklamak için değişkenler
 let selectedBook = null;
@@ -267,6 +264,7 @@ function initializeQuiz() {
   setupContainer.style.display = "none";
   quizContainer.style.display = "flex";
   resultEl.style.display = "none";
+  result_text.style.display = "none";
 
   // Skoru sıfırla ve tüm karakterleri sıfırla
   score = {};
@@ -316,6 +314,7 @@ function showResult() {
   // Test bölümünü gizle ve sonuç bölümünü göster
   quizContainer.style.display = "none";
   resultEl.style.display = "block";
+  result_text.style.display = "block";
 
   // En yüksek puanı bul
   const maxScore = Math.max(...Object.values(score));
@@ -333,12 +332,12 @@ function showResult() {
   }
 
   // Debug amaçlı tüm isimlerin puanlarını listele
-  let debugText = "Seçtiğin isimlerin sayıları:\n";
-  for (const name in score) {
-    debugText += `- ${name}: ${score[name]} defa\n`;
-  }
+  let debugText = "";
+  // for (const name in score) {
+  //   debugText += `- ${name}: ${score[name]} defa\n`;
+  // }
   debugText += `\nEn çok ${finalName} ile benzeşiyorsun!`;
 
   // Sonucu ekrana yaz
-  resultEl.textContent = debugText;
+  result_text.textContent = debugText;
 }
