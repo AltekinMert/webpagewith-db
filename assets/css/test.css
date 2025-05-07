@@ -6,24 +6,50 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 11vh;
+  padding-bottom: 11vh;
 }
 #setup-container h2{
   color: black;
 }
-.test-content{
+.test-content {
   /* height: 80%; */
   display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: #000000;
+  flex-direction: column;
+  justify-content: center;
+  position: relative; /* Add this */
+}
+
+.test-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../backgrounds/test2.jpeg');
+  background-size: cover;
+  background-size: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(0px); /* Adjust the blur amount as needed */
+  z-index: -1;
+}
+@Media screen and (max-width:768px){
+  .test-content::before{
+    background-size: 120%;
+  }
 }
 #quiz-container{
   flex-direction: column;
   justify-content: center;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
 }
 #question{
   align-self: center;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  padding: 5vw;
 }
 
 #answers{
@@ -40,7 +66,7 @@
   margin-top: 10px;
 }
 #setup-container p {
-  color: white;
+  color: rgb(0, 0, 0);
 }
 #question {
   font-weight: bold;
@@ -72,7 +98,7 @@ background-color: #8b1f1f;
   border-radius: 4px;
   background-color: #8b1f1f;
   transition: background-color 0.3s ease, border-color 0.3s ease;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   font-weight: bold;
   border-radius: 20px;
   text-align: center;
@@ -100,7 +126,7 @@ background-color: #8b1f1f;
   white-space: pre-line; /* \n ifadelerini satır başı olarak göstermek için */
 }
 #result{
-  width: -webkit-fill-available;
+  width: 20vw;
     max-width: 360px; /* 9:16 ratio için genişlik */
     aspect-ratio: 9/16;
     background-image: url('../images/ch-bg.png');
@@ -115,7 +141,28 @@ background-color: #8b1f1f;
     padding: 20px;
     color: white;
     text-align: center;
+    align-content: center;
 }
+#result img {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+#question{
+  font-size: 2em;
+  inline-size: max-content;
+}
+@Media screen and (max-width:768px){
+  #result{
+    width: -webkit-fill-available;
+  }
+  #question{
+    font-size: 1.2em;
+  }
+} 
+
 #result_text{
   font-size: 1.2em;
   font-weight: bold;
@@ -123,5 +170,6 @@ background-color: #8b1f1f;
   color: white;
   text-align: center;
   padding-bottom: 10vh;
-  background: black;
+  /* background: black; */
+
 }

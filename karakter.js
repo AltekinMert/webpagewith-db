@@ -7,11 +7,8 @@ const books = {
       "BARKIN",
       "SELCEN",
       "LEMAN",
-      "HAZAN",
       "ZELAL",
-      "BARKIN",
       "ÇAKIR",
-      "KUTAY",
       "KARMEN"
     ],
     questions: [
@@ -27,10 +24,10 @@ const books = {
       {
         question: "En büyük korkun?",
         answers: [
-          { text: "Civciv", names: ["LEMAN"] },
-          { text: "Dışlanmak", names: ["HAZAN"] },
-          { text: "Güçsüz olmak", names: ["ZELAL"] },
-          { text: "Yalnız olmak", names: ["YEVAL"] },
+          { text: "Sevdiğini Kaybetmek", names: ["ZELAL","BARKIN"] },
+          { text: "Karanlık", names: ["KARMEN"] },
+          { text: "Yalnızlık", names: ["YEVAL"] },
+          { text: "Ölüm", names: ["ÇAKIR"] },
         ],
       },
       {
@@ -38,7 +35,7 @@ const books = {
         answers: [
           { text: "Takıntılı olman", names: ["YEVAL","KARMEN"] },
           { text: "Öfken", names: ["ZELAL","BARKIN"] },
-          { text: "Saflığın", names: ["HAZAN","LEMAN"] },
+          { text: "Saflığın", names: ["LEMAN"] },
           { text: "Cesaretin", names: ["ÇAKIR"] },
         ],
       },
@@ -46,7 +43,7 @@ const books = {
         question: "Seni ağlatacak şey ne olurdu?",
         answers: [
           { text: "Ölüm", names: ["SELCEN","BARKIN"] },
-          { text: "Kırgınlık", names: ["KUTAY","ÇAKIR"] },
+          { text: "Kırgınlık", names: ["ÇAKIR"] },
           { text: "Öfke", names: ["ZELAL"] },
           { text: "Geçmişin", names: ["KARMEN","YEVAL"] },
         ],
@@ -58,6 +55,33 @@ const books = {
           { text: "Karmen", names: ["KARMEN"] },
           { text: "Yeval", names: ["YEVAL"] },
           { text: "Zelal", names: ["ZELAL"] },
+        ],
+      },
+      {
+        question: "En büyük zaafın?",
+        answers: [
+          { text: "Gücün", names: ["ZELAL"] },
+          { text: "Aşkın", names: ["BARKIN"] },
+          { text: "Duyguların", names: ["ÇAKIR","SELCEN"] },
+          { text: "Korkuların", names: ["KARMEN","YEVAL"] },
+        ],
+      },
+      {
+        question: "Eğer bir yarınlar zifiri karanlık karakteri olsaydın ekibin nesi olurdun?",
+        answers: [
+          { text: "Neşesi", names: ["LEMAN","SELCEN"] },
+          { text: "Korkusuzu", names: ["KARMEN"] },
+          { text: "Güçlüsü", names: ["BARKIN"] },
+          { text: "İntikamcısı", names: ["YEVAL"] },
+        ],
+      },
+      {
+        question: "En sevdiğin oyun?",
+        answers: [
+          { text: "Satranç", names: ["BARKIN"] },
+          { text: "Bilardo", names: ["YEVAL"] },
+          { text: "Atış", names: ["KARMEN"] },
+          { text: "Kart", names: ["SELCEN"] },
         ],
       },
       // Daha fazla soru eklemek için buraya ekleyin
@@ -191,29 +215,77 @@ const books = {
   "valens": {
     name: "Valens",
     characters: [
-      "VALİ ÖZKAN",
-      "ESRA KARA",
-      "BERKAY DEMİR",
-      "MELİH ŞEN",
-      "ZEYNEP YILMAZ"
+      "TUNA",
+      "ATILLA",
+      "DAĞHAN",
+      "BURÇAK",
+      "ZEYD",
+      "CEYDA",
+      "VERA",
+      "DEFNE"
     ],
     questions: [
       {
-        question: "En çok hangi tatili seversin?",
+        question: "Arkadaş grubunda ön plana hangi özelliğinle çıkarsın?",
         answers: [
-          { text: "Plajda dinlenmek", names: ["VALİ ÖZKAN"] },
-          { text: "Dağda kamp yapmak", names: ["ESRA KARA"] },
-          { text: "Şehir turu yapmak", names: ["BERKAY DEMİR"] },
-          { text: "Evde kitap okumak", names: ["MELİH ŞEN"] },
+          { text: "Eğlenceli kişiliğimle", names: ["TUNA","ATILLA","DAĞHAN"] },
+          { text: "Ağır başlılığımla", names: ["BURÇAK","ZEYD"] },
+          { text: "Başıma bela almamla", names: ["VERA","TUNA"] },
+          { text: "Mantığımla", names: ["CEYDA","ZEYD"] },
         ],
       },
       {
-        question: "Hangi dili öğrenmek istersin?",
+        question: "Hangisini daha çok seversin?",
         answers: [
-          { text: "İspanyolca", names: ["ZEYNEP YILMAZ"] },
-          { text: "Fransızca", names: ["VALİ ÖZKAN"] },
-          { text: "Almanca", names: ["BERKAY DEMİR"] },
-          { text: "Japonca", names: ["MELİH ŞEN"] },
+          { text: "Motor", names: ["CEYDA","ZEYD","BURÇAK"] },
+          { text: "Araba", names: ["ATILLA","DAĞHAN","VERA"] },
+          { text: "Bisiklet", names: ["TUNA"] },
+          { text: "Paten", names: ["DEFNE"] },
+        ],
+      },
+      {
+        question: "Hangi renk seni yansıtıyor?",
+        answers: [
+          { text: "Yeşil", names: ["ZEYD","CEYDA"] },
+          { text: "Mavi", names: ["BURÇAK","VERA"] },
+          { text: "Siyah", names: ["ATILLA","DAĞHAN"] },
+          { text: "Başka bir renk", names: ["DEFNE","TUNA"] },
+        ],
+      },
+      {
+        question: "Hangi aktivite senlik?",
+        answers: [
+          { text: "Kitap okumak", names: ["ZEYD","VERA"] },
+          { text: "Film izlemek", names: ["TUNA"] },
+          { text: "Yarışa Katılmak", names: ["BURÇAK","CEYDA"] },
+          { text: "Maç izlemek", names: ["ATILLA","DAĞHAN"] },
+        ],
+      },
+      {
+        question: "Karşı cinste seni çeken özellik?",
+        answers: [
+          { text: "Düşünceli oluşu", names: ["ZEYD","VERA"] },
+          { text: "Korumacı oluşu", names: ["ATILLA","DAĞHAN"] },
+          { text: "Kötü çocuk oluşu", names: ["BURÇAK","CEYDA"] },
+          { text: "Eğlenceli oluşu", names: ["DEFNE","TUNA"] },
+        ],
+      },
+      {
+        question: "Eğer kötü yola düşseydin hangisine düşerdin?",
+        answers: [
+          { text: "Toz bağımlılığı", names: ["BURÇAK","ZEYD"] },
+          { text: "Alkol bağımlılığı", names: ["CEYDA","BURÇAK"] },
+          { text: "Tütün bağımlılığı", names: ["VERA","TUNA"] },
+          { text: "Antidepresan bağımlılığı", names: ["ATILLA","DAĞHAN"] },
+        ],
+      },
+      {
+        question: "Hangisi sana huzur veriyor?",
+        answers: [
+          { text: "Ormanlar", names: ["CEYDA","ZEYD"] },
+          { text: "Okyanuslar", names: ["VERA","BURÇAK"] },
+          { text: "Pistler", names: ["DAĞHAN","ATILLA"] },
+          { text: "Uçurum Kenarları", names: ["CEYDA"] },
         ],
       },
       // Daha fazla soru eklemek için buraya ekleyin
@@ -229,6 +301,7 @@ const quizContainer = document.getElementById("quiz-container");
 const questionEl = document.getElementById("question");
 const answersEl = document.getElementById("answers");
 const resultEl = document.getElementById("result");
+const testcontent = document.getElementById("test-content");
 const result_text = document.getElementById("result_text");
 
 // Seçilen kitap verilerini saklamak için değişkenler
@@ -315,6 +388,7 @@ function showResult() {
   quizContainer.style.display = "none";
   resultEl.style.display = "block";
   result_text.style.display = "block";
+  testcontent.style.backgroundColor = "black";
 
   // En yüksek puanı bul
   const maxScore = Math.max(...Object.values(score));
@@ -330,7 +404,7 @@ function showResult() {
     const randomIndex = Math.floor(Math.random() * topNames.length);
     finalName = topNames[randomIndex];
   }
-
+  
   // Debug amaçlı tüm isimlerin puanlarını listele
   let debugText = "";
   // for (const name in score) {
@@ -339,5 +413,35 @@ function showResult() {
   debugText += `\nEn çok ${finalName} ile benzeşiyorsun!`;
 
   // Sonucu ekrana yaz
+  testcontent.style.background = "black";
+  setupContainer.style.paddingBottom = "0px";
   result_text.textContent = debugText;
+
+  // Add character image
+  const characterImage = document.createElement('img');
+  characterImage.src = `assets/karakter/${finalName.toLowerCase()}.jpeg`;
+  const imagePath = `assets/karakter/${finalName.toLowerCase()}.jpeg`;
+  console.log("Attempting to load image from:", imagePath); // Debug log
+  characterImage.alt = finalName;
+  characterImage.style.cssText = `
+    display: block;
+    margin: 0 auto;
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  `;
+
+  console.log("Selected character:", finalName);
+  console.log("Image element created:", characterImage);
+
+  // Clear resultEl first
+  resultEl.innerHTML = '';
+  
+  // Add image and text
+  resultEl.appendChild(characterImage);
+  resultEl.appendChild(result_text);
+  // result_text.textContent = debugText;
+  
 }

@@ -304,7 +304,7 @@ box-sizing: content-box;
     gap: 20px;
 }
 .sidebar-content-class span h1{
-    font-size: 18px;
+    font-size: clamp(1.2em, 3vw, 2em);
     color: black;
     text-align: center;
     font-family: "Cinzel Decorative", serif;
@@ -403,7 +403,7 @@ box-sizing: content-box;
 .sidebar-content-class span:nth-child(11) h1 {
     animation-delay: 0.9s;
 }
-.sidebar-content-class span:nth-child(7) h1 {
+.sidebar-content-class span:nth-child(8) h1 {
     animation-delay: 0.7s;
     background: #d6249f; background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
     background-clip: text;
@@ -412,7 +412,7 @@ box-sizing: content-box;
     background-size: 100% 100%;
     background-position: 0 0;
 }
-.sidebar-content-class span:nth-child(7) h1:hover{
+.sidebar-content-class span:nth-child(8) h1:hover{
     transform: scale(1.1);
     background-size: 100% 200%; /* Makes the gradient cover more of the area */
     background-position: 0 100%; /* Adjusts the position for smooth transition */
