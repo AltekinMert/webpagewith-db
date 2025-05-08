@@ -216,7 +216,7 @@ const books = {
     name: "Valens",
     characters: [
       "TUNA",
-      "ATILLA",
+      "ATiLLA",
       "DAĞHAN",
       "BURÇAK",
       "ZEYD",
@@ -228,7 +228,7 @@ const books = {
       {
         question: "Arkadaş grubunda ön plana hangi özelliğinle çıkarsın?",
         answers: [
-          { text: "Eğlenceli kişiliğimle", names: ["TUNA","ATILLA","DAĞHAN"] },
+          { text: "Eğlenceli kişiliğimle", names: ["TUNA","ATiLLA","DAĞHAN"] },
           { text: "Ağır başlılığımla", names: ["BURÇAK","ZEYD"] },
           { text: "Başıma bela almamla", names: ["VERA","TUNA"] },
           { text: "Mantığımla", names: ["CEYDA","ZEYD"] },
@@ -238,7 +238,7 @@ const books = {
         question: "Hangisini daha çok seversin?",
         answers: [
           { text: "Motor", names: ["CEYDA","ZEYD","BURÇAK"] },
-          { text: "Araba", names: ["ATILLA","DAĞHAN","VERA"] },
+          { text: "Araba", names: ["ATiLLA","DAĞHAN","VERA"] },
           { text: "Bisiklet", names: ["TUNA"] },
           { text: "Paten", names: ["DEFNE"] },
         ],
@@ -248,7 +248,7 @@ const books = {
         answers: [
           { text: "Yeşil", names: ["ZEYD","CEYDA"] },
           { text: "Mavi", names: ["BURÇAK","VERA"] },
-          { text: "Siyah", names: ["ATILLA","DAĞHAN"] },
+          { text: "Siyah", names: ["ATiLLA","DAĞHAN"] },
           { text: "Başka bir renk", names: ["DEFNE","TUNA"] },
         ],
       },
@@ -258,14 +258,14 @@ const books = {
           { text: "Kitap okumak", names: ["ZEYD","VERA"] },
           { text: "Film izlemek", names: ["TUNA"] },
           { text: "Yarışa Katılmak", names: ["BURÇAK","CEYDA"] },
-          { text: "Maç izlemek", names: ["ATILLA","DAĞHAN"] },
+          { text: "Maç izlemek", names: ["ATiLLA","DAĞHAN"] },
         ],
       },
       {
         question: "Karşı cinste seni çeken özellik?",
         answers: [
           { text: "Düşünceli oluşu", names: ["ZEYD","VERA"] },
-          { text: "Korumacı oluşu", names: ["ATILLA","DAĞHAN"] },
+          { text: "Korumacı oluşu", names: ["ATiLLA","DAĞHAN"] },
           { text: "Kötü çocuk oluşu", names: ["BURÇAK","CEYDA"] },
           { text: "Eğlenceli oluşu", names: ["DEFNE","TUNA"] },
         ],
@@ -276,7 +276,7 @@ const books = {
           { text: "Toz bağımlılığı", names: ["BURÇAK","ZEYD"] },
           { text: "Alkol bağımlılığı", names: ["CEYDA","BURÇAK"] },
           { text: "Tütün bağımlılığı", names: ["VERA","TUNA"] },
-          { text: "Antidepresan bağımlılığı", names: ["ATILLA","DAĞHAN"] },
+          { text: "Antidepresan bağımlılığı", names: ["ATiLLA","DAĞHAN"] },
         ],
       },
       {
@@ -284,7 +284,7 @@ const books = {
         answers: [
           { text: "Ormanlar", names: ["CEYDA","ZEYD"] },
           { text: "Okyanuslar", names: ["VERA","BURÇAK"] },
-          { text: "Pistler", names: ["DAĞHAN","ATILLA"] },
+          { text: "Pistler", names: ["DAĞHAN","ATiLLA"] },
           { text: "Uçurum Kenarları", names: ["CEYDA"] },
         ],
       },
@@ -388,7 +388,7 @@ function showResult() {
   quizContainer.style.display = "none";
   resultEl.style.display = "block";
   result_text.style.display = "block";
-  testcontent.style.backgroundColor = "black";
+  testcontent.style.backgroundColor = "white";
 
   // En yüksek puanı bul
   const maxScore = Math.max(...Object.values(score));
@@ -410,12 +410,12 @@ function showResult() {
   // for (const name in score) {
   //   debugText += `- ${name}: ${score[name]} defa\n`;
   // }
-  debugText += `\nEn çok ${finalName} ile benzeşiyorsun!`;
+  debugText += `\nEn çok <span class="underline">${finalName} </span> ile benzeşiyorsun!`;
 
   // Sonucu ekrana yaz
-  testcontent.style.background = "black";
+  testcontent.style.background = "white";
   setupContainer.style.paddingBottom = "0px";
-  result_text.textContent = debugText;
+  result_text.innerHTML = debugText;
 
   // Add character image
   const characterImage = document.createElement('img');
@@ -439,9 +439,9 @@ function showResult() {
   // Clear resultEl first
   resultEl.innerHTML = '';
   
-  // Add image and text
+  // Add image to resultEl
   resultEl.appendChild(characterImage);
-  resultEl.appendChild(result_text);
-  // result_text.textContent = debugText;
-  
+
+  // Add result_text to testcontent
+  testcontent.appendChild(result_text);
 }

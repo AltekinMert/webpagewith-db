@@ -27,19 +27,43 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('../backgrounds/test2.jpeg');
+  background-image: url('../backgrounds/test3\ -\ Kopya.jpeg');
   background-size: cover;
-  background-size: 50%;
+  background-size: 90%;
   background-position: center;
   background-repeat: no-repeat;
-  filter: blur(0px); /* Adjust the blur amount as needed */
   z-index: -1;
 }
-@Media screen and (max-width:768px){
-  .test-content::before{
-    background-size: 120%;
+
+/* For screen widths from 0 to 430px */
+@media screen and (max-width: 430px) {
+  .test-content::before {
+    background-size: clamp(100%, 112%, 150%);
+    background-image: url('../backgrounds/test3.jpeg');
   }
 }
+
+/* For screen widths from 430px to 768px */
+@media screen and (min-width: 430px) and (max-width: 768px) {
+  .test-content::before {
+    background-size: clamp(70%, 94%, 120%);
+    background-image: url('../backgrounds/test3.jpeg');
+  }
+}
+
+@media screen and (min-width: 500px) and (max-width: 600px) {
+  .test-content::before {
+    background-size: 90%;
+    background-image: url('../backgrounds/test3.jpeg');
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 768px) {
+  .test-content::before {
+    background-size: 70%;
+    background-image: url('../backgrounds/test3.jpeg');
+  }
+}
+
 #quiz-container{
   flex-direction: column;
   justify-content: center;
@@ -78,39 +102,39 @@
   margin-bottom: 10px;
   cursor: pointer;
   padding: 10px;
-  border: 2px solid #000000;
+  border: 1.4px solid #000000;
   border-radius: 4px;
   transition: background-color 0.3s ease, border-color 0.3s ease;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   font-weight: bold;
-  border-radius: 20px;
+  border-radius: 7px;
   text-align: center;
   width: 283px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-background-color: #8b1f1f;
+/* background-color: #8b1f1f; */
 }
 #start-quiz{
   display: block;
   margin-bottom: 10px;
   cursor: pointer;
   padding: 10px;
-  border: 2px solid #000000;
+  border: 1.4px solid #000000;
   border-radius: 4px;
-  background-color: #8b1f1f;
   transition: background-color 0.3s ease, border-color 0.3s ease;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   font-weight: bold;
-  border-radius: 20px;
+  border-radius: 40px;
   text-align: center;
   width: 283px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  font-family: 'Eur42', 'Cinzel', sans-serif;
 }
 #start-quiz:hover{
   background-color: #ec0b0b;
   border-color: #ffffff;
 }
 .answer:hover {
-  background-color: #ec0b0b;
+  background-color: #951c1c;
   border-color: #ffffff;
   transform: scale(1.08);
   transition: transform 0.3s ease;
@@ -129,8 +153,8 @@ background-color: #8b1f1f;
   width: 20vw;
     max-width: 360px; /* 9:16 ratio için genişlik */
     aspect-ratio: 9/16;
-    background-image: url('../images/ch-bg.png');
-    background-size: cover;
+    background-image: url('../backgrounds/test3.jpeg');
+    background-size: 127%;
     background-position: center;
     margin: 0 auto;
     position: relative;
@@ -138,10 +162,15 @@ background-color: #8b1f1f;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    /* padding: 20px; */
     color: white;
     text-align: center;
     align-content: center;
+}
+@media screen and (max-width: 430px) {
+  #result{
+
+  }
 }
 #result img {
   max-width: 300px;
@@ -152,7 +181,8 @@ background-color: #8b1f1f;
 }
 #question{
   font-size: 2em;
-  inline-size: max-content;
+  /* inline-size: max-content; */
+  hyphens: auto;
 }
 @Media screen and (max-width:768px){
   #result{
@@ -163,13 +193,39 @@ background-color: #8b1f1f;
   }
 } 
 
-#result_text{
+#result_text {
+  font-family: 'Eur42', 'Cinzel', sans-serif;
   font-size: 1.2em;
   font-weight: bold;
-  white-space: pre-line; /* \n ifadelerini satır başı olarak göstermek için */
-  color: white;
+  white-space: pre-line;
+  color: rgb(0, 0, 0);
   text-align: center;
   padding-bottom: 10vh;
-  /* background: black; */
+}
 
+.underline {
+  position: relative;
+  display: inline-block;
+}
+
+.underline::before {
+  content: '';
+  position: absolute;
+  left: -5px; /* Adjust to extend the underline to the left */
+  right: -5px; /* Adjust to extend the underline to the right */
+  bottom: -2px; /* Adjust the distance from the text */
+  height: 2px; /* Thickness of the underline */
+  background-color: black; /* Color of the underline */
+}
+
+.underline::after {
+  content: '\2726'; /* Unicode for LIGHT FOUR POINTED BLACK STAR */
+  position: absolute;
+  right: -21%; /* Adjust this value to position the star */
+  bottom: -45.5%;
+  font-size: 0.8em; /* Adjust the size of the star */
+  color: black; /* Color of the star */
+}
+#question{
+  padding: 40px;
 }
