@@ -19,6 +19,11 @@ const videos = [
         title: "As",
         path: "assets/videos/as1.mp4",
         thumbnail: "assets/thum/as1.png"
+    },
+    {
+        title: "ös",
+        path: "assets/videos/ös.mp4",
+        thumbnail: "assets/thum/ös.png"
     }
 ];
 
@@ -60,7 +65,8 @@ function initGallery() {
     const categories = {
         yzk: createCategorySection("Yarınlar Zifiri Karanlık"),
         sb: createCategorySection("Sonun Başlangıcı"),
-        as: createCategorySection("Askadar")
+        as: createCategorySection("Askadar"),
+        ös: createCategorySection("Ölümcül Serisi")
     };
 
     // Add all videos to their respective categories
@@ -73,6 +79,8 @@ function initGallery() {
             categories.sb.grid.appendChild(card);
         } else if (video.title === "As") {
             categories.as.grid.appendChild(card);
+        }else if (video.title === "ös") {
+            categories.ös.grid.appendChild(card);
         }
         
     });
@@ -81,6 +89,7 @@ function initGallery() {
     container.appendChild(categories.yzk.section);
     container.appendChild(categories.sb.section);
     container.appendChild(categories.as.section);
+    container.appendChild(categories.ös.section);
 }
 
 // Rest of the code remains the same

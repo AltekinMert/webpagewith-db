@@ -410,7 +410,7 @@ function showResult() {
   // for (const name in score) {
   //   debugText += `- ${name}: ${score[name]} defa\n`;
   // }
-  debugText += `\nEn çok <span class="underline">${finalName} </span> ile benzeşiyorsun!`;
+  debugText += `\nEn çok <span class="underline">${finalName} </span> ile benziyorsun!`;
 
   // Sonucu ekrana yaz
   testcontent.style.background = "white";
