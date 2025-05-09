@@ -104,6 +104,9 @@
 /* external css: flickity.css */
 .carousel {
 }
+:root {
+  color-scheme: light only;
+}
 
 .carousel .carousel-cell {
   width: 300px;

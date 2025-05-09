@@ -226,6 +226,18 @@
   font-size: 0.8em; /* Adjust the size of the star */
   color: black; /* Color of the star */
 }
+:root {
+  color-scheme: light only;
+}
+@media (prefers-color-scheme: dark) {
+  .underline::before {
+    background-color: #bdbdbd; /* Change underline color to white in dark mode */
+  }
+
+  .underline::after {
+    color: white; /* Change star color to white in dark mode */
+  }
+}
 #question{
   padding: 4em;
 }

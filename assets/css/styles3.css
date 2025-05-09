@@ -127,6 +127,9 @@
     /* background-color: white; */
     text-align: center;
 }
+:root {
+  color-scheme: light only;
+}
 .bottom-praise3{
     display: flex;
     flex-direction: column;

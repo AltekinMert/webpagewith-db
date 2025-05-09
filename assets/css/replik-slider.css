@@ -93,6 +93,7 @@
     z-index: 0;
     filter: brightness(0.7);
 }
+    
 
 .replik-carousel {
     position: relative;
@@ -108,7 +109,9 @@
     background-color: rgba(0, 0, 0, 0.5); 
     z-index: 1; 
 } */
-
+:root {
+  color-scheme: light only;
+}
 .flickity-page-dots{
     bottom: 10px;
 }

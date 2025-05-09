@@ -7,6 +7,9 @@ html,body{
 .icons{
   display: inline-flex;
 }
+:root {
+  color-scheme: light only;
+}
 .icons a{
   margin: 0 25px;
   text-decoration: none;

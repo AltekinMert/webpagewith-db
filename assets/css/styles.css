@@ -627,6 +627,9 @@ font-size: 34px;
 margin-top:30px;
 font-size: 20px;
 }
+:root {
+    color-scheme: light only;
+}
 .navbar-nav{
 float: right !important;
 width: 100%;

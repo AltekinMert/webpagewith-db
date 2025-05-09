@@ -129,6 +129,9 @@ body{
     line-height: 40px; /* Center text vertically */
     font-size: 4em;
 }
+:root {
+    color-scheme: light only;
+}
 
 .arrows h1:hover {
     transform: scale(1.5);

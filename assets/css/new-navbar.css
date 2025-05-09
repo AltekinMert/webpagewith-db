@@ -844,3 +844,6 @@ input[type="checkbox"]{
 input{
     margin: 0;
 }
+:root {
+    color-scheme: light only;
+}

@@ -5,7 +5,9 @@
     overflow: hidden;
     bottom: 0;
 }
-
+:root {
+    color-scheme: light only;
+}
 /* Base styles for all circles */
 .circle {
     position: absolute;

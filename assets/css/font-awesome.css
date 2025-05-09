@@ -11,6 +11,9 @@
   font-weight: normal;
   font-style: normal;
 }
+:root {
+  color-scheme: light only;
+}
 .fa {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;

@@ -280,6 +280,9 @@
 .mail-contact h1, .mail-contact p{
     color: red;
 }
+:root {
+    color-scheme: light only;
+}
 .mail-icerik{
     display: flex;
     flex-direction: column;
