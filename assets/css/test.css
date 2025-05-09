@@ -130,7 +130,7 @@
   font-family: 'Eur42', 'Cinzel', sans-serif;
 }
 #start-quiz:hover{
-  background-color: #ec0b0b;
+  background-color: #951c1c;
   border-color: #ffffff;
 }
 .answer:hover {
@@ -229,15 +229,7 @@
 :root {
   color-scheme: light only;
 }
-@media (prefers-color-scheme: dark) {
-  .underline::before {
-    background-color: #bdbdbd; /* Change underline color to white in dark mode */
-  }
 
-  .underline::after {
-    color: white; /* Change star color to white in dark mode */
-  }
-}
 #question{
   padding: 4em;
 }
