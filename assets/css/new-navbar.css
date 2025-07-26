@@ -633,6 +633,9 @@ box-sizing: content-box;
 .kitaplar-content-class span:nth-child(4) h1 {
     animation-delay: 0.35s;
 }
+.kitaplar-content-class span:nth-child(5) h1 {
+    animation-delay: 0.45s;
+}
 
 
 
