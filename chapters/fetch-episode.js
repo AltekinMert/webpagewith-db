@@ -6,7 +6,8 @@ const episodeCounts = {
   valens: 42,
   mabel: 29,
   sonunBaslangici: 2,
-  derinSular: 5
+  derinSular: 5,
+  olumculSerisi:1
 };
 
 
@@ -41,6 +42,7 @@ const episodesValens = generateEpisodes('Valens', episodeCounts.valens);
 const episodesMabel = generateEpisodes('Mabel', episodeCounts.mabel);
 const episodesSonunBaslangici = generateEpisodes('Sonun Başlangıcı', episodeCounts.sonunBaslangici);
 const episodesDerinSular = generateEpisodes('Derin Sular', episodeCounts.derinSular);
+const episodesOlumculSerisi = generateEpisodes('Olumcul Serisi', episodeCounts.olumculSerisi);
   
  // References to elements
  let commentsCache = {}; // Cache to store preloaded comments for the current episode
@@ -90,6 +92,9 @@ switch (currentBook.toLowerCase()) {
       episodes = episodesValens;
       break;
   default:
+    case 'olumcul-serisi':
+      episodes = episodesOlumculSerisi;
+      break;
       episodes = []; // or handle the case where no match is found
 }
 import {
